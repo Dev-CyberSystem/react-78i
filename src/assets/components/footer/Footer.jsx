@@ -1,0 +1,1 @@
+import style from './footer.module.css'
