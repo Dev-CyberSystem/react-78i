@@ -30,3 +30,5 @@ const Navegador = () => {
     </Navbar>
   );
 }
+
+export default Navegador
