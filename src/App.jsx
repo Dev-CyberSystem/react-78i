@@ -1,18 +1,14 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navegador from './assets/components/header/Navegador'
 import './App.css'
+import Footer from './assets/components/footer/Footer';
 
 function App() {
 
   return (
     <>
-      <div>
-        
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Navegador />
+      <Footer/>
     </>
   )
 }
