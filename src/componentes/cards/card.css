@@ -1,0 +1,26 @@
+.container-row {
+    display: flex;
+    justify-content:space-between;
+    width: 100%;
+    margin-top: 15px;
+    
+}
+
+.cardBody {
+    margin: 10px;
+    width: 300px;
+}
+
+.cardImg {
+    height: 200px;
+} 
+
+.card-Column {
+    display: flex;
+    justify-content: center;
+}
+
+.card-tittle {
+    text-align: center;
+    font-weight: bold;
+}

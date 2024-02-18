@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+
+.home-carousel .carousel-item img {
+    height: 300px;
+    width: 600px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.home-carousel .carousel-item p {
+    color: white;
+}
+
+.img {
+    width: 750px;
+    height: 350px;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100vw;
+    }
+}
