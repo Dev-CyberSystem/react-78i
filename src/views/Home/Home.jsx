@@ -5,7 +5,7 @@ import "./HomeStyle.css"
 
 const Home = () => {
   return (
-    <div className="container d-flex flex-column align-items-center justify-content-between">
+    <div class="container d-flex flex-column align-items-center justify-content-between">
         <Navegador/>
         <Body/>
         <Footer/>
