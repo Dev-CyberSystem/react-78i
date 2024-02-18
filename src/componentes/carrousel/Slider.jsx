@@ -16,7 +16,7 @@ const Slider = () => {
           <Image className='img' src="src/assets/img/lagosanroqueVCP.jpg" alt="Lago San Roque" />
             <Carousel.Caption>
               <h3>Lago San Roque</h3>
-              <p>El Dique San Roque es una represa ubicada en el departamento Punilla, provincia de Córdoba, República Argentina. Forma un embalse de nombre homónimo en cuyas márgenes se han desarrollado importantes centros urbanos.</p>
+              <p>El Dique San Roque es una represa ubicada en el departamento Punilla, provincia de Córdoba, República Argentina. </p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item className='carousel-item'>
