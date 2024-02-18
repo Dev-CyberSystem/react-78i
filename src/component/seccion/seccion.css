@@ -1,0 +1,31 @@
+.img-card {
+    border-radius: 10px;
+    border:2px solid darkblue;
+    width: 100%;
+    height:100% ;
+    margin-top: 2px;
+}
+.btn{
+    background-color: #FF7E69;
+    color:#FFFFFF;
+    border: 2px solid #FFFFFF;
+     
+}
+.btn :hover{
+    
+    border: 2px solid #FFFFFF;
+}
+
+.text-uppercase {
+ 
+    border-radius: 20px;
+    text-transform: uppercase;
+    background-color: #FF7E69;
+   
+}
+
+
+.text-center {
+    text-align: center;
+   
+}
