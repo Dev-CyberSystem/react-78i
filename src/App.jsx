@@ -1,14 +1,12 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Navegador from './assets/components/header/Navegador'
 import './App.css'
-import Footer from './assets/components/footer/Footer';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Home from './assets/views/home/Home'; 
 
 function App() {
 
   return (
     <>
-      <Navegador />
-      <Footer/>
+      <Home />
     </>
   )
 }

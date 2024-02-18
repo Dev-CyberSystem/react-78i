@@ -1,9 +1,12 @@
-import { Cards } from "../card/Card"
+import Cards from "../card/Cards"
 
-export const CardsContainer = () => {
+
+const CardsContainer = () => {
   return (
-    <div className="CardsContainer" >
-        <Cards titulo="Sedan" parrafo="Choose a Sedan" />
-    </div>
+    <>
+    <Cards/>
+    </>
   )
 }
+
+export default CardsContainer

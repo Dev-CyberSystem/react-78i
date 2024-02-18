@@ -1,7 +1,12 @@
-import React from 'react'
+import CardsContainer from "../cardContainer/CardContainer"
 
-export const Main = () => {
+
+
+const Main = () => {
   return (
-    <div>Main</div>
+    <>
+      <CardsContainer/>
+    </>
   )
 }
+export default Main
