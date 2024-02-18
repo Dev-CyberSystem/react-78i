@@ -1,0 +1,29 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Dosis', sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  :root {
+    --primary-color: #d05893;
+    --secundary-color: #ffe8f2;
+  }
+  
+  body{
+    background-color: #ffe8f2;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  main{
+  flex-grow: 1;
+  margin-bottom: 150px;
+  }
+  
+  header{
+    position: sticky;
+    top: 0;
+  }
+  

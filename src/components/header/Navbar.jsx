@@ -1,4 +1,4 @@
-import styles from './navbar.module.css'
+import './navbar.module.css'
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -8,9 +8,10 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function NavScrollExample() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <header className='d-flex'>
+    <Navbar expand="lg" className="bg-body-tertiary d-flex">
       <Container fluid>
-        <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+        <Navbar.Brand href="#" className='d-flex justify-content-start'>FullBar</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -18,34 +19,33 @@ function NavScrollExample() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Link</Nav.Link>
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
+            <Nav.Link href="#action1">Inicio</Nav.Link>
+            <Nav.Link href="#action2">Nosotros</Nav.Link>
+            <NavDropdown title="Servicios" id="navbarScrollingDropdown">
+              <NavDropdown.Item href="#action3">Bebidas</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
-                Another action
+                Comidas
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action5">
-                Something else here
+                Espectaculos
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#" disabled>
-              Link
-            </Nav.Link>
+            
           </Nav>
-          <Form className="d-flex">
+          <Form className="d-flex justify-content-end">
             <Form.Control
               type="search"
               placeholder="Search"
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-success">Search</Button>
+            <Button variant="outline-success">Buscar</Button>
           </Form>
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    </header>
   );
 }
 

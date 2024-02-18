@@ -1,0 +1,11 @@
+img{
+    height: 500px;
+}
+
+p, h5{
+    color: #fff0f5;
+    font-weight: bold;
+    font-size: 25px;
+    text-shadow: 1px 1px 1px black;
+}
+
