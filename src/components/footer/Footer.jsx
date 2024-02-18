@@ -1,3 +1,4 @@
+
 import SocialLogos from "./Socials/SocialLogos"
 
 const Footer = () => {

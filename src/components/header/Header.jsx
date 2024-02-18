@@ -25,6 +25,7 @@ const Header = () => {
           <Ico_user width={30} height={30} fill="#fff" />
         </article>
       </Container>
+
     </Navbar>
   );
 }
