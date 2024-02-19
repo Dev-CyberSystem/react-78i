@@ -1,0 +1,25 @@
+.intro{
+    margin-top: 30px;
+    text-align: center;
+}
+.cards{
+    margin-top: 30px;    
+}
+.sidebar{
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+  
+}
+.footer{
+    margin-top: 30px;
+    margin-bottom: 0;
+    align-items: baseline;
+    text-align: center;
+}
+.cont{
+    background-color: rgba(173, 216, 230, 0.521);
+}
+.nav{
+    margin-top: 0;
+}
