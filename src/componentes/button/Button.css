@@ -1,0 +1,14 @@
+.button {
+  margin-right: 1.2rem;
+  font-size: 1.5rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  transition: all 0.2s;
+  border-radius: 10px;
+  border: none;
+  transition: all 0.2s;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  transition: all 0.2s;
+}

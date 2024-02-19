@@ -1,0 +1,30 @@
+.contenedor-footer {
+  background-color: #ecd449;
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  text-align: center;
+}
+
+.contenedor-texto {
+  display: flex;
+  justify-content: end;
+  width: 50%;
+}
+
+.contenedor-logo {
+  display: flex;
+  justify-content: start;
+  width: 50%;
+}
+
+.texto-footer {
+  color: #242422;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.2rem;
+  margin-right: 1.25rem;
+}
+
+.logo {
+  height: 3rem;
+}

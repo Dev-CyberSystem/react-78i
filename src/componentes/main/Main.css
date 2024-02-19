@@ -1,0 +1,44 @@
+.contenedor-foto {
+  max-width: 100%;
+  height: 550px;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.contenedor-texto-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.foto {
+  position: relative;
+  bottom: 90%;
+  right: 10%;
+}
+
+.texto-main {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.5rem;
+}
+
+.contenedor-reseña {
+  display: flex;
+  padding: 20px;
+}
+
+.reseña {
+  display: flex;
+  flex-direction: column;
+  justify-content: justify;
+  padding: 15px;
+}
+
+.fotoReseña {
+  height: 300px;
+}
+
+.texto-reseña {
+  font-size: 25px;
+}

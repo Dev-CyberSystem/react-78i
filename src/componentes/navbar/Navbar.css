@@ -1,0 +1,29 @@
+.header {
+  background-color: #ecd449;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.logo {
+  height: 3rem;
+  transition: all 0.5s;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  transition: all 0.5s;
+}
+
+.contenedor-logo {
+  width: 50%;
+}
+
+.contenedor-texto {
+  width: 50%;
+}
+
+.texto-navbar:hover {
+  transform: scale(1.05);
+}
