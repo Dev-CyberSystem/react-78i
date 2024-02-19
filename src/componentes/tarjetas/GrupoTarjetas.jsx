@@ -5,7 +5,7 @@ const GrupoTarjetas = () => {
   <>
     <CardGroup>
       <Card>
-        <Card.Img variant="top" src= "holder.js/100px160"/>
+        <Card.Img variant="top" src= "src/assets/img/Los siete maridos de Evelyn Hugo.jpg"/>
         <Card.Body>
           <Card.Title>LOS 7 MARIDOS DE EVELYN HUGO</Card.Title>
           <Card.Text>
@@ -18,7 +18,7 @@ const GrupoTarjetas = () => {
         </Card.Footer>
       </Card>
       <Card>
-        <Card.Img variant="top" src="holder.js/100px160" />
+        <Card.Img variant="top" src="src/assets/img/Los Cuatro Acuerdos.jpg" />
         <Card.Body>
           <Card.Title>LOS CUATRO ACUERDOS</Card.Title>
           <Card.Text>
@@ -32,16 +32,16 @@ const GrupoTarjetas = () => {
         </Card.Footer>
       </Card>
       <Card>
-        <Card.Img variant="top" src="holder.js/100px160" />
+        <Card.Img variant="top" src="src/assets/img/El poder de las palabras.jpg" />
         <Card.Body>
-          <Card.Title>MI DESEO DE ODIARTE</Card.Title>
+          <Card.Title>EL PODER DE LAS PALABRAS</Card.Title>
           <Card.Text>
-            Hay amores que son imposibles de olvidar. Sentimientos que perduran mas alla
-            del tiempo y la distancia Deseos irresistibles que ni el peligro consigue aplacar.
+          Nuestra mente es mucho más maleable de lo que creemos y, a pesar de que conservamos toda la vida la misma capacidad de aprender que tenemos de chicos, con el tiempo vamos perdiendo la necesidad y la motivación para hacerlo. 
+          Así, empezamos a convencernos de lo que no podemos: o somos malos para la matemática, o no nacimos para la música, o no podemos manejar nuestra ira, o nos es imposible superar el miedo
           </Card.Text>
         </Card.Body>
         <Card.Footer>
-          <small className="text-muted">AR$ 17.300,00</small>
+          <small className="text-muted">AR$ 18.300,00</small>
         </Card.Footer>
       </Card>
     </CardGroup>
