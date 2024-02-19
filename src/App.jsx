@@ -1,7 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navegador from './componentes/navegador/Navegador';
 import GrupoTarjetas from './componentes/tarjetas/GrupoTarjetas';
-import Carrusel from './componentes/carrusel/Carrusel';
+import Slider from './componentes/carrusel/Slider';
+
 function App() {
   return (
     <>
