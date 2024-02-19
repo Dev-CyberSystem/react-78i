@@ -1,0 +1,9 @@
+.carrusel{
+    display: flex;
+    justify-content: center;
+ 
+    width: 600px;
+    height: 600px;
+    margin: auto;
+    padding: 10px;
+}
