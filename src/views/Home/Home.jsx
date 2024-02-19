@@ -1,6 +1,6 @@
-import Cards from "../components/Cards/cards"
-import Foot from "../components/Foot/Foot"
-import Head from "../components/Head/head"
+import Cards from "../../components/Cards/cards"
+import Foot from "../../components/Foot/Foot"
+import Head from "../../components/Head/head"
 import './home.css'
 
 
