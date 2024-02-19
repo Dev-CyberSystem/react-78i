@@ -6,7 +6,7 @@ const Navegador = () => {
       <Navbar bg="dark" data-bs-theme="dark">
           <Container>
             <Navbar.Brand href="#home">TechBook</Navbar.Brand>
-            <Nav className="me-auto">
+            <Nav className="">
               <Nav.Link href="#">Home</Nav.Link>
               <Nav.Link href="#">Contacto</Nav.Link>
               <Nav.Link href="#">Carrito</Nav.Link>

@@ -37,7 +37,7 @@ const GrupoTarjetas = () => {
           <Card.Title>EL PODER DE LAS PALABRAS</Card.Title>
           <Card.Text>
           Nuestra mente es mucho más maleable de lo que creemos y, a pesar de que conservamos toda la vida la misma capacidad de aprender que tenemos de chicos, con el tiempo vamos perdiendo la necesidad y la motivación para hacerlo. 
-          Así, empezamos a convencernos de lo que no podemos: o somos malos para la matemática, o no nacimos para la música, o no podemos manejar nuestra ira, o nos es imposible superar el miedo
+          Así, empezamos a convencernos de lo que no podemos: o somos malos para la matemática, o no nacimos para la música, o no podemos manejar nuestra ira, o nos es imposible superar el miedo.
           </Card.Text>
         </Card.Body>
         <Card.Footer>
