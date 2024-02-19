@@ -1,5 +1,5 @@
 import {Carousel, Image} from 'react-bootstrap';
-import 'componentes/slinder.css'
+import './slider.css'
 
 const Slider = () => {
   return (

@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'
 import Navegador from './componentes/navegador/Navegador';
 import GrupoTarjetas from './componentes/tarjetas/GrupoTarjetas';
 import Slider from './componentes/carrusel/Slider';
