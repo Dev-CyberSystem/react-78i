@@ -1,12 +1,12 @@
 import Footer from '../../components/footer/Footer'
 import Navegador from '../../components/header/Navegador';
-import Main from '../../components/main/Main';
+import Section from '../../components/section/Section';
 
 const Home = ()=> {
     return (
         <div>
             <Navegador/>
-            <Main/>
+            <Section/>
             <Footer />
         </div>
     )
