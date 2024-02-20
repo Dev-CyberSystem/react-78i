@@ -1,7 +1,7 @@
 import {Routes, Route} from "react-router-dom"
 import Home from "../../views/home/Home"
 import Contacto from "../../views/contacto/Contacto"
-import Error404 from "../../views/error404/Error404"
+import Carrito from "../../views/carrito/Carrito"
 
 
 const Rutas = () => {
@@ -10,7 +10,8 @@ const Rutas = () => {
     <Routes>
         <Route path="/" element= {<Home/>}></Route>
         <Route path="/contacto" element= {<Contacto/>}></Route>
-        <Rutas path="*" element= {<Error404/>}></Rutas>
+        <Route path="/carrito" element= {<Carrito/>}></Route>
+        <Route path="*" element= {<h1>Not Found</h1>}></Route>
     </Routes>
         
       

@@ -10,7 +10,7 @@ const Navegador = () => {
             <Nav className="">
               <Nav.Link onClick={() => navigate ("/")}>Home</Nav.Link>
               <Nav.Link onClick={() => navigate ("/contacto")}>Contacto</Nav.Link>
-              <Nav.Link>Carrito</Nav.Link>
+              <Nav.Link onClick={() => navigate ("/carrito")}>Carrito</Nav.Link>
             </Nav>
           </Container>
          <Dropdown as={ButtonGroup}>
