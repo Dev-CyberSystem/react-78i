@@ -1,5 +1,5 @@
-import Slider from 'src/componentes/carrusel/Slider';
-import GrupoTarjetas from 'src/componentes/tarjetas/GrupoTarjetas';
+import Slider from '../../componentes/carrusel/Slider';
+import GrupoTarjetas from '../../componentes/tarjetas/GrupoTarjetas';
 const Home = () => {
   return (
     <>

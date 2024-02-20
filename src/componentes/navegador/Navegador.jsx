@@ -1,15 +1,16 @@
 import {Container, Nav, Navbar, Button, ButtonGroup, Dropdown} from 'react-bootstrap';
-
+import {useNavigate} from 'react-router';
 const Navegador = () => {
+  const navigate = useNavigate()
     return (
    <>
       <Navbar bg="dark" data-bs-theme="dark">
           <Container>
-            <Navbar.Brand href="#home">TechBook</Navbar.Brand>
+            <Navbar.Brand onClick={() => navigate ("/")}>TechBook</Navbar.Brand>
             <Nav className="">
-              <Nav.Link href="#">Home</Nav.Link>
-              <Nav.Link href="#">Contacto</Nav.Link>
-              <Nav.Link href="#">Carrito</Nav.Link>
+              <Nav.Link onClick={() => navigate ("/")}>Home</Nav.Link>
+              <Nav.Link onClick={() => navigate ("/contacto")}>Contacto</Nav.Link>
+              <Nav.Link>Carrito</Nav.Link>
             </Nav>
           </Container>
          <Dropdown as={ButtonGroup}>
