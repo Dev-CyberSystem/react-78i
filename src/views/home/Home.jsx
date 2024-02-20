@@ -1,5 +1,6 @@
 import Slider from '../../componentes/carrusel/Slider';
 import GrupoTarjetas from '../../componentes/tarjetas/GrupoTarjetas';
+
 const Home = () => {
   return (
     <>
