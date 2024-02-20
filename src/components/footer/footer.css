@@ -1,0 +1,13 @@
+footer img{
+    width: 2rem;
+    height: 2rem;
+    margin: 0.3rem;
+}
+
+footer{
+    background-color: rgb(65, 8, 119);
+    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
