@@ -1,11 +1,10 @@
 
 
-const Products = (props) => {
+const Products = () => {
     
   return (
     <>
       <h2>Tus Productos</h2>
-      <h2>Libro: {props.nombre}</h2>
     </>
   )
 }
