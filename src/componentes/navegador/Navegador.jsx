@@ -23,7 +23,7 @@ const Navegador = () => {
          </Dropdown>
         </Navbar>
    </>
-);
+)
 }
 
 export default Navegador

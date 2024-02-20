@@ -22,7 +22,7 @@ const Slider = () => {
       </Carousel.Item>
      </Carousel>
     </div>
-);
+)
 }
 
 export default Slider
