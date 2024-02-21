@@ -1,19 +1,22 @@
 import "./Navbar.css";
 import logo from "../../imagenes/logo-martingarrix.png";
 import Boton from "../button/Button";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
   return (
     <header className="header">
       <div className="contenedor-logo">
         <img src={logo} alt="logo de martin garrix" className="logo" />
       </div>
       <div className="contenedor-texto">
-        <Boton texto="HOME" />
-        <Boton texto="TOURS" />
-        <Boton texto="MUSIC" />
-        <Boton texto="SHOP" />
-        <Boton texto="CONTACT" />
+        <Boton texto="HOME" navigate="" />
+        <Boton texto="TOURS" navigate="" />
+        <Boton texto="MUSIC" navigate="" />
+        <Boton texto="SHOP" navigate="" />
+        <Boton texto="ABOUT" navigate="/about" />
       </div>
     </header>
   );

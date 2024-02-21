@@ -1,0 +1,31 @@
+.contenedor-about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 0.5px solid black;
+  padding: 20px;
+}
+
+.contenedor-fotoabout {
+  width: 50%;
+}
+
+.texto-about {
+  font-weight: bold;
+}
+
+.rostroMartin {
+  height: 300px;
+  overflow: hidden;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.section-about {
+  width: 50%;
+}
+
+.h3-about {
+  text-decoration: underline;
+}
