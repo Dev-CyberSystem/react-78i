@@ -14,8 +14,8 @@ const Navegador = () => {
           <Nav className="me-auto">
             <Nav.Link onClick={() => navigate("/")}>Home</Nav.Link>
             <Nav.Link onClick={() => navigate("/about")}>About</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+            <NavDropdown title="Administrador" id="basic-nav-dropdown">
+              <NavDropdown.Item onClick={() => navigate("/admin")}>Admin</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
               </NavDropdown.Item>
