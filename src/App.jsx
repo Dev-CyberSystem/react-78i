@@ -1,11 +1,14 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Home from './views/Home/Home';
+import Navegador from '../src/COMPONENTS/Navbar/Navegador.jsx';
+import Routes from '../src/COMPONENTS/Routes/Routes.jsx'
 
 function App() {
   return (
     <>
-      <Home/>
+    <Navegador/>
+    <Routes/>
     </>
   )
 }
+
 export default App
