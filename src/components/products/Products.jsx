@@ -6,14 +6,11 @@ const Products = ({nombre, numero, club, funcionProps}) => {
     console.log(nombre)
     console.log(numero)
     console.log(club.nombre)
-
+    //PropTypes nos dicen el tipo de dato que estamos recibiendo en nuestra props. 
     // eslint-disable-next-line react/prop-types
     // console.log(props.club, "club")
-
     // const {nombre, estadio, direccion} = props.club
-
     // console.log(nombre, estadio, direccion, "destructuring")
-
 
   return (
    <>
@@ -30,7 +27,14 @@ const Products = ({nombre, numero, club, funcionProps}) => {
 
 Products.propTypes = {
   nombre: PropTypes.string.isRequired, // isRequired es para que sea obligatorio
-  numero: PropTypes.number
+  numero: PropTypes.number,
+  // club: PropTypes.shape({
+  //   nombre: PropTypes.string,
+  //   estadio: PropTypes.string,
+  //   direccion: PropTypes.string
+  // }),
+  club: PropTypes.object,
+  funcionProps: PropTypes.func
 }
 
 export default Products
