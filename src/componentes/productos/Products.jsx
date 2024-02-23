@@ -1,12 +1,13 @@
-
+import "./producto.css";
 
 const Products = () => {
-    
   return (
-    <>
-      <h2>Tus Productos</h2>
-    </>
+    <div className="product">
+      <h3>Nombre: </h3>
+      <h3>Precio: </h3>
+    </div>
   )
 }
 
 export default Products
+
