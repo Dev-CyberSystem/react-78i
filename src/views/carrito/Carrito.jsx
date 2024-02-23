@@ -1,15 +1,14 @@
-import "../../../src/componentes/productos/Products"
+
 
 const Carrito = () => {
   return (
-    <div>
-      <h2>Tus Libros</h2>
-      <Products nombre="hola"/>
-      
-    </div>
+    <>
+      <h3>Tú Carrito</h3>
+    </>
   )
 }
 
 export default Carrito
+
 
 
