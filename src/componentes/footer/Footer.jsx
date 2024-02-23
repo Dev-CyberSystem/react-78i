@@ -14,7 +14,7 @@ for (let number = 1; number <= 5; number++) {
 const Footer = () => {
   return (
     <>
-      <div className="container">
+      <div className="footer-container">
         <div className="footer-pagination">
           <Pagination>{items}</Pagination>
         </div>

@@ -3,12 +3,14 @@
     margin-top: 50px;
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .footer-pagination {
     display: flex;
     justify-content: center;
+    max-width: 100%;
+    position: absolute;
 }
 
 .copy {

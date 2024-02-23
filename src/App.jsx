@@ -4,6 +4,8 @@ import Navegador from './componentes/navegador/Navegador';
 import Footer from './componentes/footer/Footer';
 import Card from './componentes/cards/Card';
 import Slider from './componentes/carrousel/Slider';
+// import Rutas from './componentes/rutas/Rutas';
+// import Home from './views/home/home/Home';
 
 
 function App() {
@@ -11,9 +13,11 @@ function App() {
   return (
     <>
       <Navegador />
-      <Slider/>
+      {/* <Home /> */}
+      <Slider />
       <Card />
-      <Footer/>
+      <Footer />
+      {/* <Rutas /> */}
       
     </>
   )
