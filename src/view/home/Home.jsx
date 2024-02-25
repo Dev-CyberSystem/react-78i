@@ -1,12 +1,12 @@
 
-import Carrouselll from './component/carruselll/Carruselll.jsx';
-import Carrouselll from './component/cards/Cards.jsx';
+import Carruselll from "../../component/carruselll/Carruselll"
+
 const Home = () => {
   return (
     <>
-   <Carrouselll/>
-   <Cards/>
-   
+    <Carruselll/>
+  
+      
     </>
   )
 }
