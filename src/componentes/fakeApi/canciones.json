@@ -1,0 +1,54 @@
+{
+  "canciones": [
+    {
+      "name": "Animals",
+      "album": "Gold Skies",
+      "year": "2013"
+    },
+    {
+      "name": "In the Name of Love",
+      "album": "Single",
+      "year": "2016"
+    },
+    {
+      "name": "Scared to Be Lonely",
+      "album": "Single",
+      "year": "2017"
+    },
+    {
+      "name": "There for You",
+      "album": "Single",
+      "year": "2017"
+    },
+    {
+      "name": "Ocean",
+      "album": "Single",
+      "year": "2018"
+    },
+    {
+      "name": "High on Life",
+      "album": "Single",
+      "year": "2018"
+    },
+    {
+      "name": "No Sleep",
+      "album": "Single",
+      "year": "2019"
+    },
+    {
+      "name": "Summer Days",
+      "album": "Single",
+      "year": "2019"
+    },
+    {
+      "name": "Home",
+      "album": "Single",
+      "year": "2019"
+    },
+    {
+      "name": "Used to Love",
+      "album": "Single",
+      "year": "2019"
+    }
+  ]
+}

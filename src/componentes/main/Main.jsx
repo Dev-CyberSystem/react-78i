@@ -1,8 +1,28 @@
 import "./Main.css";
 import logo from "../../imagenes/cuarto-martingarrix.jpg";
 import fotoReseña from '../../imagenes/fotoReseña.webp'
+import { useEffect } from "react";
+import { useState } from 'react'
+import axios from 'axios'
 
 const Main = () => {
+
+  const [canciones, setCanciones] = useState([])
+
+  useEffect(() => {
+    const obtenerDatos = async() => {
+      try {
+        const response = await axios.get("http://localhost:8000/canciones");
+        setCanciones(response.data)
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    obtenerDatos()
+  }, [])
+  
+  console.log(canciones);
+
   return (
     <main>
       <div className="contenedor-foto">
