@@ -1,22 +1,13 @@
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navegador from './component/navegador/Navegador';
-import Cards from './component/cards/Cards';
-import Seccion from './component/seccion/Seccion';
-import Carruselll from './component/carruselll/Carruselll';
-import Footer from './component/footer/Footer';
-
+import Home from './view/home/Home.jsx';
 
 function App() {
   return (
     <>
-  <Navegador/>
-  <Carruselll/>
-  <Cards/>
-  <Seccion/>
-  <Footer/>
-  
-
+ 
+ <Home/>
+ 
  </>
   )
 }
