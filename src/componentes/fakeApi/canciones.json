@@ -3,52 +3,61 @@
     {
       "name": "Animals",
       "album": "Gold Skies",
-      "year": "2013"
+      "year": "2013",
+      "id": "741e"
     },
     {
       "name": "In the Name of Love",
       "album": "Single",
-      "year": "2016"
+      "year": "2016",
+      "id": "4ef3"
     },
     {
       "name": "Scared to Be Lonely",
       "album": "Single",
-      "year": "2017"
+      "year": "2017",
+      "id": "c8a7"
     },
     {
       "name": "There for You",
       "album": "Single",
-      "year": "2017"
+      "year": "2017",
+      "id": "b176"
     },
     {
       "name": "Ocean",
       "album": "Single",
-      "year": "2018"
+      "year": "2018",
+      "id": "59eb"
     },
     {
       "name": "High on Life",
       "album": "Single",
-      "year": "2018"
+      "year": "2018",
+      "id": "0c72"
     },
     {
       "name": "No Sleep",
       "album": "Single",
-      "year": "2019"
+      "year": "2019",
+      "id": "f46a"
     },
     {
       "name": "Summer Days",
       "album": "Single",
-      "year": "2019"
+      "year": "2019",
+      "id": "04db"
     },
     {
       "name": "Home",
       "album": "Single",
-      "year": "2019"
+      "id": "8fd0"
     },
     {
       "name": "Used to Love",
       "album": "Single",
-      "year": "2019"
+      "year": "2019",
+      "id": "82ee"
     }
   ]
 }

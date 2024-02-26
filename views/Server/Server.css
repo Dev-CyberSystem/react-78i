@@ -1,0 +1,29 @@
+.contenedor-server {
+  background-color: #e9d981
+}
+
+.titulo {
+  text-decoration: underline;
+  text-align: center;
+  background-color: #e9d981;
+  padding: 10px;
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  background-color: #e9d981;
+  padding: 10px;
+}
+
+.boton {
+  border: none;
+  background-color: black;
+  color: #ecd449;
+  border-radius: 10px;
+  padding: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
