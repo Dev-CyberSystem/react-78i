@@ -1,0 +1,52 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Producto A",
+      "precio": 1100
+    },
+    {
+      "id": 2,
+      "nombre": "Producto B",
+      "precio": 2200
+    },
+    {
+      "id": 3,
+      "nombre": "Producto C",
+      "precio": 3300
+    },
+    {
+      "id": 4,
+      "nombre": "Producto D",
+      "precio": 4400
+    },
+    {
+      "id": 5,
+      "nombre": "Producto E",
+      "precio": 5500
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Usuario 1",
+      "email": "user1@h.com"
+    },
+    {
+      "id": 2,
+      "nombre": "Usuario 2",
+      "email": "user2@h.com"
+    },
+    {
+      "id": 3,
+      "nombre": "Usuario 3",
+      "email": "user3@h.com"
+    },
+    {
+      "id": 4,
+      "nombre": "Administrador",
+      "es_admin": true
+    }
+  ]
+}
+
