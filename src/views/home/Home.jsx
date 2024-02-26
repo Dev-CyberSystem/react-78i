@@ -1,7 +1,5 @@
 import Aside from "../../components/aside/Aside";
 import Cards from "../../components/cards/Cards";
-import Navigation from "../../components/navigation/Navigation";
-import Footer from "./../../components/footer/Footer";
 import Intro from "../../components/intro/Intro";
 import { Container, Row, Col } from "react-bootstrap/";
 import "./styleHome.css";
@@ -12,7 +10,6 @@ const Home = () => {
     <>
       <Container fluid className="cont">
         <Row>
-          <Navigation className="nav" />
         </Row>
         <Row>
           <Col className="intro">
@@ -29,9 +26,6 @@ const Home = () => {
           <Col className="sidebar">
             <Aside />
           </Col>
-        </Row>
-        <Row className="footer">
-          <Footer />
         </Row>
       </Container>
     </>

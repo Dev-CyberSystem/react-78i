@@ -1,0 +1,16 @@
+{
+  "Personajes": [
+    {
+      "Nombre": "Juan",
+      "Edad": 30,
+      "Profesion": "Desarrollador de Software"
+    }
+  ],
+  "Usuarios": [
+    {
+      "id": 2,
+      "usuario": "administrator",
+      "password": "123456789"
+    }
+  ]
+}
