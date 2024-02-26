@@ -1,7 +1,6 @@
 // import Products from "../../components/products/Products";
-import { useEffect, useState } from "react";
-import { Button, Container, Row, Col } from "react-bootstrap";
-import axios from "axios";
+import { Container, Row, Col } from "react-bootstrap";
+import Products from "../../components/products/Products";
 
 // import Admin from "../admin/Admin";
 
@@ -20,7 +19,6 @@ const Home = () => {
 
   // const [count, setCount] = useState(0);
   // const [count2, setCount2] = useState(0)
-  const [users, setUsers] = useState([])
 
   // const funcionProps = () => {
   //   setCount(count + 1);
@@ -47,25 +45,10 @@ const Home = () => {
   // }, [count])
   
   
-  useEffect(() => {
-    const obtenerDatos = async () => {
-      try{
-        const response = await axios.get("http://localhost:8000/usuarios");
-        setUsers(response.data)
-      } catch(error){
-        console.log(error)
-      }
-    }
-    obtenerDatos()
-     
-  }, [])
+  
 
-console.log(users, "users")
 
-  // useContext es un hook que nos permite acceder al contexto de un componente funcional.
-  // useReducer es un hook que nos permite manejar estados complejos.
-  // useMemo es un hook que nos permite memorizar valores.
-  // useCallback es un hook que nos permite memorizar funciones.
+
 
   return (
     <>
@@ -89,6 +72,8 @@ console.log(users, "users")
       </Container>
 
       {/* <Products nombre="Diego" numero={55} club={club} funcionProps={funcionProps} /> */}
+
+      <Products />
 
       {/* <Admin funcionProps={funcionProps} /> */}
     </>
