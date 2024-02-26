@@ -10,6 +10,7 @@ const Server = () => {
       console.log(response.data);
     } catch (error) {
       console.error(error);
+      console.log("EL SERVIDOR ESTÁ APAGADO");
     }
   }
 
@@ -24,6 +25,7 @@ const Server = () => {
       console.log(response.data);
     } catch (error) {
       console.error(error);
+      console.log("EL SERVIDOR ESTÁ APAGADO");
     }
   }
 
