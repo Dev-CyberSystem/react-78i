@@ -9,7 +9,7 @@ const Navegador = () => {
             <Navbar.Brand onClick={() => navigate ("/")}>TechBook</Navbar.Brand>
             <Nav className="">
               <Nav.Link onClick={() => navigate ("/")}>Home</Nav.Link>
-              <Nav.Link onClick={() => navigate ("/productos")}>Productos</Nav.Link>
+              <Nav.Link ></Nav.Link>
               <Nav.Link onClick={() => navigate ("/admin")}>Admin</Nav.Link>
             </Nav>
           </Container>
