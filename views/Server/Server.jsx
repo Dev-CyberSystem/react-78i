@@ -1,43 +1,20 @@
-import './Server.css'
-import axios from 'axios'
-import { useEffect } from 'react'
+import { CancionesProvider } from "../../src/context/SongsContext";
+import { useContext } from "react";
+import TablaCanciones from "../../src/componentes/tablas/TablaCanciones";
+import "./Server.css";
 
 const Server = () => {
+  const { songs } = useContext(CancionesProvider);
 
-  const getCanciones = async() => {
-    try {
-      const response = await axios.get("http://localhost:8000/canciones")
-      console.log(response.data);
-    } catch (error) {
-      console.error(error);
-      console.log("EL SERVIDOR ESTÁ APAGADO");
-    }
-  }
-
-  const postCancion = async() => {
-    try {
-      const cancion = {
-        name: "Carry You",
-        album: "Single",
-        year: "2024"
-      }
-      const response = await axios.post("http://localhost:8000/canciones", cancion)
-      console.log(response.data);
-    } catch (error) {
-      console.error(error);
-      console.log("EL SERVIDOR ESTÁ APAGADO");
-    }
-  }
+  const db = () => {
+    console.log(songs);
+  };
 
   return (
-    <div className='contenedor-server'>
-      <h4 className='titulo'>PRUEBA DE SERVIDOR</h4>
-      <div className='botones'>
-        <button className='boton' onClick={getCanciones}>GET</button>
-        <button className='boton' onClick={postCancion}>POST</button>
-      </div>
-    </div>
-  )
-}
+    <>
+      <TablaCanciones />
+    </>
+  );
+};
 
-export default Server
+export default Server;

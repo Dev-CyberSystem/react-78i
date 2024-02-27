@@ -1,0 +1,10 @@
+.tabla-canciones {
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.titulo-tabla {
+  text-decoration: underline;
+}

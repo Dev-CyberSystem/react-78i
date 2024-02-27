@@ -13,7 +13,7 @@ const Navbar = () => {
       </div>
       <div className="contenedor-texto">
         <Boton texto="HOME" navigate="" />
-        <Boton texto="SERVER" navigate="/server" />
+        <Boton texto="SONGS" navigate="/server" />
         <Boton texto="MUSIC" navigate="" />
         <Boton texto="SHOP" navigate="" />
         <Boton texto="ABOUT" navigate="/about" />
