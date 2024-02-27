@@ -1,16 +1,14 @@
 
 import Carrousel from '../../components/carrousel/Carrousel'
-import Footer from '../../components/footer/Footer'
-import Navegador from '../../components/navegador/Navegador'
+import Products from '../../components/products/Products'
 
 
 
-export const Home = () => {
+
+const Home = () => {
   return (
     <div className='d-flex flex-column align-items-center justify-content-between'>
-      <Navegador/>
     <Carrousel/>
-    <Footer/>
     </div>
   )
 }

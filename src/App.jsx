@@ -1,11 +1,15 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Home } from "./views/home/Home";
+import Rutas from "./components/rutas/Rutas";
+import Navegador from './components/navegador/Navegador';
+import Footer from './components/footer/Footer';
 
 function App() {
 
   return (
     <>
-      <Home/>
+    <Navegador/>
+      <Rutas/>
+    <Footer/>
     </>
   )
 }
