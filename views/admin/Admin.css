@@ -1,0 +1,17 @@
+.tabla-usuarios {
+  margin: 20px;
+  text-align: center;
+}
+
+.t-r {
+  font-size: 20px;
+}
+
+.t-d {
+  display: flex;
+  justify-content: space-around;
+}
+
+.titulo-usuarios {
+  text-decoration: underline;
+}

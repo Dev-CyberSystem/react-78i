@@ -1,0 +1,156 @@
+{
+  "canciones": [
+    {
+      "name": "Animals",
+      "album": "Gold Skies",
+      "year": "2013",
+      "id": "741e"
+    },
+    {
+      "name": "In the Name of Love",
+      "album": "Single",
+      "year": "2016",
+      "id": "4ef3"
+    },
+    {
+      "name": "Scared to Be Lonely",
+      "album": "Single",
+      "year": "2017",
+      "id": "c8a7"
+    },
+    {
+      "name": "There for You",
+      "album": "Single",
+      "year": "2017",
+      "id": "b176"
+    },
+    {
+      "name": "Ocean",
+      "album": "Single",
+      "year": "2018",
+      "id": "59eb"
+    },
+    {
+      "name": "High on Life",
+      "album": "Single",
+      "year": "2018",
+      "id": "0c72"
+    },
+    {
+      "name": "No Sleep",
+      "album": "Single",
+      "year": "2019",
+      "id": "f46a"
+    },
+    {
+      "name": "Summer Days",
+      "album": "Single",
+      "year": "2019",
+      "id": "04db"
+    },
+    {
+      "name": "Home",
+      "album": "Single",
+      "year": "2019",
+      "id": "8fd0"
+    },
+    {
+      "name": "Used to Love",
+      "album": "Single",
+      "year": "2019",
+      "id": "82ee"
+    }
+  ],
+  "usuarios": [
+    {
+      "name": "John",
+      "lastname": "Doe",
+      "year": "1990",
+      "email": "johndoe@example.com"
+    },
+    {
+      "name": "Jane",
+      "lastname": "Smith",
+      "year": "1985",
+      "email": "janesmith@example.com"
+    },
+    {
+      "name": "Michael",
+      "lastname": "Johnson",
+      "year": "1995",
+      "email": "michaeljohnson@example.com"
+    },
+    {
+      "name": "Emily",
+      "lastname": "Brown",
+      "year": "1992",
+      "email": "emilybrown@example.com"
+    },
+    {
+      "name": "Daniel",
+      "lastname": "Davis",
+      "year": "1988",
+      "email": "danieldavis@example.com"
+    },
+    {
+      "name": "Olivia",
+      "lastname": "Wilson",
+      "year": "1991",
+      "email": "oliviawilson@example.com"
+    },
+    {
+      "name": "David",
+      "lastname": "Taylor",
+      "year": "1987",
+      "email": "davidtaylor@example.com"
+    },
+    {
+      "name": "Sophia",
+      "lastname": "Anderson",
+      "year": "1994",
+      "email": "sophiaanderson@example.com"
+    },
+    {
+      "name": "Matthew",
+      "lastname": "Thomas",
+      "year": "1989",
+      "email": "matthewthomas@example.com"
+    },
+    {
+      "name": "Ava",
+      "lastname": "Jackson",
+      "year": "1993",
+      "email": "avajackson@example.com"
+    },
+    {
+      "name": "Andrew",
+      "lastname": "White",
+      "year": "1986",
+      "email": "andrewwhite@example.com"
+    },
+    {
+      "name": "Emma",
+      "lastname": "Harris",
+      "year": "1997",
+      "email": "emmaharris@example.com"
+    },
+    {
+      "name": "Christopher",
+      "lastname": "Clark",
+      "year": "1996",
+      "email": "christopherclark@example.com"
+    },
+    {
+      "name": "Mia",
+      "lastname": "Lewis",
+      "year": "1984",
+      "email": "mialewis@example.com"
+    },
+    {
+      "name": "Joshua",
+      "lastname": "Walker",
+      "year": "1998",
+      "email": "joshuawalker@example.com"
+    }
+  ]
+}

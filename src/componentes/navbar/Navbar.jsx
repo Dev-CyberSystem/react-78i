@@ -15,7 +15,7 @@ const Navbar = () => {
         <Boton texto="HOME" navigate="" />
         <Boton texto="SONGS" navigate="/server" />
         <Boton texto="MUSIC" navigate="" />
-        <Boton texto="SHOP" navigate="" />
+        <Boton texto="ADMIN" navigate="/admin" />
         <Boton texto="ABOUT" navigate="/about" />
       </div>
     </header>

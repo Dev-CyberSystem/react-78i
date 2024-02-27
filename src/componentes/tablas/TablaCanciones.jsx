@@ -1,11 +1,10 @@
 import { useContext } from "react";
-import { CancionesProvider } from "../../context/SongsContext";
+import { CancionesProvider } from "../../context/GlobalContext";
 import Table from "react-bootstrap/Table";
 import "./TablaCanciones.css";
 
 const TablaCanciones = () => {
   const { songs } = useContext(CancionesProvider);
-  console.log(songs, "Canciones desde tabla de canciones");
 
   return (
     <div className="tabla-canciones">
