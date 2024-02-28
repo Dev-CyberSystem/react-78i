@@ -27,7 +27,7 @@ const FormUsuarios = () => {
           />
         </Form.Group>
         <Form.Group className="mb-3">
-          <Form.Label>Precio</Form.Label>
+          <Form.Label>Email</Form.Label>
           <Form.Control
             type="email"
             name="email"

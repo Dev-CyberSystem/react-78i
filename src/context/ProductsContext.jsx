@@ -27,10 +27,61 @@ const ProductsContext = ({children}) => {
 
       // console.log(productos, "productos en el contexto")
 
+const addProductos = async (producto) => {
+  console.log (producto, "Producto a agregar")
+  try {
+      const respuesta = await axios.post('http://localhost:8000/productos', producto);
+      console.log ("Se agrego correctamente",respuesta.data)
+      setProductos ([...productos, respuesta.data]);
+  }
+  catch(error) {  
+      console.log(error)
+  }
+};
 
+
+const deleteProductos = async (id) =>  {
+    try {
+      await axios.delete(`http://localhost:8000/productos/${id}`);
+      setProductos(productos.filter((producto)=> producto.id !== id))
+    } catch (error) {
+      console.log(error)
+    }
+
+  }
+
+  
+  // const getProductoAEditar = async (id)  => {
+  //   try{
+  //     const response = await axios.get(`http://localhost:8000/productos/${id}`);
+  //     setProductos(response.data)
+  //   } catch(error){
+  //     console.log(error)
+  //   }
+
+  
+  
+  
+  // const editarProductos =  async  (editedProduct ,id )=> {
+  //   console.log(editedProduct,"el prodocto que se va a editar ")
+  //   try {
+  //     await axios.put (`http://localhost:8000/productos/${id}`, editedProduct );
+  //     setProductos(productos.map ((producto)=>{
+  //       if(producto.id === id) {
+  //         return editedProduct;
+  //       } else{
+  //         return producto;
+  //       }
+  //     }));
+  //   }catch (error){
+  //     console.log("Error al editar ", error)
+  //   }
+  //     }
+    
+ 
 
   return (
-    <ProductosProvider.Provider value={{ productos }}>
+    <ProductosProvider.Provider value={{ productos, addProductos, deleteProductos, editarProductos }}>
       {children}
     </ProductosProvider.Provider>
   )

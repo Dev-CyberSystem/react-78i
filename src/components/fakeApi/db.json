@@ -1,29 +1,9 @@
 {
   "productos": [
     {
-      "id": 1,
-      "nombre": "Producto A",
-      "precio": 1100
-    },
-    {
-      "id": 2,
-      "nombre": "Producto B",
-      "precio": 2200
-    },
-    {
-      "id": 3,
-      "nombre": "Producto C",
-      "precio": 3300
-    },
-    {
-      "id": 4,
-      "nombre": "Producto D",
-      "precio": 4400
-    },
-    {
-      "id": 5,
-      "nombre": "Producto E",
-      "precio": 5500
+      "id": "3048ed3e-dca3-4e50-abd1-59b35869e654",
+      "nombre": "Coca",
+      "precio": "2000"
     }
   ],
   "usuarios": [
@@ -49,4 +29,3 @@
     }
   ]
 }
-
