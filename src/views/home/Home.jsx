@@ -2,6 +2,7 @@ import Slider from '../../componentes/carrusel/Slider';
 import GrupoTarjetas from '../../componentes/tarjetas/GrupoTarjetas';
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+import Users from '../../componentes/users/Users';
 
 const Home = () => {
   const [usuario, setUsuario] = useState ([]) //con el useState se guardan los datos traidos con el axios.
@@ -25,11 +26,13 @@ const Home = () => {
   return (
     <>
       <h2>Home</h2>
+      <Users users={Users}/> 
       {/* <Slider/> */}
       {/* <h2>PRODUCTOS DESTACADOS</h2> */}
       {/* <GrupoTarjetas/> */}
     </>
-)
+    //los datos del home (padre) son pasados al hijo (User) por props.
+  )
 }
 
 export default Home
