@@ -1,12 +1,14 @@
 import React from 'react'
-
-const Products = (props) => {
+ 
+const Products = ({nombre,edad}) => {
   return (
     <>
-    <div>desde Products mi nombre es {props.nombre} y tengo {props.edad} </div>
+    <div>desde Products mi nombre es { nombre} y tengo { edad} </div>
  
     </>
   )
 }
+
+ 
 
 export default Products

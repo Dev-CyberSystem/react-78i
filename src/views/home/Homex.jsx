@@ -1,35 +1,38 @@
- 
-// import { useEffect,useState } from "react"
+import React, { useEffect,useState} from "react";
 import Carrusel from "../../components/carrusel/Carrusel"
-import Products from "../products/Products"
  
+ import axios from "axios";
 
-// const[count,setProducts] = useState([]) 
- function Homex  () {
 
-    return(
+ function Homex  () {   
+    const[products,setProducts] = useState([]) 
+    const [count,setCount]= useState(0);
+    const aumentarCount = () =>{
+    setCount(count+ 1);
+}
+
+    useEffect(()=>{
+    const obtenerDatos = async () =>{
+        try{
+            const response  = await axios.get("http://localhost:8000/productos")
+            setProducts(response.data)
+        }
+        catch(error){
+            console.log(error);
+        }   
+    } 
+    obtenerDatos();   
+    console.log ("Los productos son:  ", {products})    
+ },[])
+   return(
         <>
-      
-        <Carrusel />
-        <Products   />
+         <Carrusel />
+        <h2>El valor de count es : {count}</h2>
+    
+        <button onClick={aumentarCount}>Incremento</button>
         </>
-    
-
-        
-    );
-    
+      );
+     
     }
  export default Homex;     
   
-//  useEffect(()=>{
-//     const obtenerDatos = async () =>{
-//         try{
-//             const response  = await axios.get("http://localhost:8000/productos")
-//             setProducts(response.data)
-//         }
-//         catch(error){
-//             console.log(error);
-//         }
-//     } 
-//     obtenerDatos();       
-//  },[])
