@@ -5,7 +5,7 @@ import  { ProductosProvider }  from "../../context/ProductsContext";
 import PropTypes from "prop-types";
 
 const Products = () => {
-  
+ 
   const { productos } = useContext(ProductosProvider);
   
   console.log(productos, "Productos desde productos viniendo desde el context");

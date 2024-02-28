@@ -1,28 +1,47 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Form, Button } from "react-bootstrap";
+import { ProductosProvider } from "../../context/ProductsContext";
+import { v4 as uuidv4 } from "uuid";
 
 const FormProductos = () => {
-  const [nombre, setNombre] = useState();
-  const [precio, setPrecio] = useState();
+  const { addProductos } = useContext(ProductosProvider);
+
+  const [producto, setProducto] = useState({
+    id: uuidv4(),
+    nombre: "",
+    precio: 0,
+
+  });
+
+  console.log(producto, "Productos en el estado inicial del form");
+
+  const handleChange = (e) => {
+    setProducto({
+      ...producto, // recuperar los datos que tenemos actualmente en el estado.
+      [e.target.name]: e.target.value, // Actualizar el estado con el nuevo valor
+    });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault(); // Evita que se recargue la pagina
-    setNombre(e.target.nombre.value);
-    setPrecio(e.target.precio.value);
+    addProductos(producto);
+    setProducto({
+      id: uuidv4(),
+      nombre: "",
+      precio: 0,
+    });
   };
-
-  console.log(nombre, "Estado Nombre");
-  console.log(precio, "Estado Precio");
 
   return (
     <>
-    <h2>Formulario de productos</h2>
+      <h2>Formulario de productos</h2>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3">
           <Form.Label>Nombre</Form.Label>
           <Form.Control
             type="text"
-            value={nombre}
+            value={producto.nombre}
+            onChange={handleChange}
             name="nombre"
             placeholder="Nombre del producto"
           />
@@ -31,12 +50,12 @@ const FormProductos = () => {
           <Form.Label>Precio</Form.Label>
           <Form.Control
             type="number"
-            value={precio}
+            value={producto.precio}
+            onChange={handleChange}
             name="precio"
             placeholder="Precio"
           />
         </Form.Group>
-
         <Button type="submit"> Agregar Productos </Button>
       </Form>
     </>
