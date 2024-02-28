@@ -1,0 +1,24 @@
+{
+    "usuarios":[
+        {
+            "id": 1,
+            "nombre": "juancitoperez1",
+            "email": "juanperez@gmail.com"
+        },
+        {
+            "id": 2,
+            "nombre": "mariabonita300",
+            "email": "mariafernandez@gmail.com"
+        },
+        {
+            "id": 3,
+            "nombre": "ilovepizza",
+            "email": "martinargceballos@gmail.com"
+        },
+        {
+            "id": 4,
+            "nombre": "rollingschool",
+            "email": "rollingcodeschool@tucuman.com"
+        }
+    ]
+}
