@@ -1,7 +1,8 @@
 import { Routes, Route } from 'react-router-dom'
-import Home from '../Views/Home/Home'
-import Error from '../Views/Error/Error'
-import { Caracteristicas } from '../Views/Caracteristicas/Caracteristicas'
+import Home from '../../views/home/Home'
+import Error from '../../views/error/Error'
+import Caracteristicas from '../../views/caracteristica/Caracteristicas'
+import Admin from '../../views/admin/Admin'
 
 
 const Rutas = () => {
@@ -11,6 +12,8 @@ const Rutas = () => {
                 <Route path='/' element={<Home />} />
                 <Route path='/Error' element={<Error />} />
                 <Route path='/Caracteristicas' element={<Caracteristicas />} />
+                <Route path='/Admin' element={<Admin/>} />
+
             </Routes>
         </>
     )

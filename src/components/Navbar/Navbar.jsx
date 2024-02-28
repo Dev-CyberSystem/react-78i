@@ -10,6 +10,8 @@ const NavBar = () => {
                 <Nav.Link onClick={() => navigate("/")}>Inicio</Nav.Link>
                 <Nav.Link onClick={() => navigate("/Caracteristicas")}>Características</Nav.Link>
                 <Nav.Link onClick={() => navigate("/Error")}>Contacto</Nav.Link>
+                <Nav.Link onClick={() => navigate("/Admin")}>Admin</Nav.Link>
+
             </Nav>
         </Navbar>
     );

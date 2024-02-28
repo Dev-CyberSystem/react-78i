@@ -1,6 +1,6 @@
 
-import NavBar from '../../Navbar/Navbar';
-import MiCard from '../../Card/Card';
+import NavBar from '../../components/navBar/Navbar';
+import MiCard from '../../components/card/Card';
 
 
 function Home() {
