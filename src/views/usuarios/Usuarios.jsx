@@ -1,5 +1,6 @@
 import { React} from "react";
 import Users from "../../components/users/Users";
+import TableUsers from "../../components/table/TableUsers";
 
 export const Usuarios = () => {
 
@@ -9,7 +10,7 @@ export const Usuarios = () => {
   return (
     <div>Usuarios
 
-    <Users/>
+    <TableUsers/>
 
 
     </div>
