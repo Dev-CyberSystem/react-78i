@@ -1,14 +1,19 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Footer from "./component/navegador/Navegador"
-import Footer from "./component/footer/Footer"
+import Navegador from './component/navegador/Navegador';
 import Rutas from './component/rutas/Rutas';
+import Footer from './component/footer/Footer';
+import InscContext from './context/InscContext';
 
 const App = () => {
   return (
     <>
-    <Navegador/> 
+    <InscContext>
+
+    <Navegador/>
     <Rutas/>
-    <Footer/> 
+    <Footer/>
+    
+    </InscContext>
     </>
   )
 }

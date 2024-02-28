@@ -6,6 +6,7 @@ import {useNavigate} from 'react-router-dom';
 import './navegador.css'
 
 const Navegador = () => {
+  const navigate = useNavigate ()
   return (
     <>
      <Navbar expand="lg" id="navbar" >
@@ -15,10 +16,11 @@ const Navegador = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link onClick = {() =>navigate ("/about")}>Quienes somos</Nav.Link>
-            <Nav.Link href="#link">Directivos</Nav.Link>
-            <Nav.Link href="#link">Docentes</Nav.Link>
-            <Nav.Link href="#link">Contacto</Nav.Link>
+            <Nav.Link onClick = {() =>navigate ("/about")}>Nosotros</Nav.Link>
+            <Nav.Link onClick = {() =>navigate ("/directivos")}>Directivos</Nav.Link>
+            <Nav.Link onClick = {() =>navigate ("/docentes")}>Docentes</Nav.Link>
+            <Nav.Link onClick = {() =>navigate ("/contacto")}>Contacto</Nav.Link>
+            <Nav.Link onClick = {() =>navigate ("/administrador")}>Administrador</Nav.Link>
             <NavDropdown title="Acceso alumnos" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Legajo personal</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
@@ -27,7 +29,7 @@ const Navegador = () => {
               <NavDropdown.Item href="#action/3.3">Asistencias</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">
-                Telefonos de Contacto
+                Teléfono de Contacto
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>

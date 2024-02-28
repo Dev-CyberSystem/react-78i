@@ -1,0 +1,24 @@
+{
+    "inscripciones": [
+      {
+        "id": 1,
+        "nombre": "Juan Pérez",
+        "edad": 10,
+        "fecha_nacimiento": "1999-03-15",
+        "domicilio": "Calle Falsa 123",
+        "telefono": "555-1234",
+        "mail": "juan@example.com",
+        "grado": "5"
+      },
+      {
+        "id": 2,
+        "nombre": "María Juárez",
+        "edad": 12,
+        "fecha_nacimiento": "2002-07-20",
+        "domicilio": "Avenida Principal 456",
+        "telefono": "555-5678",
+        "mail": "maria@example.com",
+        "grado": "6"
+      }
+    ]
+  }

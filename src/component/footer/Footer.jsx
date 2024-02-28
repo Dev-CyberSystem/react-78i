@@ -2,9 +2,11 @@ import Nav from 'react-bootstrap/Nav';
 import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import {useNavigate} from 'react-router-dom';
 import './footer.css'
 
 const Footer = () => {
+  const navigate = useNavigate ()
   return (
     <>
      <div class ="text-uppercase fluid footer-text text-center m-2 "><h4>VACANTES 2024 DISPONIBLES</h4>
@@ -41,10 +43,10 @@ const Footer = () => {
     <Card style={{width: '20rem', height: '12rem'}} id= "cardFooter3">
      
       <Card.Body>
-        <Button  id= "btn-footer" variant="primary">Directivos</Button>
-        <Button id= "btn-footer" variant="primary">Docentes</Button>
-        <Button id= "btn-footer" variant="primary">Alumnos</Button>
-        <Button id= "btn-footer" variant="primary">Contacto</Button>
+        <Button  id= "btn-footer" variant="primary" onClick = {() =>navigate ("/directivos")}>Directivos</Button>
+        <Button id= "btn-footer" variant="primary" onClick = {() =>navigate ("/docentes")}>Docentes</Button>
+        <Button id= "btn-footer" variant="primary" onClick = {() =>navigate ("/alumnos")}>Alumnos</Button>
+        <Button id= "btn-footer" variant="primary" onClick = {() =>navigate ("/contacto")}>Contacto</Button>
       </Card.Body>
     </Card>
     <div class="text-uppercase fluid footer-text text-center m-2 ">Copyright © 2024 Lorena Oterino. Todos los derechos reservados.
