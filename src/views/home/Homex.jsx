@@ -1,35 +1,52 @@
-import React, { useEffect,useState} from "react";
+import React, { createContext, useContext, useEffect,useState} from "react";
+import {ProductoProvider} from "../../components/context/ProductsContext";
+import axios from "axios";
+
 import Carrusel from "../../components/carrusel/Carrusel"
- 
- import axios from "axios";
+import './styleHome.css'
+
+  
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 
  function Homex  () {   
-    const[products,setProducts] = useState([]) 
-    const [count,setCount]= useState(0);
-    const aumentarCount = () =>{
-    setCount(count+ 1);
-}
+   
+  const [count,setCount]= useState(0)
+  const aumentarCount = () =>{
+  setCount(count+ 1);
+  }
 
-    useEffect(()=>{
-    const obtenerDatos = async () =>{
-        try{
-            const response  = await axios.get("http://localhost:8000/productos")
-            setProducts(response.data)
-        }
-        catch(error){
-            console.log(error);
-        }   
-    } 
-    obtenerDatos();   
-    console.log ("Los productos son:  ", {products})    
- },[])
+  const {products} = useContext(ProductoProvider);
+
    return(
-        <>
+       
+   <>
          <Carrusel />
+         
         <h2>El valor de count es : {count}</h2>
     
         <button onClick={aumentarCount}>Incremento</button>
+   
+   
+    {products.map((product)=> (
+    <>
+    <div  className="cards-container">
+    <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src="holder.js/100px180" />
+      <Card.Body>
+        <Card.Title>{product.nombre}</Card.Title>
+        <Card.Text>
+          Precio: {product.precio}
+        </Card.Text>
+        <Button variant="primary">Go somewhere</Button>
+      </Card.Body>
+    </Card>
+    </div>
+    </>
+
+))}
+   
         </>
       );
      
