@@ -1,6 +1,7 @@
 // import Products from "../../components/products/Products";
 import { Container, Row, Col } from "react-bootstrap";
 import Products from "../../components/products/Products";
+import Usuarios from "../../components/usuarios/Usuarios";
 
 // import Admin from "../admin/Admin";
 
@@ -73,9 +74,11 @@ const Home = () => {
 
       {/* <Products nombre="Diego" numero={55} club={club} funcionProps={funcionProps} /> */}
 
-      <Products />
+      {/* <Products /> */}
 
       {/* <Admin funcionProps={funcionProps} /> */}
+
+      <Usuarios />
     </>
   );
 };
