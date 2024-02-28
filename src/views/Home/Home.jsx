@@ -7,12 +7,13 @@ import axios from "axios";
 const Home = () => {
 
   const [users, setUsers] = useState([]);
+
   useEffect(() => {
     const obtenerDatos = async () => {
       try {
-        const response = await axios.get("src/COMPONENTS/FakeApi/db.json");
+        const response = await axios.get("http://localhost:8000/productos");
         setUsers(response.data);
-        console.log('Usuarios:', response.data);
+        console.log('Traigo los datosque solicito: ', response.data);
       } catch (error) {
         console.error('Error al obtener datos:', error);
       }
@@ -23,11 +24,9 @@ const Home = () => {
   return (
     <div className="container d-flex flex-column align-items-center justify-content-between">
       <Body/>
-      <Products nombre="ENZO" numero={912} />
+      {/* <Products nombre="ENZO" numero={912} /> */}
       <Footer/>
     </div>
   );
 }
-
 export default Home;
-
