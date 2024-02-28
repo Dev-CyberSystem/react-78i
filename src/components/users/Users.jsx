@@ -1,4 +1,10 @@
-const Users = ({users}) => {
+import { useContext } from "react"
+import {UsuariosContext} from "../../context/UsersContext"
+
+const Users = () => {
+
+  const {users} = useContext(UsuariosContext)
+
 
   console.log(users)
 

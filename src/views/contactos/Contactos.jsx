@@ -3,7 +3,6 @@ import Figure from 'react-bootstrap/Figure';
 import Products from '../../components/products/Products';
 import Button from 'react-bootstrap/Button';
 import { useState } from "react"
-import axios from "axios"
 
 const Contactos = () => {
 
