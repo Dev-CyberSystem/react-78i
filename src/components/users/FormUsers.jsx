@@ -1,20 +1,34 @@
 import { Form, Button } from 'react-bootstrap'
 import { useState, useEffect, useContext } from 'react'
 import { UsersProvider } from '../../context/UsersContext'
+import { v4 as uuidv4 } from "uuid";
 
 const FormUsers = () => {
 
-  const [email, setEmail] = useState()
-  const [name, setName] = useState()
+  const { postUsers } = useContext(UsersProvider)
+
+  const [User, setUser] = useState({
+    id: uuidv4(),
+    nombre: "",
+    email: ""
+  })
+
+  const handleChange = (e) => {
+    setUser({
+      ...User,
+      [e.target.name]: e.target.value
+    })
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setEmail(e.target.email.value)
-    setName(e.target.name.value)
-    console.log(email, name, 'email y nombre desde formUsers')
+    postUsers(User)
+    setUser({
+      id: uuidv4(),
+      nombre: "",
+      email: ""
+    })
   }
-
-  const { Users } = useContext(UsersProvider)
 
   return (
     <>
@@ -22,11 +36,11 @@ const FormUsers = () => {
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" >
           <Form.Label>Usuario</Form.Label>
-          <Form.Control type="text" placeholder="Nombre de usuario" value={name} name="name" />
+          <Form.Control type="text" placeholder="Nombre de usuario" value={User.name} name="nombre" onChange={handleChange} />
         </Form.Group>
         <Form.Group className="mb-3" >
           <Form.Label>E-mail</Form.Label>
-          <Form.Control type="email" placeholder="E-mail" value={email} name="email" />
+          <Form.Control type="email" placeholder="E-mail" value={User.email} name="email" onChange={handleChange} />
         </Form.Group>
         <Button type='submit'>Registrar usuario</Button>
       </Form>

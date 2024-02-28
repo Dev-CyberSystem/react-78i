@@ -3,11 +3,15 @@ import { useContext } from 'react'
 import { UsersProvider } from '../../context/UsersContext'
 
 const TableUsers = () => {
-    const {Users} = useContext(UsersProvider)
+    const {Users, deleteUsers} = useContext(UsersProvider)
   return (
     <>
     <h2>Tabla de usuarios</h2>
-    <Table striped bordered hover>
+
+    {Users.length === 0 ? (
+      <h2>No hay usuarios para mostrar</h2>
+    ) : (
+      <Table striped bordered hover>
       <thead>
         <tr>
           <th>#</th>
@@ -24,13 +28,14 @@ const TableUsers = () => {
             <td>{user.email}</td>
             <td>
                 <Button variant='primary'>Editar</Button>
-                <Button variant='danger'>Eliminar</Button>
+                <Button variant='danger' onClick={() => deleteUsers(user.id)}>Eliminar</Button>
             </td>
           </tr>
         ))}
         
       </tbody>
     </Table>
+    )}
     </>
   )
 }

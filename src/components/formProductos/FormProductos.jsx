@@ -1,29 +1,46 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Form, Button } from "react-bootstrap";
+import { v4 as uuidv4 } from "uuid";
+import { ProductosProvider } from "../../context/ProductsContext";
 
 const FormProductos = () => {
-  const [nombre, setNombre] = useState();
-  const [precio, setPrecio] = useState();
+
+  const { addProducto } = useContext(ProductosProvider);
+
+  const [producto, setProducto] = useState({
+    id: uuidv4(),
+    nombre: "",
+    precio: 0
+  })
+
+  const handleChange = (e) => {
+    setProducto({
+      ...producto,
+      [e.target.name]: e.target.value
+    })
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault(); // Evita que se recargue la pagina
-    setNombre(e.target.nombre.value);
-    setPrecio(e.target.precio.value);
+    addProducto(producto)
+    setProducto({
+      id: uuidv4(),
+      nombre: "",
+      precio: 0
+    })
   };
-
-  console.log(nombre, "Estado Nombre");
-  console.log(precio, "Estado Precio");
 
   return (
     <>
-    <h2>Formulario de productos</h2>
+      <h2>Formulario de productos</h2>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3">
           <Form.Label>Nombre</Form.Label>
           <Form.Control
             type="text"
-            value={nombre}
+            value={producto.nombre}
             name="nombre"
+            onChange={handleChange}
             placeholder="Nombre del producto"
           />
         </Form.Group>
@@ -31,8 +48,9 @@ const FormProductos = () => {
           <Form.Label>Precio</Form.Label>
           <Form.Control
             type="number"
-            value={precio}
+            value={producto.precio}
             name="precio"
+            onChange={handleChange}
             placeholder="Precio"
           />
         </Form.Group>

@@ -6,25 +6,49 @@ export const UsersProvider = createContext()
 const UsersContext = ({ children }) => {
     const [Users, setUsers] = useState([])
 
-    useEffect(() => {
-        const conseguirDatos = async () => {
-            try {
-                const apiURL = 'http://localhost:8000/usuarios'
-                const response = await axios.get(apiURL)
-                setUsers(response.data)
-            } catch (error) {
-                console.log(error)
-            }
+    const apiURL = 'http://localhost:8000/usuarios'
 
+    //GET
+
+    const conseguirDatos = async () => {
+        try {
+            
+            const response = await axios.get(apiURL)
+            setUsers(response.data)
+        } catch (error) {
+            console.log(error)
         }
-        conseguirDatos()
 
+    }
+
+    useEffect(() => {
+        conseguirDatos()
     }, [])
 
-    console.log(Users, 'usuarios de api desde USERCONTEXT')
+    //POST
+
+    const postUsers = async(user) => {
+        try {
+            const response = await axios.post(apiURL, user)
+            setUsers([...Users, response.data])
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    //DELETE
+
+    const deleteUsers = async(id) => {
+        try {
+            const response = await axios.delete(`http://localhost:8000/usuarios/${id}`)
+            setUsers(Users.filter((user) => user.id !== id))
+        } catch (error) {
+            console.error(error)
+        }
+    }
 
     return (
-        <UsersProvider.Provider value={{Users}}>
+        <UsersProvider.Provider value={{Users, postUsers, deleteUsers}}>
             {children}
         </UsersProvider.Provider>
     )

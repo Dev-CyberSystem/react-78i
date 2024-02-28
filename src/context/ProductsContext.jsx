@@ -12,25 +12,50 @@ const ProductsContext = ({children}) => {
 
     // Llamadas api. Verbos HTTP (GET, POST, PUT, DELETE)
 
+    // GET
+
+    const obtenerDatos = async () => {
+      try{
+        const response = await axios.get("http://localhost:8000/productos");
+        setProductos(response.data)
+      } catch(error){
+        console.log(error)
+      }
+    }
+
     useEffect(() => {
-        const obtenerDatos = async () => {
-          try{
-            const response = await axios.get("http://localhost:8000/productos");
-            setProductos(response.data)
-          } catch(error){
-            console.log(error)
-          }
-        }
         obtenerDatos()
-         
       }, [])
 
       console.log(productos, "productos en el contexto")
 
+    // POST
+
+    const addProducto = async(producto) => {
+      try {
+        const response = await axios.post("http://localhost:8000/productos", producto)
+        console.log(producto, '<---- LLEGO EL PRODUCTO, SOY CRACK')
+        setProductos([...productos, response.data])
+      } catch (error) {
+        console.error(error)
+      }
+    }
+
+    // DELETE
+
+    const deleteProducto = async(id) => {
+      try {
+        const response = await axios.delete(`http://localhost:8000/productos/${id}`)
+        setProductos(productos.filter((producto) => producto.id !== id));
+      } catch (error) {
+        console.error(error)
+      }
+    }
+
 
 
   return (
-    <ProductosProvider.Provider value={{ productos }}>
+    <ProductosProvider.Provider value={{ productos, addProducto, deleteProducto }}>
       {children}
     </ProductosProvider.Provider>
   )

@@ -3,7 +3,7 @@ import { ProductosProvider } from "../../context/ProductsContext";
 import { Button, Table } from "react-bootstrap";
 
 const TableProducts = () => {
-  const { productos } = useContext(ProductosProvider);
+  const { productos, deleteProducto } = useContext(ProductosProvider);
 
   console.log(productos, "productos desde la tabla de productos");
 
@@ -32,7 +32,7 @@ const TableProducts = () => {
                   <td>{product.precio}</td>
                   <td>
                     <Button variant="primary">Editar</Button>
-                    <Button variant="danger">Eliminar</Button>
+                    <Button variant="danger" onClick={() => deleteProducto(product.id)}>Eliminar</Button>
                   </td>
                 </tr>
               </>
