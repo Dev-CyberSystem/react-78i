@@ -1,4 +1,3 @@
-
 import SocialLogos from "./Socials/SocialLogos"
 
 const Footer = () => {
@@ -13,3 +12,12 @@ const Footer = () => {
 }
 
 export default Footer
+// const Footer = () => {
+//   return (
+//     <>
+//       <h1>Footer</h1>
+//     </>
+//   );
+// };
+
+// export default Footer;
