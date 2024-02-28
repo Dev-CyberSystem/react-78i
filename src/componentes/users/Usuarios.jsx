@@ -1,19 +1,20 @@
 import {Card, Button} from 'react-bootstrap';
 
-const Users = ({users}) => { // users es el atributo establecido en el home (padre).
+const Usuarios = ({usuarios}) => { // usuarios es el atributo establecido en el home (padre).
+
+    console.log(usuarios, "anda")
+
    // Map, sirve para recorrer el array y mostrar lo que contiene el mismo. 
   return (
     <>
       <h2>Usuarios</h2>
-
-
-      {users.map((users) => (
+      {usuarios.map((usuarios) => (
         <>
            <Card style={{ width: '18rem' }}>
            <Card.Img variant="top" src="holder.js/100px180" />
            <Card.Body>
-             <Card.Title>{users.nombre}</Card.Title>
-             <Card.Text>{users.email}</Card.Text>
+             <Card.Title>{usuarios.nombre}</Card.Title>
+             <Card.Text>{usuarios.email}</Card.Text>
              <Button variant="primary">ver más</Button>
            </Card.Body> 
            </Card>
@@ -23,4 +24,4 @@ const Users = ({users}) => { // users es el atributo establecido en el home (pad
 );
 }
 
-export default Users
+export default Usuarios

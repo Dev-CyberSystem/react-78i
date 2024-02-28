@@ -2,10 +2,10 @@ import Slider from '../../componentes/carrusel/Slider';
 import GrupoTarjetas from '../../componentes/tarjetas/GrupoTarjetas';
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import Users from '../../componentes/users/Users';
+import Usuarios from '../../componentes/users/Usuarios';
 
 const Home = () => {
-  const [usuario, setUsuario] = useState ([]) //con el useState se guardan los datos traidos con el axios.
+  const [usuarios, setUsuario] = useState ([]) //con el useState se guardan los datos traidos con el axios.
 
   //Función asincronica lo indica el async.
   useEffect (() => {
@@ -21,12 +21,12 @@ const Home = () => {
     datosApi()// se ejecuta la función.
   },[]) //dependencias siempre agregar. 
   //try catch es un manejador de error, si no se ejecuta lo que esta en el try salta lo del catch.
-  console.log(usuario, "usuario ejecutado")
-
+  console.log(usuarios, "usuario ejecutado")
+  //linea 29 estoy pasando el estado (creo mas arriba) en donde se guarda la fakiApi.
   return (
     <>
       <h2>Home</h2>
-      <Users users={Users}/> 
+      <Usuarios usuarios={usuarios}/> 
       {/* <Slider/> */}
       {/* <h2>PRODUCTOS DESTACADOS</h2> */}
       {/* <GrupoTarjetas/> */}
