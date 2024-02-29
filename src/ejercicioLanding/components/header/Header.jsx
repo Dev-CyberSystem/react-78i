@@ -1,9 +1,9 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import Ico_Plant from '../../assets/icons/ico_plant';
-import Ico_search from '../../assets/icons/ico_search';
-import Ico_user from '../../assets/icons/ico_user';
+import Ico_Plant from '../../../assets/icons/ico_plant';
+import Ico_search from '../../../assets/icons/ico_search';
+import Ico_user from '../../../assets/icons/ico_user';
 
 const Header = () => {
   return (
