@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "../../views/home/Home";
-import Personajes from "../../views/personajes/Personajes"
+import Admin from "../../views/admin/Admin";
 
 
 const Rutas = () => {
@@ -8,7 +8,7 @@ const Rutas = () => {
     <>
       <Routes>
         <Route path="/" element={<Home />}/>
-        <Route path="/personajes" element={<Personajes/>}/>
+        <Route path="/Admin" element={<Admin/>}/>
       </Routes>
     </>
   );

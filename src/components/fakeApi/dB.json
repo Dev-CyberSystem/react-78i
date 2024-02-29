@@ -1,16 +1,67 @@
 {
-  "Personajes": [
+  "productos": [
     {
-      "Nombre": "Juan",
-      "Edad": 30,
-      "Profesion": "Desarrollador de Software"
-    }
-  ],
-  "Usuarios": [
+      "id": 1,
+      "nombre": "Producto 1",
+      "precio": 250.00
+    },
     {
       "id": 2,
-      "usuario": "administrator",
-      "password": "123456789"
+      "nombre": "Producto 2",
+      "precio": 500.00
+    },
+    {
+      "id": 3,
+      "nombre": "Producto 3",
+      "precio": 750.00
+    },
+    {
+      "id": 4,
+      "nombre": "Producto 4",
+      "precio": 100.00
+    },
+    {
+      "id": 5,
+      "nombre": "Producto 5",
+      "precio": 1200.00
+    },
+    {
+      "id": 6,
+      "nombre": "Producto 6",
+      "precio": 600.00
+    },
+    {
+      "id": 7,
+      "nombre": "Producto 7",
+      "precio": 800.00
+    },
+    {
+      "id": 8,
+      "nombre": "Producto 8",
+      "precio": 350.00
+    },
+    {
+      "id": 9,
+      "nombre": "Producto 9",
+      "precio": 950.00
+    },
+    {
+      "id": 10,
+      "nombre": "Producto 10",
+      "precio": 1500.00
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Usuario 1",
+      "email": "usuario1@example.com"
+    },
+    {
+      "id": 2,
+      "nombre": "Usuario 2",
+      "email": "usuario2@example.com"
     }
   ]
 }
+
