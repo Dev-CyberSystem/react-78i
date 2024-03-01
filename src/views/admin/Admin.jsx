@@ -1,4 +1,5 @@
 import FormUsuarios from "../../componentes/formulario/FormUsuarios"
+import TablaUsuarios from "../../componentes/tabla/TablaUsuarios"
 
 
 const Admin = () => {
@@ -6,6 +7,7 @@ const Admin = () => {
     <div>
       <h2>Pagína Admin</h2>
       <FormUsuarios/>
+      <TablaUsuarios/>
     </div>
   )
 }
