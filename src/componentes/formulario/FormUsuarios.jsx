@@ -22,7 +22,7 @@ const FormUsuarios = () => {
       <Form.Group className="mb-3">
         <Form.Label>Usuario</Form.Label>
         <Form.Control type="text"
-        value={nombre} //Paso 4
+        value={nombre} //Paso 3
         name= "nombre"
         placeholder="nombre del usuario" />
       </Form.Group>
