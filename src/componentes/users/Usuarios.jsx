@@ -1,4 +1,4 @@
-import {Card, Button} from 'react-bootstrap';
+import {Card, Button, Row, Col} from 'react-bootstrap';
 
 const Usuarios = ({usuarios}) => { // usuarios es el atributo establecido en el home (padre).
 
@@ -8,8 +8,9 @@ const Usuarios = ({usuarios}) => { // usuarios es el atributo establecido en el 
   return (
     <>
       <h2>Usuarios</h2>
-      {usuarios.map((usuarios) => (
-        <>
+        <Row>
+          {usuarios.map((usuarios) => (
+          <Col key={usuarios.id}>
            <Card style={{ width: '18rem' }}>
            <Card.Img variant="top" src="holder.js/100px180" />
            <Card.Body>
@@ -18,8 +19,9 @@ const Usuarios = ({usuarios}) => { // usuarios es el atributo establecido en el 
              <Button variant="primary">ver más</Button>
            </Card.Body> 
            </Card>
-        </>
+        </Col> 
       ))}
+    </Row>
    </>
 );
 }
