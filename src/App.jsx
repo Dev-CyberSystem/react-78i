@@ -8,11 +8,11 @@ import ContextUsuarios from './contexto/ContextUsuarios';
 function App() {
   return (
     <>
-    <ContextUsuarios.Provider>
+    <ContextUsuarios>
     <Navegador/>
     <Rutas/>
     <Footer/>
-    </ContextUsuarios.Provider>
+    </ContextUsuarios>
     </>
 )
 }
