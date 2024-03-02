@@ -1,8 +1,12 @@
 import {Card, Button, Row, Col} from 'react-bootstrap';
+import { useContext } from 'react';
+import { UsuariosContext } from '../../contexto/ContextUsuarios';
 
-const Usuarios = ({usuarios}) => { // usuarios es el atributo establecido en el home (padre).
+//importo el create context que me permite disponibilizar los datos de la api. (en cada parte de la pagina debo importar el create).
+const Usuarios = () => { // usuarios es el atributo establecido en el home (padre).
+  const {usuarios} = useContext(UsuariosContext)
 
-    console.log(usuarios, "anda")
+    //console.log(usuarios, "anda")
 
    // Map, sirve para recorrer el array y mostrar lo que contiene el mismo. 
   return (
