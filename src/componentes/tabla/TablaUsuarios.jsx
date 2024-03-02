@@ -1,6 +1,9 @@
 import {Table, Button}from 'react-bootstrap';
+import { useContext } from 'react';
+import { UsuariosContext } from '../../contexto/ContextUsuarios';
 
 const TablaUsuarios = () => {
+  const {usuarios} = useContext(UsuariosContext)
   return (
     <>
       <h2>Tabla Usuarios</h2>
