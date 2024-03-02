@@ -12,10 +12,10 @@ const Home = () => {
   return (
     <>
       <h2>Home</h2>
-      <Usuarios /> 
       <Slider/>
       <h2>PRODUCTOS DESTACADOS</h2> 
       <GrupoTarjetas/> 
+      <Usuarios /> 
     </>
     //los datos del home (padre) son pasados al hijo (User) por props.
   )
