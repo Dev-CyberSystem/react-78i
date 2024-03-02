@@ -1,11 +1,26 @@
+import { useEffect, useState } from 'react';
 import Slider from '../../componentes/carrusel/Slider';
 import GrupoTarjetas from '../../componentes/tarjetas/GrupoTarjetas';
 import Usuarios from '../../componentes/users/Usuarios';
+import axios from 'axios';
 
 const Home = () => {
-  //con el useState se guardan los datos traidos con el axios.
+  const [usuarios, setUsuario] = useState ([])//con el useState se guardan los datos traidos con el axios.
 
-  
+  useEffect (() => {
+    const datosApi = async() => {
+    try { 
+      const response = await axios.get ("http://localhost:8000/usuarios") // con el axios get se traen los datos creados en la fakeApi (se levanto un servidor para la api con el json-server).
+      setUsuario (response.data) // se guardan los datos del http.
+    }
+    catch (error) {
+      console.log("error")
+    }
+  }
+  datosApi()
+},[])
+
+
   //try catch es un manejador de error, si no se ejecuta lo que esta en el try salta lo del catch.
   //console.log(usuarios, "usuario ejecutado")
   //linea 29 estoy pasando el estado (creo mas arriba) en donde se guarda la fakiApi.
@@ -15,7 +30,7 @@ const Home = () => {
       <Slider/>
       <h2>PRODUCTOS DESTACADOS</h2> 
       <GrupoTarjetas/> 
-      <Usuarios /> 
+      <Usuarios usuarios={usuarios}/> 
     </>
     //los datos del home (padre) son pasados al hijo (User) por props.
   )
