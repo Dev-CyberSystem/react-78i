@@ -3,8 +3,10 @@ import Button from 'react-bootstrap/Button';
 const Footer = () => {
   return (
     <>
-    <div>Footer</div>
-    <Button variant="primary">Primary</Button>{' '}
+    <div>SOY EL FOOTER</div>
+    <footer>
+  <p>&copy; 2024 Todos los derechos reservados.</p>
+</footer>
     </>
   )
 }
