@@ -7,11 +7,11 @@ import Footer from './componentes/footer/Footer';
 function App() {
   return (
     <>
-    <UsuariosContext.provider>
+    <UsuariosContext.Provider>
     <Navegador/>
     <Rutas/>
     <Footer/>
-    </UsuariosContext.provider>
+    </UsuariosContext.Provider>
     </>
 )
 }
