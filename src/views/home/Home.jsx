@@ -1,10 +1,8 @@
 import Slider from '../../componentes/carrusel/Slider';
 import GrupoTarjetas from '../../componentes/tarjetas/GrupoTarjetas';
 import Usuarios from '../../componentes/users/Usuarios';
-import { useState } from 'react';
 
 const Home = () => {
-  const [usuarios, setUsuario] = useState ([])
   //con el useState se guardan los datos traidos con el axios.
 
   
@@ -14,7 +12,7 @@ const Home = () => {
   return (
     <>
       <h2>Home</h2>
-      <Usuarios usuarios={usuarios}/> 
+      <Usuarios /> 
       {/* <Slider/> */}
       {/* <h2>PRODUCTOS DESTACADOS</h2> */}
       {/* <GrupoTarjetas/> */}

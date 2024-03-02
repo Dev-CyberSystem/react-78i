@@ -3,12 +3,11 @@ import axios from "axios"
 
 export const UsuariosContext = createContext()
 
-const ContextUsuarios = () => {
+const ContextUsuarios = ({children}) => {
   const [usuarios, setUsuario] = useState ([])
 
-  //Función asincronica lo indica el async.
-  useEffect (() => {
-    const datosApi = async () => {
+   //Función asincronica lo indica el async.
+    const getApi = async () => {
       try { 
         const response = await axios.get ("http://localhost:8000/usuarios") // con el axios get se traen los datos creados en la fakeApi (se levanto un servidor para la api con el json-server).
         setUsuario (response.data) // se guardan los datos del http.
@@ -17,12 +16,13 @@ const ContextUsuarios = () => {
         console.log("error")
       }
     }
-    datosApi()// se ejecuta la función.
-  },[]) //dependencias siempre agregar. 
+    useEffect(() => {
+    getApi() //se ejecuta la llamada a la api.
+    }, [])
     
-  return (
+   return (
     <>
-    <UsuariosContext.Provider>
+    <UsuariosContext.Provider value={{usuarios, getApi}}>
         {children}
     </UsuariosContext.Provider>
       
