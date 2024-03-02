@@ -9,7 +9,7 @@ const Usuarios = ({usuarios}) => { // usuarios es el atributo establecido en el 
     <>
       <h2>Usuarios</h2>
         <Row>
-          {usuarios.map((usuarios) => (
+        {usuarios.map((usuarios) => (
           <Col key={usuarios.id}>
            <Card style={{ width: '18rem' }}>
            <Card.Img variant="top" src="holder.js/100px180" />
