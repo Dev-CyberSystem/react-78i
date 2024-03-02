@@ -13,9 +13,9 @@ const Home = () => {
     <>
       <h2>Home</h2>
       <Usuarios /> 
-      {/* <Slider/> */}
-      {/* <h2>PRODUCTOS DESTACADOS</h2> */}
-      {/* <GrupoTarjetas/> */}
+      <Slider/>
+      <h2>PRODUCTOS DESTACADOS</h2> 
+      <GrupoTarjetas/> 
     </>
     //los datos del home (padre) son pasados al hijo (User) por props.
   )
