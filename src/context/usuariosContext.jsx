@@ -10,6 +10,7 @@ const UsuariosContext = ({children}) =>
     const [usuarios, setUsuarios] = useState([])
 
     useEffect(() => {
+        console.log("Useeffect funcionandoooooooo")
         const obtenerApi = async() =>{
             try{
                 const response = await axios.get("http://localhost:8000/usuarios")
@@ -17,13 +18,15 @@ const UsuariosContext = ({children}) =>
             }catch(e){
                 console.log(e)
             }
-            obtenerApi()
+           
         }
+        obtenerApi()
+        console.log("Estos son tus usuarios: ", usuarios)
     }, []) 
 
-    console.log("Estos son tus usuarios: ", usuarios)
+    
     return(
-        <UsuariosProvider.Provider value={usuarios}>
+        <UsuariosProvider.Provider value={{usuarios}}>
             {children}
         </UsuariosProvider.Provider>
     )
