@@ -1,12 +1,13 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navegador from '../src/COMPONENTS/Navbar/Navegador.jsx';
-import Routes from '../src/COMPONENTS/Routes/Routes.jsx'
+import Footer from './components/Footer/Footer.jsx';
+import Navegador from './components/Navbar/Navegador.jsx';
 
 function App() {
   return (
     <>
     <Navegador/>
-    <Routes/>
+    <h1>Hola!!!</h1>
+    <Footer/>
     </>
   )
 }

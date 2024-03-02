@@ -1,14 +1,12 @@
+import Button from 'react-bootstrap/Button';
+
 const Footer = () => {
-    return (
-        <>
-        <div>
-            <footer>
-                &copy; Enzo Castro. Todos los derechos reservados, página de prueba y práctica.
-                </footer>
-                </div>
-        </>
-    )
+  return (
+    <>
+    <div>Footer</div>
+    <Button variant="primary">Primary</Button>{' '}
+    </>
+  )
 }
 
 export default Footer
-
