@@ -39,27 +39,19 @@
       "id": 8,
       "nombre": "Producto 8",
       "precio": 350.00
-    },
-    {
-      "id": 9,
-      "nombre": "Producto 9",
-      "precio": 950.00
-    },
-    {
-      "id": 10,
-      "nombre": "Producto 10",
-      "precio": 1500.00
     }
   ],
   "usuarios": [
     {
       "id": 1,
       "nombre": "Usuario 1",
+      "apellido":"Pieruzzi",
       "email": "usuario1@example.com"
     },
     {
       "id": 2,
       "nombre": "Usuario 2",
+      "apellido": "Gonzalez",
       "email": "usuario2@example.com"
     }
   ]

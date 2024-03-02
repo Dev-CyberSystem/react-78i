@@ -9,7 +9,7 @@ const ContextProduct = ({ children }) => {
   useEffect(() => {
     const obtenerDatos = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/productos");
+        const response = await axios.get("http://localhost:7000/productos");
         setProducto(response.data);
       } catch (error) {
         console.log(error);
@@ -17,8 +17,7 @@ const ContextProduct = ({ children }) => {
     };
     obtenerDatos();
   }, []);
-
-  
+  console.log(producto,"context")
 return (
   <ProductContext.Provider value={{producto}}>
     {children}
