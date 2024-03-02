@@ -1,40 +1,45 @@
-import PropTypes from 'prop-types'
+import { useContext } from "react";
+import { Card, Button, Container, Row, Col } from "react-bootstrap";
+import  { ProductosProvider }  from "../../context/ProductsContext";
 
-const Products = ({nombre, numero, club, funcionProps}) => {
+import PropTypes from "prop-types";
 
+const Products = () => {
+ 
+  const { productos } = useContext(ProductosProvider);
   
-    console.log(nombre)
-    console.log(numero)
-    console.log(club.nombre)
-    //PropTypes nos dicen el tipo de dato que estamos recibiendo en nuestra props. 
-    // eslint-disable-next-line react/prop-types
-    // console.log(props.club, "club")
-    // const {nombre, estadio, direccion} = props.club
-    // console.log(nombre, estadio, direccion, "destructuring")
+  console.log(productos, "Productos desde productos viniendo desde el context");
 
   return (
-   <>
-   <h1>Productos</h1>
-   <h2>Esto es el componente products que recibe una props que es: {nombre} </h2>
-   {/* <h2>Esto debe ser un numero: {props.numero}</h2>
-    <h2>Esto es el club: {nombre} </h2> */}
+    <>
+      <h1>Productos</h1>
 
-    <button onClick={funcionProps}>Ejecutar la funcion</button>
-   
-   </>
-  )
-}
+      <Container>
+        {productos.lenght === 0 ? (
+          <h1>No hay productos</h1>
+        ) : (
+          <Row>
+            {productos.map((product) => (
+              <Col key={product.id} xs={12} md={4} sm={6} lg={3}>
+                <Card style={{ width: "18rem" }}>
+                  <Card.Img variant="top" src="holder.js/100px180" />
+                  <Card.Body>
+                    <Card.Title>{product.nombre}</Card.Title>
+                    <Card.Text>Precio: {product.precio}</Card.Text>
+                    <Button variant="success">Comprar</Button>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+        )}
+      </Container>
+    </>
+  );
+};
 
 Products.propTypes = {
-  nombre: PropTypes.string.isRequired, // isRequired es para que sea obligatorio
-  numero: PropTypes.number,
-  // club: PropTypes.shape({
-  //   nombre: PropTypes.string,
-  //   estadio: PropTypes.string,
-  //   direccion: PropTypes.string
-  // }),
-  club: PropTypes.object,
-  funcionProps: PropTypes.func
-}
+  products: PropTypes.array,
+};
 
-export default Products
+export default Products;
