@@ -32,17 +32,19 @@
     }
   ],
   "usuarios": [
-    {"id": 1,
-    "nombre": "Usuario 1",
-    "email": "1@1.com"
+    {
+      "id": "7e0ec981-8cff-4e52-b0d5-7ac50c9ebb0e",
+      "nombre": "Javier"
     },
-    {"id": 2,
-    "nombre": "Usuario 2",
-    "email": "2@2.com"
+    {
+      "id": "f047cdf9-d919-44ad-b5d1-ecca34670c99",
+      "nombre": "fede",
+      "email": "fede@gmail.com"
     },
-    {"id": 3,
-    "nombre": "Usuario 3",
-    "email": "3@3.com"
+    {
+      "id": "8c3d5974-7e8a-4bc6-b1cc-9530613ad714",
+      "nombre": "maria",
+      "email": "maria@gmail.com"
     }
   ]
 }

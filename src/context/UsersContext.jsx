@@ -33,10 +33,24 @@ const UsersContext = ({children}) => {
 //delete users
 
 const deleteUsuarios = async (id) => {
-  //Recibe el id del producto que queremos eliminar
+  //Recibe el id del usuario que queremos eliminar
   try {
     await axios.delete(`http://localhost:8000/usuarios/${id}`); //Elimina el producto de la base de datos
-    setUsers(productos.filter((usuario) => usuario.id !== id)); //Elimina el producto del estado de productos
+    setUsers(users.filter((usuario) => usuario.id !== id)); //Elimina el producto del estado de productos
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const addUsers = async (user) => {
+  console.log(user, "<--------- LLEGO EL USUARIO AL CONTEXT");
+
+  try {
+    const response = await axios.post(
+      "http://localhost:8000/usuarios",
+      user
+    ); //Agrega este user a la base de datos
+    setUsers([...users, response.data]); //Agrega este usuario al estado de productos
   } catch (error) {
     console.log(error);
   }
@@ -44,7 +58,7 @@ const deleteUsuarios = async (id) => {
 
 
   return (
-    <UsuariosContext.Provider value={{users, deleteUsuarios}}>
+    <UsuariosContext.Provider value={{users, deleteUsuarios, addUsers}}>
       {children}
     </UsuariosContext.Provider>
   )

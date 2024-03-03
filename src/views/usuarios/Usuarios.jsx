@@ -1,18 +1,25 @@
 import { React} from "react";
-import Users from "../../components/users/Users";
+import { Container, Row, Col } from "react-bootstrap";
 import TableUsers from "../../components/table/TableUsers";
+import FormUsers from "../../components/form/FormUsers";
+
+
 
 export const Usuarios = () => {
-
-
-
-
   return (
-    <div>Usuarios
+    <>
+      <h1>Usuarios</h1>
 
-    <TableUsers/>
-
-
-    </div>
-  )
+      <Container>
+        <Row>
+          <Col>
+            <FormUsers/>
+          </Col>
+          <Col>
+            <TableUsers />
+          </Col>
+        </Row>
+      </Container>
+    </>
+  );
 }
