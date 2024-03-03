@@ -21,9 +21,7 @@ console.log("Productos desde CONTEXTS", productos); */
 
     return (
         <>
-            <h1>SOY PRODUCTOS:</h1>
-    
-            <Container>
+         <Container>
                 {productos.length === 0 ? (
                     <h1>NO HAY PRODUCTOS</h1>
                 ) : (

@@ -50,26 +50,7 @@ useEffect(() => {
        <h1>ESTE ES EL CONTADOR: {count}</h1>
        <Button onClick={funcionProps}>AUMENTO</Button>
        <Button onClick={() => setCount(count - 1)}>DECREMENTO</Button>
-
-       <div className="container">
-         <div className="row mt-5">
-          <div className="col-md-4">
-            <Card>
-              <Card.Img variant="top" src="https://via.placeholder.com/800x400" />
-              <Card.Body>
-                <Card.Title>Card 1</Card.Title>
-                <Card.Text>
-                  This is a card with placeholder content.
-                </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
-              </Card.Body>
-            </Card>
-          </div>
-        </div>
-       </div>
-
        <Admin funcionProps={funcionProps} />
-       <h1>Productos: </h1>
        <Products nombre="Enzo" edad={25}  club={club} productos={productos} />
        <Footer />
      </>
