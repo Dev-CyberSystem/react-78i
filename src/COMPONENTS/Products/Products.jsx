@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 //en vez de poner props, podemos poner el parámetro entre llaves {} //
 const Products = ({nombre, edad, club, funcionProps}) => {
 
-  console.log(nombre);
+  /*console.log(nombre);
   console.log(edad);
-  console.log(club.nombre);
+  console.log(club.nombre);*/
 
     //console.log(props); // Esto está bien afuera del return
     //console.log(props.club);//
@@ -27,7 +27,13 @@ const Products = ({nombre, edad, club, funcionProps}) => {
 
 Products.propTypes = {
     nombre: PropTypes.string.isRequired,
-    edad: PropTypes.number.isRequired
+    edad: PropTypes.number.isRequired,
+    club: PropTypes.shape({
+        nombre: PropTypes.string,
+        estadio: PropTypes.string,
+        direccion: PropTypes.string
+    }), //también puedp poner simplemente club: propTypes.object//
+    funcionProps: PropTypes.func
 }
 
 
