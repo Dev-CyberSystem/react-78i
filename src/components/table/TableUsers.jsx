@@ -5,7 +5,7 @@ import {UsuariosContext} from "../../context/UsersContext"
 
 const TableUsers = () => {
 
-    const {users} = useContext(UsuariosContext)
+    const {users, deleteUsuarios} = useContext(UsuariosContext)
 
     console.log(users, "users desde la tabla")
 
@@ -34,7 +34,7 @@ const TableUsers = () => {
                   <td>{user.email}</td>
                   <td>
                     <Button variant="primary">Editar</Button>
-                    <Button variant="danger">Eliminar</Button>
+                    <Button variant="danger" onClick={ () =>  deleteUsuarios(user.id)}>Eliminar</Button>
                   </td>
                 </tr>
               </>

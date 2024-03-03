@@ -1,51 +1,48 @@
 {
-    "productos": [
-        {
-            "id": 1,
-            "nombre": "Producto 1",
-            "precio": 100
-        },
-        {
-            "id": 2,
-            "nombre": "Producto 2",
-            "precio": 200
-        },
-        {
-            "id": 3,
-            "nombre": "Producto 3",
-            "precio": 300
-        },
-        {
-            "id": 4,
-            "nombre": "Producto 4",
-            "precio": 400
-        },
-        {
-            "id": 5,
-            "nombre": "Producto 5",
-            "precio": 500
-        },
-        {
-            "id": 6,
-            "nombre": "Producto 61",
-            "precio": 600
-        }
-    ],
-    "usuarios": [
-        {
-            "id": 1,
-            "username": "Usuario 1",
-            "email": "1@1.com"
-        },
-        {
-            "id": 2,
-            "username": "Usuario 2",
-            "email": "2@2.com"
-        },
-        {
-            "id": 3,
-            "username": "Usuario 3",
-            "email": "3@3.com"
-        }
-    ]
+  "productos": [
+    {
+      "id": "1",
+      "nombre": "Producto 1",
+      "precio": 100
+    },
+    {
+      "id": "2",
+      "nombre": "Producto 2",
+      "precio": 200
+    },
+    {
+      "id": "3",
+      "nombre": "Producto 3",
+      "precio": 300
+    },
+    {
+      "id": "4",
+      "nombre": "Producto 4",
+      "precio": 400
+    },
+    {
+      "id": "5",
+      "nombre": "Producto 5",
+      "precio": 500
+    },
+    {
+      "id": "6",
+      "nombre": "Producto 61",
+      "precio": 600
+    }
+  ],
+  "usuarios": [
+    {"id": 1,
+    "nombre": "Usuario 1",
+    "email": "1@1.com"
+    },
+    {"id": 2,
+    "nombre": "Usuario 2",
+    "email": "2@2.com"
+    },
+    {"id": 3,
+    "nombre": "Usuario 3",
+    "email": "3@3.com"
+    }
+  ]
 }

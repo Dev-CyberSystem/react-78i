@@ -11,7 +11,7 @@ const UsersContext = ({children}) => {
 
   const [users, setUsers] = useState([])
 
-
+//llamada con get
 
   useEffect(() =>{
       const obetenerDatos = async () => {
@@ -29,8 +29,22 @@ const UsersContext = ({children}) => {
         console.log(users)
 
 
+
+//delete users
+
+const deleteUsuarios = async (id) => {
+  //Recibe el id del producto que queremos eliminar
+  try {
+    await axios.delete(`http://localhost:8000/usuarios/${id}`); //Elimina el producto de la base de datos
+    setUsers(productos.filter((usuario) => usuario.id !== id)); //Elimina el producto del estado de productos
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
   return (
-    <UsuariosContext.Provider value={{users}}>
+    <UsuariosContext.Provider value={{users, deleteUsuarios}}>
       {children}
     </UsuariosContext.Provider>
   )
