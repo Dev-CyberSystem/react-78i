@@ -3,11 +3,13 @@ import axios from "axios";
 
 const TableProducts = () => {
 
+
     useEffect(() => {
         const obtenerDatos = async () => {
           try {
             const response = await axios.get("http://localhost:3000/productos");
-            setProducts(response.data);
+           /* setProducts(response.data);*/
+           console.log(response.data);
           } catch (error) {
             console.error("Error al obtener datos:", error);
           }

@@ -3,11 +3,11 @@ import { useContext } from 'react';
 import { ProductosContexts } from '../../context/ProductsContext.jsx';
 
 // En vez de poner props, podemos poner el parámetro entre llaves {} //
-const Products = ({ nombre, edad, club, funcionProps, productos }) => {
+const Products = ({ nombre, edad, club, funcionProps/*,productos */}) => {
     /*console.log("Productos desde PRODUCTOS:", products);*/
 
-/* const {productos} = useContext(ProductosContexts);
-console.log("Productos desde CONTEXTS", productos); */
+const {productos} = useContext(ProductosContexts);
+console.log("Productos desde CONTEXTS", productos);
 
     // console.log(nombre);
     // console.log(edad);
@@ -22,9 +22,9 @@ console.log("Productos desde CONTEXTS", productos); */
     return (
         <>
          <Container>
-                {productos.length === 0 ? (
+                {!productos.length ? 
                     <h1>NO HAY PRODUCTOS</h1>
-                ) : (
+                    : 
                     <Row>
                         {productos.map((product) => (
                             <Col key={product.id}>
@@ -41,7 +41,7 @@ console.log("Productos desde CONTEXTS", productos); */
                             </Col>
                         ))}
                     </Row>
-                )}
+               }
             </Container>
     
             <h2>ESTE ES EL COMPONENTE PRODUCTS QUE RECIBE UNA PROP: {nombre} </h2>
