@@ -1,17 +1,27 @@
-import { Button } from "react-bootstrap"
 import PropTypes from 'prop-types';
+import { Container, Row, Col } from "react-bootstrap";
+import FormProductos from "../../components/formProductos/FormProductos.jsx";
+import TableProducts from "../../components/Tablas/TableProducts.jsx";
 
-const Admin = ({funcionProps}) => {
+const Admin = () => {
   return (
     <>
-    <Button onClick={funcionProps}>Ejecutador de FUNCIÓN DESDE ADMIN</Button>
+      <Container>
+        <Row>
+          <Col>
+            <FormProductos />
+          </Col>
+          <Col>
+            <TableProducts />
+          </Col>
+        </Row>
+      </Container>
     </>
-  )
+  );
 }
-
 
 Admin.propTypes = {
-    funcionProps: PropTypes.func
+  funcionProps: PropTypes.func
 }
 
-export default Admin
+export default Admin;
