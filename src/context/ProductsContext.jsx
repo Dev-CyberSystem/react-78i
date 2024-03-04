@@ -17,10 +17,10 @@ const [productos, setProductos] = useState([]);
     obtenerDatos();
   }, []);
 
-  console.log(productos, 'Estos son los productos desde el ProductsContext');
+ console.log(productos, 'ESTO ES DESDE EL ProductsContext');
 
   return (
-    <ProductosProvider.Provider value={productos}>
+    <ProductosProvider.Provider value={{productos}}>
       {children}
     </ProductosProvider.Provider>
   );

@@ -3,11 +3,11 @@ import { useContext } from 'react';
 import {ProductosProvider} from '../../context/ProductsContext.jsx';
 import { propTypes } from 'react-bootstrap/esm/Image.js';
 
-const Products = ({ nombre, edad, club, funcionProps,productos}) => {
+const Products = ({ nombre, edad, club, funcionProps/*,productos*/}) => {
     /*console.log("Productos desde PRODUCTOS:", products);*/
 
-/*const {productos} = useContext(ProductosProvider);
-console.log('Esto no funciona: ', productos);*/
+const {productos} = useContext(ProductosProvider);
+console.log('Productos desde el PRODUCTS.JSX ', productos);
 
     // console.log(nombre);
     // console.log(edad);
