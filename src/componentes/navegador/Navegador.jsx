@@ -15,7 +15,7 @@ const Navegador = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link onClick={() => navigate("/About")}>About</Nav.Link>
+            <Nav.Link onClick={() => navigate("/Admin")}>Admin</Nav.Link>
             <Nav.Link onClick={() => navigate("/Contacto")}>Contacto</Nav.Link>
             <NavDropdown title="Ver mas" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">¿Dónde dormir?</NavDropdown.Item>
