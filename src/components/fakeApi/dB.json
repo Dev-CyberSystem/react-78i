@@ -1,59 +1,50 @@
 {
   "productos": [
     {
-      "id": 1,
-      "nombre": "Producto 1",
-      "precio": 250.00
+      "id": 0,
+      "nombre": "fernet",
+      "precio": "10000"
     },
     {
-      "id": 2,
-      "nombre": "Producto 2",
-      "precio": 500.00
+      "id": 0,
+      "nombre": "coca cola",
+      "precio": "2500"
     },
     {
-      "id": 3,
-      "nombre": "Producto 3",
-      "precio": 750.00
+      "id": 0,
+      "nombre": "pepsi",
+      "precio": "1500"
     },
     {
-      "id": 4,
-      "nombre": "Producto 4",
-      "precio": 100.00
-    },
-    {
-      "id": 5,
-      "nombre": "Producto 5",
-      "precio": 1200.00
-    },
-    {
-      "id": 6,
-      "nombre": "Producto 6",
-      "precio": 600.00
-    },
-    {
-      "id": 7,
-      "nombre": "Producto 7",
-      "precio": 800.00
-    },
-    {
-      "id": 8,
-      "nombre": "Producto 8",
-      "precio": 350.00
+      "id": 0,
+      "nombre": "salchica",
+      "precio": "1000"
     }
   ],
   "usuarios": [
     {
-      "id": 1,
-      "nombre": "Usuario 1",
-      "apellido":"Pieruzzi",
-      "email": "usuario1@example.com"
+      "id": "ae08"
     },
     {
-      "id": 2,
-      "nombre": "Usuario 2",
-      "apellido": "Gonzalez",
-      "email": "usuario2@example.com"
+      "id": "628f",
+      "nombre": "Bruno Javier",
+      "apellido": "",
+      "email": "pieruzzib@gmail.com",
+      "Apellido": "i"
+    },
+    {
+      "id": "f0f7",
+      "nombre": "",
+      "apellido": "",
+      "email": "",
+      "Apellido": "d"
+    },
+    {
+      "id": "2c33",
+      "nombre": "Bruno Javier",
+      "apellido": "Pieruzzi",
+      "email": "pieruzzib@gmail.com",
+      "Apellido": "l"
     }
   ]
 }
-

@@ -1,10 +1,10 @@
-import Productos from "../../components/productos/Productos";
+// import Productos from "../../components/productos/Productos";
 
 const Home = () => {
   return (
     <>
       <h1>Home</h1>
-      <Productos/>
+      {/* <Productos/> */}
     </>
   );
 };

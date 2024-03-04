@@ -6,6 +6,15 @@ export const ProviderUser = createContext();
 const ContexUsers = ({ children }) => {
   const [user, setUser] = useState();
 
+  const addUsuario = async (usuario) => {
+    try {
+      const response = await axios.post("http://localhost:7000/usuarios",usuario);
+      setUser(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     const getUser = async () => {
       try {
@@ -17,14 +26,11 @@ const ContexUsers = ({ children }) => {
     };
     getUser();
   }, []);
-  console.log(user,"usercontex")
 
   return (
-   
-      <ProviderUser.Provider value={{user}}>
-        {children}
-      </ProviderUser.Provider>
-
+    <ProviderUser.Provider value={{ user, addUsuario }}>
+      {children}
+    </ProviderUser.Provider>
   );
 };
 

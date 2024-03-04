@@ -4,7 +4,6 @@ import { ProductContext } from "../../context/ContextProduct";
 
 const TablaProductos = () => {
   const { producto } = useContext(ProductContext);
-  console.log(producto);
 
   return (
     <>
@@ -18,19 +17,22 @@ const TablaProductos = () => {
           </tr>
         </thead>
         <tbody>
-          {producto.map((p) => (
-            <tr key={p.id}>
-              <td>{p.id}</td>
-              <td>{p.nombre}</td>
-              <td>{p.precio}</td>
-              <td>
-                <Button variant="danger">Eliminar</Button>
-                <Button variant="primary">Editar</Button>
-              </td>
-            </tr>
-          ))}
+          {Array.isArray(producto) &&
+            producto.map((p) => (
+              
+              <tr key={p.id}>
+                <td>{p.id}</td>
+                <td>{p.nombre}</td>
+                <td>{p.precio}</td>
+                <td>
+                  <Button variant="danger">Eliminar</Button>
+                  <Button variant="primary">Editar</Button>
+                </td>
+              </tr>
+            ))}
         </tbody>
       </Table>
+      
     </>
   );
 };

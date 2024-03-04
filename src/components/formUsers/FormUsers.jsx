@@ -1,19 +1,28 @@
-import {useState,useEffect} from "react";
-import {Form,Button} from  'react-bootstrap';
+import { useState, useContext, useEffect } from "react";
+import { Form, Button } from "react-bootstrap";
+import { ProviderUser } from "../../context/ContexUsers";
 
 export const FormUsers = () => {
+  const { addUsuario } = useContext(ProviderUser);
 
-  const [nombre, setNombre] = useState();
-  const [email, setEmail] = useState();
-  const [apellido, setApellido] = useState();
+  const [usuario, setUsuario] = useState({
+    nombre: "",
+    apellido: "",
+    email: "",
+  });
+
+  const handleChange = (e) => {
+    setUsuario({
+      ...usuario,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const handleSubmitUsers = (e) => {
     e.preventDefault();
-    setNombre(e.target.nombre.value);
-    setEmail(e.target.email.value);
-    setApellido(e.target.password.value);
+    addUsuario(usuario);
   };
-  
+
   return (
     <>
       <h1>FormUsers</h1>
@@ -23,18 +32,19 @@ export const FormUsers = () => {
           <Form.Control
             type="text"
             placeholder="Nombre"
-            value={nombre}
+            onChange={handleChange}
+            value={usuario.nombre}
             name="nombre"
           />
-          <Form.Text className="text-muted"></Form.Text>
         </Form.Group>
         <Form.Group className="mb-3">
-          <Form.Label>Apellido</Form.Label>
+          <Form.Label>Apelldio</Form.Label>
           <Form.Control
             type="text"
             placeholder="Apellido"
-            value={apellido}
-            name="Apellido"
+            onChange={handleChange}
+            value={usuario.apellido}
+            name="apellido"
           />
         </Form.Group>
         <Form.Group className="mb-3">
@@ -42,7 +52,8 @@ export const FormUsers = () => {
           <Form.Control
             type="email"
             placeholder="Email"
-            value={email}
+            onChange={handleChange}
+            value={usuario.email}
             name="email"
           />
           <Form.Text className="text-muted"></Form.Text>

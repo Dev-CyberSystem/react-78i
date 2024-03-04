@@ -20,7 +20,9 @@ const Admin = () => {
           <Col>
             <FormUsers />
           </Col>
-          <Col><TablaUsers /></Col>
+          <Col>
+          <TablaUsers />
+          </Col>
         </Row>
       </Container>
     </>
