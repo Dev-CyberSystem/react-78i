@@ -20,6 +20,13 @@
       "lugar": "San Miguel de Tucumán, Tucumán, Argentina",
       "precio": "30.000",
       "descripcion": "una locura este hotel que decirte"
+    },
+    {
+      "id": "3c1f",
+      "hotel": "Torrente",
+      "lugar": "Yemen",
+      "precio": "68.000",
+      "descripcion": "owieiudsh"
     }
   ]
 }

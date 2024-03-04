@@ -21,11 +21,22 @@ const UsuariosContext = ({children}) =>
            
         }
         obtenerApi()
+
     }, []) 
+
+    const agregarUsuario = async (usuarioLogin) =>
+        {
+            try {
+                const response = await axios.post("http://localhost:3000/usuarios", usuarioLogin)
+                setUsuarios(...usuarios, response.data)
+            } catch (error) {
+                console.log(error)
+            }
+        }
 
     
     return(
-        <UsuariosProvider.Provider value={{usuarios}}>
+        <UsuariosProvider.Provider value={{usuarios, agregarUsuario}}>
             {children}
         </UsuariosProvider.Provider>
     )

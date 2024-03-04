@@ -30,7 +30,7 @@ const TablaDeUsuarios = () => {
                                 {item.id}
                             </td>
                             <td>
-                                {item.nombre}
+                                {item.usuario}
                             </td>
                             <td>
                                 {item.email}

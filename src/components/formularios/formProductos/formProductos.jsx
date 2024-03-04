@@ -21,9 +21,8 @@ const FormProductos = () =>
         })
     }    
         
-    const handleSubmit = (e) =>
+    const handleSubmit = () =>
     {
-        e.preventDefault()
         agregarProducto(formulario)
     }
     return(
