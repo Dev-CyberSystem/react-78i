@@ -51,7 +51,7 @@ useEffect(() => {
        <Button onClick={funcionProps}>AUMENTO</Button>
        <Button onClick={() => setCount(count - 1)}>DECREMENTO</Button>
        <Admin funcionProps={funcionProps} />
-       <Products /*nombre="Enzo" edad={25}  club={club} productos={productos} *//>
+       <Products nombre="Enzo" edad={25}  club={club} productos={productos} />
        <Footer />
      </>
   );
