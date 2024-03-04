@@ -17,7 +17,7 @@ const [productos, setProductos] = useState([]);
     obtenerDatos();
   }, []);
 
-  console.log(productos, 'PRODUCTOS desde el contexto');
+  console.log(productos, 'Estos son los productos desde el ProductsContext');
 
   return (
     <ProductosProvider.Provider value={productos}>

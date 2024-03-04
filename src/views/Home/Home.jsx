@@ -34,7 +34,7 @@ useEffect (() => {
 useEffect(() => {
     const obtenerDatos = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/productos");
+        const response = await axios.get("http://localhost:8000/productos");
         setProductos(response.data);
       } catch (error) {
         console.error("Error al obtener datos:", error);
@@ -43,7 +43,7 @@ useEffect(() => {
     obtenerDatos();
   }, []);
 
-  console.log(productos, 'somos los users');
+  console.log(productos, 'somos los productos');
 
    return (
      <>
@@ -51,7 +51,7 @@ useEffect(() => {
        <Button onClick={funcionProps}>AUMENTO</Button>
        <Button onClick={() => setCount(count - 1)}>DECREMENTO</Button>
        <Admin funcionProps={funcionProps} />
-       <Products nombre="Enzo" edad={25}  club={club} /*productos={productos}*/ />
+       <Products nombre="Enzo" edad={25}  club={club} productos={productos} />
        <Footer />
      </>
   );
