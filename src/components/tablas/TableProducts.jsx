@@ -5,17 +5,20 @@ import FormProductos from '../formProductos/FormProductos'
 
 const TableProducts = () => {
   const { productos, deleteProductos } = useContext(ProductosProvider);
- 
   const [show, setShow] = useState(false);
-  const [editProducto, setEditProducto]  = useState(null);
-
+  const [editProducto , setEditProducto] = useState(null)
+  
+  
   const handleClose = () => setShow(false);
 
-  const handleEdit  = (product) => {
-    setEditProducto(product)
-    setShow(true)
-  
-  }
+    
+    const handleEdit =(product)=>{
+      console.log(product,  "hola")
+      setEditProducto(product)
+      setShow(true)
+    }
+    
+
 
   return (
     <>
@@ -49,16 +52,14 @@ const TableProducts = () => {
           </tbody>
         </Table>
       )}
-  <Modal show={show} onHide={handleClose}>
+                    <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Editar Producto</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <FormProductos editProducto ={editProducto} handleClose={handleClose}/>
+    <FormProductos editProducto={editProducto} handleClose={handleClose}/>
         </Modal.Body>
-
       </Modal>
-
     </>
   );
 };
