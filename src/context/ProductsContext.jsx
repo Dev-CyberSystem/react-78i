@@ -4,71 +4,77 @@ import axios from 'axios'
 
 export const ProductosProvider = createContext()
 
-// eslint-disable-next-line react/prop-types
-const ProductsContext = ({children}) => {
-    
-    const [productos, setProductos] = useState([])
+const ProductsContext = ({ children }) => {
+  const [productos, setProductos] = useState([]);
+
+  const getProductos = async () => {
+    try {
+      const response = await axios.get("http://localhost:8000/productos");
+      setProductos(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
 
-    // Llamadas api. Verbos HTTP (GET, POST, PUT, DELETE)
+  const addProductos = async (producto) => {
+    try {
+      const response = await axios.post(
+        "http://localhost:8000/productos",
+        producto
+      );
+      setProductos([...productos, response.data]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-    const getProductos = async () => {
-      try {
-        const response = await axios.get("http://localhost:8000/productos");
-        setProductos(response.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
+  //Editar Producto
 
-    useEffect (()=>{
-       getProductos();
-    },[])
+  const editarProducto = async (producto) => {
+    console.log(
+      producto,
+      "<<<<---------- Recibimos el producto a editar en el context"
+    );
+    try {
+      await axios.put(
+        `http://localhost:8000/productos/${producto.id}`,
+        producto
+      );
+      await getProductos();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-const addProductos = async (producto) => {
-  console.log (producto, "Producto a agregar")
-  try {
-      const respuesta = await axios.post('http://localhost:8000/productos', producto);
-      console.log ("Se agrego correctamente",respuesta.data)
-      setProductos ([...productos, respuesta.data]);
-  }
-  catch(error) {  
-      console.log(error)
-  }
-};
+  // Delete productos
 
-
-const deleteProductos = async (id) =>  {
+  const deleteProductos = async (id) => {
     try {
       await axios.delete(`http://localhost:8000/productos/${id}`);
-      setProductos(productos.filter((producto)=> producto.id !== id))
+      setProductos(productos.filter((producto) => producto.id !== id));
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
+  };
 
-  }
-
-
-const editarProducto = async (producto) => {
-  try {
-    axios.put(`http://localhost:8000/productos/${producto.id}`)
-  await  getProductos()
-  }
-  catch(error){
-    console.log("Error al actualizar el Producto");
-  }
-}
-  
-
- 
+  useEffect(() => {
+    getProductos();
+  }, []);
 
   return (
-    <ProductosProvider.Provider value={{ productos, addProductos, deleteProductos, editarProducto }}>
+    <ProductosProvider.Provider
+      value={{
+        productos,
+        getProductos,
+        addProductos,
+        editarProducto,
+        deleteProductos,
+      }}
+    >
       {children}
     </ProductosProvider.Provider>
-  )
-}
+  );
+};
 
-
-
-export default ProductsContext
+export default ProductsContext;

@@ -35,7 +35,7 @@ const TableProducts = () => {
           <tbody>
             {productos.map((product) => (
               <>
-                <tr>
+                <tr key={product.id}>
                   <td>{product.id}</td>
                   <td>{product.nombre}</td>
                   <td>{product.precio}</td>

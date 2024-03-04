@@ -1,7 +1,9 @@
 {
   "productos": [
     {
-      "id": "a8fcccac-c589-4442-9f0c-bce3c1b57000"
+      "id": "9edb55dd-a988-4a52-986e-1cf18a715c19",
+      "nombre": "Pepsi",
+      "precio": "1200"
     }
   ],
   "usuarios": [
