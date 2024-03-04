@@ -4,6 +4,11 @@
       "id": "2300ca3f-5df7-4de6-898e-ffc096fe5c2d",
       "nombre": "Coca ",
       "precio": "1500"
+    },
+    {
+      "id": "2fc155cd-16fb-4580-b6e5-62a3c50fda2d",
+      "nombre": "Pepsi",
+      "precio": "1300"
     }
   ],
   "usuarios": [

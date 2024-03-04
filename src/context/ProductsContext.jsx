@@ -12,20 +12,18 @@ const ProductsContext = ({children}) => {
 
     // Llamadas api. Verbos HTTP (GET, POST, PUT, DELETE)
 
-    useEffect(() => {
-        const obtenerDatos = async () => {
-          try{
-            const response = await axios.get("http://localhost:8000/productos");
-            setProductos(response.data)
-          } catch(error){
-            console.log(error)
-          }
-        }
-        obtenerDatos()
-         
-      }, [])
+    const getProductos = async () => {
+      try {
+        const response = await axios.get("http://localhost:8000/productos");
+        setProductos(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
 
-      // console.log(productos, "productos en el contexto")
+    useEffect (()=>{
+       getProductos();
+    },[])
 
 const addProductos = async (producto) => {
   console.log (producto, "Producto a agregar")
@@ -50,16 +48,18 @@ const deleteProductos = async (id) =>  {
 
   }
 
-  const editarProducto = async (product) => {
-    console.log(product)
-    try {
-      await axios.put (`http://localhost:8000/productos/${product.id}`, product);
 
-      await obtenerDatos()
-      } catch (error) {
-        console.log("Error al actualizar los datos");
-    }
+const editarProducto = async (product) => {
+  try {
+    axios.put('http://localhost:8000/productos/$(producto.id)')
+  await  getProductos()
   }
+  catch(error){
+    console.log("Error al actualizar el Producto");
+  }
+}
+  
+
  
 
   return (

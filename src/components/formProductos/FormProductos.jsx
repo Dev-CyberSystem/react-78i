@@ -31,10 +31,10 @@ setProductos ({
       handleClose()
       } else {
         addProductos(producto)
-    setProductos({
-      id: uuidv4(),
-      nombre:"",
-      precio: 0,
+        setProductos({
+        id: uuidv4(),
+        nombre:"",
+        precio: 0,
       });
   }; 
     
@@ -69,7 +69,7 @@ setProductos ({
 
         {
           editProducto ? (
-            <Button type="submit" variant="succes"> {" "} Editar Producto
+            <Button type="submit" variant="success"> {" "} Editar Producto
             {" "}</Button>
             )  : (
           
@@ -84,6 +84,7 @@ setProductos ({
   );
 };
 FormProductos.propTypes = {
+  editProducto: PropTypes.object
 
 };
 
