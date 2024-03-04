@@ -1,0 +1,29 @@
+{
+    "usuarios": [
+      {
+        "id": 1,
+        "nombre": "Claudio",
+        "pass": "contrasenia"
+      },
+      {
+        "id": 2,
+        "nombre": "Jose",
+        "pass": "contrasenia"
+      },
+      {
+        "id": 3,
+        "nombre": "Rocio",
+        "pass": "contrasenia"
+      },
+      {
+        "id": 4,
+        "nombre": "Pedro",
+        "pass": "contrasenia"
+      },
+      {
+        "id": 5,
+        "nombre": "Sofia",
+        "pass": "contrasenia"
+      }
+    ]
+  }
