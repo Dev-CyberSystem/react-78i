@@ -41,6 +41,17 @@ const ProductsContext = ({children}) => {
       }
     }
 
+    // PUT
+
+    const editProduct = async (producto) => {
+      try {
+        await axios.put(`http://localhost:8000/productos/${producto.id}`, producto)
+        await obtenerDatos()
+      } catch (error) {
+        console.error(error)
+      }
+    }
+
     // DELETE
 
     const deleteProducto = async(id) => {
@@ -55,7 +66,7 @@ const ProductsContext = ({children}) => {
 
 
   return (
-    <ProductosProvider.Provider value={{ productos, addProducto, deleteProducto }}>
+    <ProductosProvider.Provider value={{ productos, addProducto, deleteProducto, editProduct }}>
       {children}
     </ProductosProvider.Provider>
   )

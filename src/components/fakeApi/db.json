@@ -1,4 +1,20 @@
 {
-  "productos": [],
+  "productos": [
+    {
+      "id": "73e41d07-64ea-47ea-82df-dcbcf537c068",
+      "nombre": "Test 1",
+      "precio": "100"
+    },
+    {
+      "id": "395d9db6-b8c4-4a85-9f71-e15732f2783d",
+      "nombre": "Test 2",
+      "precio": "200"
+    },
+    {
+      "id": "77535ebb-a932-4f20-b2be-08be76349c4c",
+      "nombre": "Test 3",
+      "precio": "300"
+    }
+  ],
   "usuarios": []
 }

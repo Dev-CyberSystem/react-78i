@@ -3,14 +3,14 @@ import { Form, Button } from "react-bootstrap";
 import { v4 as uuidv4 } from "uuid";
 import { ProductosProvider } from "../../context/ProductsContext";
 
-const FormProductos = () => {
+const FormProductos = ({ editProducto, handleClose }) => {
 
-  const { addProducto } = useContext(ProductosProvider);
+  const { addProducto, editProduct } = useContext(ProductosProvider);
 
   const [producto, setProducto] = useState({
-    id: uuidv4(),
-    nombre: "",
-    precio: 0
+    id: editProducto ? editProducto.id : uuidv4(),
+    nombre: editProducto ? editProducto.nombre : "",
+    precio: editProducto ? editProducto.precio : 0
   })
 
   const handleChange = (e) => {
@@ -22,12 +22,17 @@ const FormProductos = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault(); // Evita que se recargue la pagina
-    addProducto(producto)
-    setProducto({
-      id: uuidv4(),
-      nombre: "",
-      precio: 0
-    })
+    if (editProducto) {
+      editProduct(producto)
+      handleClose()
+    } else {
+      addProducto(producto)
+      setProducto({
+        id: uuidv4(),
+        nombre: "",
+        precio: 0
+      })
+    }
   };
 
   return (
@@ -55,7 +60,11 @@ const FormProductos = () => {
           />
         </Form.Group>
 
-        <Button type="submit"> Agregar Productos </Button>
+        {editProducto ? (
+          <Button type="submit" variant="success"> Editar Producto </Button>
+        ) : (
+          <Button type="submit"> Agregar Productos </Button>
+        )}
       </Form>
     </>
   );

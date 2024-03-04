@@ -1,11 +1,19 @@
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Container, Nav, Navbar, NavDropdown, Modal, Button } from "react-bootstrap";
 import {useNavigate} from 'react-router-dom'
+import { useState } from "react";
+import FormLogin from "../login/FormLogin";
 
 const Navegador = () => {
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const navigate = useNavigate()
 
   return (
+    <>
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
         <Navbar.Brand onClick={() => navigate("/")}>Comision 78i</Navbar.Brand>
@@ -26,9 +34,23 @@ const Navegador = () => {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
+          <Button variant="danger" onClick={handleShow}>LOGIN</Button>
         </Navbar.Collapse>
       </Container>
     </Navbar>
+
+
+    <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Inicio de sesión</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <FormLogin handleClose={handleClose}/>
+        </Modal.Body>
+        <Modal.Footer>
+        </Modal.Footer>
+      </Modal>
+    </>
   );
 };
 

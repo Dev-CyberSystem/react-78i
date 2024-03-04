@@ -1,11 +1,21 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ProductosProvider } from "../../context/ProductsContext";
-import { Button, Table } from "react-bootstrap";
+import { Button, Table, Modal } from "react-bootstrap";
+import FormProductos from "../formProductos/FormProductos"
 
 const TableProducts = () => {
   const { productos, deleteProducto } = useContext(ProductosProvider);
+  const [editProducto, seteditProducto] = useState(null)
 
-  console.log(productos, "productos desde la tabla de productos");
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+
+  const handleEdit = (producto) => {
+    seteditProducto(producto)
+    console.log(producto)
+    setShow(true)
+  }
 
   return (
     <>
@@ -31,7 +41,7 @@ const TableProducts = () => {
                   <td>{product.nombre}</td>
                   <td>{product.precio}</td>
                   <td>
-                    <Button variant="primary">Editar</Button>
+                    <Button variant="primary" onClick={() => handleEdit(product)}>Editar</Button>
                     <Button variant="danger" onClick={() => deleteProducto(product.id)}>Eliminar</Button>
                   </td>
                 </tr>
@@ -40,6 +50,17 @@ const TableProducts = () => {
           </tbody>
         </Table>
       )}
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Editar Producto</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <FormProductos editProducto={editProducto} handleClose={handleClose}/>
+        </Modal.Body>
+        <Modal.Footer>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 };
