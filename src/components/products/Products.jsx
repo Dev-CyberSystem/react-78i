@@ -8,8 +8,6 @@ const Products = () => {
  
   const { productos } = useContext(ProductosProvider);
   
-  console.log(productos, "Productos desde productos viniendo desde el context");
-
   return (
     <>
       <h1>Productos</h1>

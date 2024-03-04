@@ -1,19 +1,18 @@
 import { useContext, useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { ProductosProvider } from "../../context/ProductsContext";
+import PropTypes from "prop-types";
 import { v4 as uuidv4 } from "uuid";
 
-const FormProductos = () => {
-  const { addProductos } = useContext(ProductosProvider);
+// eslint-disable-next-line react/prop-types
+const FormProductos = ({ editProducto, handleClose }) => {
+  const { addProductos, editarProducto } = useContext(ProductosProvider);
 
   const [producto, setProducto] = useState({
-    id: uuidv4(),
-    nombre: "",
-    precio: 0,
-
+    id: editProducto ? editProducto.id : uuidv4(),
+    nombre: editProducto ? editProducto.nombre : "xxxxxxxxxxx",
+    precio: editProducto ? editProducto.precio : 43,
   });
-
-  console.log(producto, "Productos en el estado inicial del form");
 
   const handleChange = (e) => {
     setProducto({
@@ -24,12 +23,18 @@ const FormProductos = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault(); // Evita que se recargue la pagina
-    addProductos(producto);
-    setProducto({
-      id: uuidv4(),
-      nombre: "",
-      precio: 0,
-    });
+
+    if (editProducto) {
+      editarProducto(producto);
+      handleClose()
+    } else {
+      addProductos(producto);
+      setProducto({
+        id: uuidv4(),
+        nombre: "",
+        precio: 0,
+      });
+    }
   };
 
   return (
@@ -40,9 +45,9 @@ const FormProductos = () => {
           <Form.Label>Nombre</Form.Label>
           <Form.Control
             type="text"
+            name="nombre"
             value={producto.nombre}
             onChange={handleChange}
-            name="nombre"
             placeholder="Nombre del producto"
           />
         </Form.Group>
@@ -56,10 +61,22 @@ const FormProductos = () => {
             placeholder="Precio"
           />
         </Form.Group>
-        <Button type="submit"> Agregar Productos </Button>
+
+        {editProducto ? (
+          <Button type="submit" variant="success">
+            {" "}
+            Editar Producto{" "}
+          </Button>
+        ) : (
+          <Button type="submit"> Agregar Productos </Button>
+        )}
       </Form>
     </>
   );
+};
+
+FormProductos.propTypes = {
+  editProducto: PropTypes.object,
 };
 
 export default FormProductos;

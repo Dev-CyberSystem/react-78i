@@ -24,7 +24,6 @@ const ProductsContext = ({ children }) => {
   const getProductos = async () => {
     try {
       const response = await axios.get("http://localhost:8000/productos");
-      console.log(response, "<---------response!!");
       setProductos(response.data);
     } catch (error) {
       console.log(error);
@@ -34,14 +33,31 @@ const ProductsContext = ({ children }) => {
   // llamada post --> Crear productos
 
   const addProductos = async (producto) => {
-    console.log(producto, "<--------- LLEGO EL PRODUCTO AL CONTEXT");
-
     try {
       const response = await axios.post(
         "http://localhost:8000/productos",
         producto
       ); //Agrega este producto a la base de datos
       setProductos([...productos, response.data]); //Agrega este producto al estado de productos
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  //Editar Producto
+
+  const editarProducto = async (producto) => {
+    console.log(
+      producto,
+      "<<<<---------- Recibimos el producto a editar en el context"
+    );
+    try {
+      await axios.put(
+        `http://localhost:8000/productos/${producto.id}`,
+        producto
+      ); //Edita el producto en la base de datos
+
+      await getProductos(); //Actualiza el estado de productos
     } catch (error) {
       console.log(error);
     }
@@ -65,7 +81,13 @@ const ProductsContext = ({ children }) => {
 
   return (
     <ProductosProvider.Provider
-      value={{ productos, getProductos, addProductos, deleteProductos }}
+      value={{
+        productos,
+        getProductos,
+        addProductos,
+        editarProducto,
+        deleteProductos,
+      }}
     >
       {children}
     </ProductosProvider.Provider>

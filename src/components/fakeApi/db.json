@@ -1,5 +1,21 @@
 {
-  "productos": [],
+  "productos": [
+    {
+      "id": "7b46f92d-4b84-4fec-ab2f-e3e33bbd3cb4",
+      "nombre": "Coca Cola",
+      "precio": "67"
+    },
+    {
+      "id": "3a259b39-77eb-43c3-80cb-c04d4c23c29f",
+      "nombre": "Fanta",
+      "precio": "27"
+    },
+    {
+      "id": "eb4d191f-6696-4bd5-9fe4-c6bb3ee35c6a",
+      "nombre": "Hielo",
+      "precio": "20"
+    }
+  ],
   "usuarios": [
     {
       "id": "1",
