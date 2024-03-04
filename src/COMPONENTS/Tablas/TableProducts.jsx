@@ -4,7 +4,7 @@ import { ProductosProvider } from '../../context/ProductsContext.jsx';
 const TableProducts = () => {
 
 const {productos} = useContext(ProductosProvider)
-console.log("Estos son desde TABLA DE PRO: ", productos)
+console.log("Productos desde la tabla: ", productos)
 
   /*useEffect(() => {
       const obtenerDatos = async () => {
