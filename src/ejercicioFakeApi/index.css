@@ -1,0 +1,54 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: url('assets/img/bg-plant.jpg'), url('assets/img/bg-color.jpg');
+  background-blend-mode: luminosity;
+  background-size: cover;
+}
+body{
+  background-color: transparent !important;
+}
+.home-container{
+  height: 100dvh;
+}
+.btn-book, .btn-know{
+  padding: 10px 20px;
+  border: none;
+  font-weight: bolder;
+}
+.btn-book{
+  background-color: #4ead00;
+}
+.btn-know{
+  border: 2px solid #4ead00;
+  background-color: #ffffff23;
+}
+.btn-book:hover{
+  background-color: #479e00;
+}
+.btn-know:hover{
+  border: 2px solid #4ead00;
+  background-color: #ffffff55;
+  color: #fff;
+}
+.main-title{
+  font-size: 3rem;
+}
+.main-subtitle{
+  font-size: 1rem;
+}
+@media (min-width: 568px){
+  .main-title{
+    font-size: 4rem;
+    width: 75%;
+  }
+  .main-subtitle{
+    width: 75%;
+    font-size: 1.5rem;
+  }
+}
