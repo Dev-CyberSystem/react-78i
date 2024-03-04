@@ -1,12 +1,12 @@
 import { Card, Button, Container, Row, Col } from 'react-bootstrap';
 import { useContext } from 'react';
-import { ProductosContexts } from '../../context/ProductsContext.jsx';
+import { ProductosProvider } from '../../context/ProductsContext.jsx';
 
 // En vez de poner props, podemos poner el parámetro entre llaves {} //
 const Products = ({ nombre, edad, club, funcionProps/*,productos */}) => {
     /*console.log("Productos desde PRODUCTOS:", products);*/
 
-const {productos} = useContext(ProductosContexts);
+const {productos} = useContext(ProductosProvider);
 console.log("Productos desde CONTEXTS", productos);
 
     // console.log(nombre);

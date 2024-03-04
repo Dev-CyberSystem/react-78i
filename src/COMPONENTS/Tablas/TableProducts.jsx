@@ -1,25 +1,24 @@
-import { useEffect } from "react";
-import axios from "axios";
+import { useContext} from "react";
+import { ProductosProvider } from '../../context/ProductsContext.jsx';
 
 const TableProducts = () => {
 
+const {productos} = useContext(ProductosProvider)
+console.log("Estos son desde TABLA DE PRO: ", productos)
 
-    useEffect(() => {
-        const obtenerDatos = async () => {
-          try {
-            const response = await axios.get("http://localhost:3000/productos");
-           /* setProducts(response.data);*/
-           console.log(response.data);
-          } catch (error) {
-            console.error("Error al obtener datos:", error);
-          }
-        };
-        obtenerDatos();
-      }, []);
+  /*useEffect(() => {
+      const obtenerDatos = async () => {
+        try {
+          const response = await axios.get("http://localhost:3000/productos");
+          console.log(response.data);
+        } catch (error) {
+          console.error("Error al obtener datos:", error);
+        }
+      };
+      obtenerDatos();
+    }, []);
 
-      console.log("productos desde TABLEPRODUCTS")
-
-
+    console.log("productos desde TABLEPRODUCTS") */
 
   return (
     <>
@@ -28,4 +27,4 @@ const TableProducts = () => {
   )
 }
 
-export default TableProducts
+export default TableProducts;

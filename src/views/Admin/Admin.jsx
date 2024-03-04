@@ -4,6 +4,9 @@ import FormProductos from "../../components/formProductos/FormProductos.jsx";
 import TableProducts from "../../components/Tablas/TableProducts.jsx";
 
 const Admin = () => {
+
+  
+
   return (
     <>
       <Container>
