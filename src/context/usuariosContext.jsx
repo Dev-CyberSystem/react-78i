@@ -13,7 +13,7 @@ const UsuariosContext = ({children}) =>
         console.log("Useeffect funcionandoooooooo")
         const obtenerApi = async() =>{
             try{
-                const response = await axios.get("http://localhost:8000/usuarios")
+                const response = await axios.get("http://localhost:3000/usuarios")
                 setUsuarios(response.data)
             }catch(e){
                 console.log(e)
@@ -21,7 +21,6 @@ const UsuariosContext = ({children}) =>
            
         }
         obtenerApi()
-        console.log("Estos son tus usuarios: ", usuarios)
     }, []) 
 
     

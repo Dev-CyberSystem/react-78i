@@ -6,6 +6,7 @@ import Header from './components/header/header'
 import Footer from './components/footer/footer'
 import Rutas from './rutas/rutas'
 import UsuariosContext from './context/usuariosContext'
+import ProductosContext from './context/productosContext'
 
 
 function App() {
@@ -13,9 +14,11 @@ function App() {
   return (
     <>
       <UsuariosContext>
-        <Header />
-        <Rutas />
-        <Footer />
+        <ProductosContext>
+          <Header />
+          <Rutas />
+          <Footer />
+        </ProductosContext>
       </UsuariosContext>
     </>
   )

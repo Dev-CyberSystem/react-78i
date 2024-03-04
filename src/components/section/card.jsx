@@ -12,7 +12,7 @@ function Cards() {
         <Card.Text>
           Che che venite a bariloche al al al cerro catedral
         </Card.Text>
-        <Button variant="outline-dark">Reservar</Button>
+        <Button variant="outline-dark">Ver más</Button>
       </Card.Body>
     </Card>
     <Card style={{ width: '18rem' }}>
@@ -22,7 +22,7 @@ function Cards() {
       <Card.Text>
         Quebradeño a mí me dicen porque nací en la quebrada
       </Card.Text>
-      <Button variant="outline-dark">Reservar</Button>
+      <Button variant="outline-dark">Ver más</Button>
     </Card.Body>
   </Card>
   </>

@@ -3,14 +3,13 @@ import { UsuariosProvider } from "../../context/usuariosContext"
 import { Table } from "react-bootstrap"
 
 
-const TablaDeUsuarios = () =>
-{
+const TablaDeUsuarios = () => {
     //traigo los datos de mi api mediante el estado global (contexto)
-    const {usuarios} = useContext(UsuariosProvider)
+    const { usuarios } = useContext(UsuariosProvider)
 
-  
+
     return (
-        <Table bordered>
+        <Table bordered responsive>
             <thead>
                 <th>
                     ID
@@ -26,20 +25,20 @@ const TablaDeUsuarios = () =>
                 {usuarios.map(item =>
                 (
                     <>
-                    <tr>
-                        <td>
-                            {item.id}
-                        </td>
-                        <td>
-                            {item.nombre}
-                        </td>
-                        <td>
-                            {item.email}
-                        </td>
-                    </tr>
+                        <tr>
+                            <td>
+                                {item.id}
+                            </td>
+                            <td>
+                                {item.nombre}
+                            </td>
+                            <td>
+                                {item.email}
+                            </td>
+                        </tr>
                     </>
                 )
-                    )}
+                )}
             </tbody>
         </Table>
     )
