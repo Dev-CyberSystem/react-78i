@@ -49,9 +49,9 @@ const deleteProductos = async (id) =>  {
   }
 
 
-const editarProducto = async (product) => {
+const editarProducto = async (producto) => {
   try {
-    axios.put('http://localhost:8000/productos/$(producto.id)')
+    axios.put(`http://localhost:8000/productos/${producto.id}`)
   await  getProductos()
   }
   catch(error){

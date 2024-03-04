@@ -4,7 +4,7 @@ import { ProductosProvider } from "../../context/ProductsContext";
 import { v4 as uuidv4 } from "uuid"
 import PropTypes  from 'prop-types';
 
-const FormProductos = ({editProducto}) => {
+const FormProductos = ({editProducto, handleClose}) => {
   
 const {addProductos, editarProducto} =  useContext(ProductosProvider);
 
@@ -31,10 +31,10 @@ setProductos ({
       handleClose()
       } else {
         addProductos(producto)
-        setProductos({
-        id: uuidv4(),
-        nombre:"",
-        precio: 0,
+    setProductos({
+      id: uuidv4(),
+      nombre:"",
+      precio: 0,
       });
   }; 
     
@@ -84,8 +84,7 @@ setProductos ({
   );
 };
 FormProductos.propTypes = {
-  editProducto: PropTypes.object
-
+editarProducto  : PropTypes.object,
 };
 
 export default FormProductos;
