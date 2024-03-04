@@ -6,19 +6,15 @@ import FormProductos from '../formProductos/FormProductos'
 const TableProducts = () => {
   const { productos, deleteProductos } = useContext(ProductosProvider);
   const [show, setShow] = useState(false);
-  const [editProducto , setEditProducto] = useState(null)
-  
-  
+  const [editProducto, setEditProducto] = useState(null)
+
   const handleClose = () => setShow(false);
+  
 
-    
-    const handleEdit =(product)=>{
-      console.log(product,  "hola")
-      setEditProducto(product)
-      setShow(true)
-    }
-    
-
+  const handleEdit = (product) => {
+    setEditProducto(product)
+    setShow(true)
+  }
 
   return (
     <>
@@ -36,31 +32,34 @@ const TableProducts = () => {
               <th>Acciones</th>
             </tr>
           </thead>
-          
           <tbody>
             {productos.map((product) => (
-                <tr key={product.id}>
+              <>
+                <tr>
                   <td>{product.id}</td>
                   <td>{product.nombre}</td>
                   <td>{product.precio}</td>
                   <td>
                     <Button variant="primary" onClick={() => handleEdit(product)}>Editar</Button>
-                    <Button variant="danger" onClick={() => deleteProductos(product.id) }>Eliminar</Button>
+                    <Button variant="danger" onClick={ () =>  deleteProductos(product.id)}>Eliminar</Button>
                   </td>
                 </tr>
+              </>
             ))}
           </tbody>
         </Table>
       )}
-                    <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Editar Producto</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-    <FormProductos editProducto={editProducto} handleClose={handleClose}/>
+          <FormProductos editProducto={editProducto} handleClose={handleClose}/> 
         </Modal.Body>
+        
       </Modal>
     </>
+
   );
 };
 
