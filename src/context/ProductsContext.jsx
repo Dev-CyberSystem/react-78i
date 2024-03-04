@@ -3,12 +3,12 @@ import axios from "axios";
 
 export const ProductosProvider = createContext();
 
-const ProductsProvider = ({ children }) => {
+const ProductsContext = ({ children }) => {
 const [productos, setProductos] = useState([]);
   useEffect(() => {
     const obtenerDatos = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/productos");
+        const response = await axios.get("http://localhost:8000/productos");
         setProductos(response.data);
       } catch (error) {
         console.error("Error al obtener datos:", error);
@@ -26,4 +26,4 @@ const [productos, setProductos] = useState([]);
   );
 }
 
-export default ProductsProvider;
+export default ProductsContext;

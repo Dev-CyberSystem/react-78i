@@ -1,13 +1,13 @@
 import { Card, Button, Container, Row, Col } from 'react-bootstrap';
 import { useContext } from 'react';
 import {ProductosProvider} from '../../context/ProductsContext.jsx';
+import { propTypes } from 'react-bootstrap/esm/Image.js';
 
-// En vez de poner props, podemos poner el parámetro entre llaves {} //
-const Products = ({ nombre, edad, club, funcionProps, productos}) => {
+const Products = ({ /*nombre, edad, club, funcionProps,productos*/}) => {
     /*console.log("Productos desde PRODUCTOS:", products);*/
 
-/*const {productos} = useContext(ProductosProvider);
-console.log('Estos son los PRO desde PRODUCTOS, los traigo del context: ', productos);*/
+const {productos} = useContext(ProductosProvider);
+console.log('Esto no funciona: ', productos);
 
     // console.log(nombre);
     // console.log(edad);
