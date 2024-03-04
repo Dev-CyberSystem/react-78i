@@ -50,38 +50,20 @@ const deleteProductos = async (id) =>  {
 
   }
 
-  
-  // const getProductoAEditar = async (id)  => {
-  //   try{
-  //     const response = await axios.get(`http://localhost:8000/productos/${id}`);
-  //     setProductos(response.data)
-  //   } catch(error){
-  //     console.log(error)
-  //   }
+  const editarProducto = async (product) => {
+    console.log(product)
+    try {
+      await axios.put (`http://localhost:8000/productos/${product.id}`, product);
 
-  
-  
-  
-  // const editarProductos =  async  (editedProduct ,id )=> {
-  //   console.log(editedProduct,"el prodocto que se va a editar ")
-  //   try {
-  //     await axios.put (`http://localhost:8000/productos/${id}`, editedProduct );
-  //     setProductos(productos.map ((producto)=>{
-  //       if(producto.id === id) {
-  //         return editedProduct;
-  //       } else{
-  //         return producto;
-  //       }
-  //     }));
-  //   }catch (error){
-  //     console.log("Error al editar ", error)
-  //   }
-  //     }
-    
+      await obtenerDatos()
+      } catch (error) {
+        console.log("Error al actualizar los datos");
+    }
+  }
  
 
   return (
-    <ProductosProvider.Provider value={{ productos, addProductos, deleteProductos, editarProductos }}>
+    <ProductosProvider.Provider value={{ productos, addProductos, deleteProductos, editarProducto }}>
       {children}
     </ProductosProvider.Provider>
   )

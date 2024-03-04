@@ -1,29 +1,29 @@
 {
   "productos": [
     {
-      "id": "3048ed3e-dca3-4e50-abd1-59b35869e654",
-      "nombre": "Coca",
-      "precio": "2000"
+      "id": "2300ca3f-5df7-4de6-898e-ffc096fe5c2d",
+      "nombre": "Coca ",
+      "precio": "1500"
     }
   ],
   "usuarios": [
     {
-      "id": 1,
+      "id": "1",
       "nombre": "Usuario 1",
       "email": "user1@h.com"
     },
     {
-      "id": 2,
+      "id": "2",
       "nombre": "Usuario 2",
       "email": "user2@h.com"
     },
     {
-      "id": 3,
+      "id": "3",
       "nombre": "Usuario 3",
       "email": "user3@h.com"
     },
     {
-      "id": 4,
+      "id": "4",
       "nombre": "Administrador",
       "es_admin": true
     }

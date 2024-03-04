@@ -1,25 +1,24 @@
 import { useContext, useState } from "react";
 import { ProductosProvider } from "../../context/ProductsContext";
-import { Button, Table, Modal, Form } from "react-bootstrap";
-
+import { Button, Table, Modal } from "react-bootstrap";
+import FormProductos from '../formProductos/FormProductos'
 
 const TableProducts = () => {
-  const { productos, deleteProductos, editarProductos } = useContext(ProductosProvider);
+  const { productos, deleteProductos } = useContext(ProductosProvider);
   const [show, setShow] = useState(false);
+  const [editProducto , setEditProducto] = useState(null)
+  
+  
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
     
-    
-      
-      const handleSubmit = (e) => {
-        
-     
-      };
+    const handleEdit =(product)=>{
+      console.log(product,  "hola")
+      setEditProducto(product)
+      setShow(true)
+    }
     
 
-
-  // console.log(productos, "productos desde la tabla de productos");
 
   return (
     <>
@@ -45,44 +44,7 @@ const TableProducts = () => {
                   <td>{product.nombre}</td>
                   <td>{product.precio}</td>
                   <td>
-                    <Button variant="primary" onClick={handleShow}>Editar</Button>
-                    <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Editar</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-        <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3">
-          <Form.Label>Nombre</Form.Label>
-          <Form.Control
-            type="text"
-            value={product.nombre}
-            name="nombre"
-            // onChange={handleChange}
-            placeholder="Nombre del producto"
-          />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>Precio</Form.Label>
-          <Form.Control
-            type="number"
-            value={product.precio}
-            name="precio"
-            // onChange={handleChange}
-            placeholder="Precio"
-          />
-        </Form.Group>
-      </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={()=> editarProducto(product.id)}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
-      </Modal>
+                    <Button variant="primary" onClick={() => handleEdit(product)}>Editar</Button>
                     <Button variant="danger" onClick={() => deleteProductos(product.id) }>Eliminar</Button>
                   </td>
                 </tr>
@@ -90,6 +52,14 @@ const TableProducts = () => {
           </tbody>
         </Table>
       )}
+                    <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Editar Producto</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+    <FormProductos editProducto={editProducto} handleClose={handleClose}/>
+        </Modal.Body>
+      </Modal>
     </>
   );
 };
