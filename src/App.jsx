@@ -7,7 +7,7 @@
 import Navigator from './components/navigator/Navigator'
 import Footer from './components/footer/Footer'
 import Rutas from './components/rutas/Rutas' 
-import Products from './views/products/Products' 
+ import Products from './views/products/Products'
 import ProductsContext from './components/context/ProductsContext'
  
 function App() {

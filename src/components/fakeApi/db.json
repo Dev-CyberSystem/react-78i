@@ -1,18 +1,14 @@
-{"productos" :[    
+{
+  "productos": [
     {
-    "id" :312,
-    "nombre" : "Producto 1",
-    "precio" : 300  
+      "id": "b5e30eb5-86c4-43cf-98d1-8f870ac2dec4",
+      "nombreProducto": "Producto 4",
+      "precioProducto": "0211"
     },
     {
-    "id" :200,
-    "nombre" : "Producto 2",
-    "precio" : 455  
-    },   
-    {
-    "id" :122,
-     "nombre" : "Producto 3",
-     "precio" : 500  
+      "id": "b17ff6e2-d6ad-4a95-bd90-2ed59a4a643c",
+      "nombreProducto": "Producto 4",
+      "precioProducto": "0121"
     }
-]
+  ]
 }
