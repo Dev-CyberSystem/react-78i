@@ -1,4 +1,4 @@
-import FormRegistro from "../../componentes/formRegistro/FormRegistro"
+import FormRegistro from "../../componentes/formulario/FormRegistro";
 
 const Registro = () => {
   return (

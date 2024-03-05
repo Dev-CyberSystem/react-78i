@@ -1,6 +1,16 @@
 import { useState } from 'react';
 import {Form, Button}from 'react-bootstrap';
-const Login = () => {
+import { useNavigate } from 'react-router-dom';
+
+
+const Login = (handleClose) => {
+
+    const navigate = useNavigate() //sirve para la redirección de los componentes.
+
+    const redireccionRegistro= () => {
+      navigate("/registro")
+      handleClose()
+    }
 
     const [users, setUsers] = useState ({
       email:"",
@@ -37,7 +47,7 @@ const Login = () => {
         onChange={handleChange}
         placeholder="Contraseña" />
       </Form.Group>
-      <Button variant="primary" type="submit">Iniciar Sesión</Button>
+      <Button variant="primary" type="submit" onClick={() => redireccionRegistro()}>Iniciar Sesión</Button>
     </Form>
  </>
   )
