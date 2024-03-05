@@ -5,6 +5,8 @@ import Modal from 'react-bootstrap/Modal';
 
 export const ProductoProvider = createContext();
 
+
+
 // GET: traer, POST: Crear, PUT: Editar (con ID), DELETE: Eliminar (con ID)
 
 const  ProductsContext  = ({children}) => {
@@ -54,37 +56,16 @@ const  ProductsContext  = ({children}) => {
     }
  }
  
-const editarDatos = (id) =>{
-    
-       <>
-        <div
-        className="modal show"
-        style={{ display: 'block', position: 'initial' }}
-      >
-        <Modal.Dialog>
-          <Modal.Header closeButton>
-            <Modal.Title>Editar Producto {id} </Modal.Title>
-          </Modal.Header>
-  
-          <Modal.Body>
-            <p>Modal body text goes here.</p>
-          </Modal.Body>
-  
-          <Modal.Footer>
-            <Button variant="secondary">Close</Button>
-            <Button variant="primary">Save changes</Button>
-          </Modal.Footer>
-        </Modal.Dialog>
-      </div>
-      </>
- 
-    // try{
-    //     const response = await axios.put(`http://localhost:8000/productos/${id}`,productFormEdit)
-    //     setProducts([...products, response.data]) 
-    // }
-    // catch(error){
-    //    console.log(error) 
-    // }
+const editarDatos = async (productForm ) =>{
+
+        try{
+          await   axios.put(`http://localhost:8000/productos/${productForm.id}`,productForm)
+          await obtenerDatos();
+          
+    }
+    catch(error){
+       console.log(error) 
+    }
 }
 
     return (

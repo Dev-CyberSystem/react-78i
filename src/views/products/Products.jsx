@@ -1,13 +1,27 @@
  
-import React, {   useContext } from "react";
-import Button from 'react-bootstrap/Button';
+import React, {   useContext, useState } from "react";
+import {Button,Modal,Table} from 'react-bootstrap';
 import {ProductoProvider} from "../../components/context/ProductsContext";
-import Table from 'react-bootstrap/Table';
+ 
 import Form from "../../components/form/Form";
+
+
 
 const Products = ( ) => {
   
-  const {products,borrarDatos,editarDatos} = useContext(ProductoProvider);
+  const {products,borrarDatos} = useContext(ProductoProvider);
+
+  const [show, setShow] = useState(false);
+  const [editProducto, setEditProducto] = useState(null)
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+ 
+
+  const handleEdit =  (product) =>{
+    setEditProducto(product)
+    handleShow();
+  }
+  let n = 1;
   console.log(products)
   return (
     <>
@@ -19,7 +33,7 @@ const Products = ( ) => {
     <Table striped bordered hover>
      <thead>
        <tr>
-         <th>ID</th>
+         <th>N°</th>
          <th>Nombre</th>
          <th>Precio</th>
          <th>Editar</th>
@@ -30,11 +44,11 @@ const Products = ( ) => {
      {products.map((product)=> ( 
 
        <tr>
-           <td>{product.id}</td>
+           <td>{n++}</td>
            <td>{product.nombreProducto}</td>
            <td>{product.precioProducto}</td>
            <td>
-            <Button onClick={()=>editarDatos(product.id)} >Editar</Button> 
+            <Button onClick={ ()=>  handleEdit (product) }>Editar</Button> 
            <Button onClick={()=>borrarDatos(product.id)} variant="danger">Eliminar</Button>
            </td>
        </tr>
@@ -43,7 +57,18 @@ const Products = ( ) => {
      
      </tbody>
    </Table>
+   <Modal show={show} onHide={handleClose}>
+    <Modal.Header closeButton>
+      <Modal.Title>Edicion de producto</Modal.Title>
+    </Modal.Header>
+    <Modal.Body>
+    <Form editProducto = {editProducto} handleClose = {handleClose}/>
+    </Modal.Body>
+   
+  </Modal>
+
     </div>
+     
     )
    }
      
