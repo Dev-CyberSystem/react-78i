@@ -3,13 +3,13 @@ import {Form, Button}from 'react-bootstrap';
 const Login = () => {
 
     const [gmail, setGmail] = useState ("")
-    const {contraseña, setContraseña} = useState ("")
+    const [contraseña, setContraseña] = useState ("")
 
     const handleSubmit = (e) => {
       e.preventDefault()
     }
 
-    const handleChange = () => {
+    const handleChange = (e) => {
       setGmail({
         ...gmail [e.target.gmail.value]
       })
