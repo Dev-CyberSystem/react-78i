@@ -7,8 +7,8 @@ const Navegador = () => {
 
   const [show, setShow] = useState(false)
 
-  const handleClose = () => setShow(false)
-  const handleShow = () => setShow(true)
+  const handleClose = () => setShow(false) //se estable el setShow en false para que el modal se cierre.
+  const handleShow = () => setShow(true) //se establece el setShow en true para que el modal se muestre.
 
 
   const navigate = useNavigate()
@@ -21,6 +21,7 @@ const Navegador = () => {
               <Nav.Link onClick={() => navigate ("/")}>Home</Nav.Link>
               <Nav.Link ></Nav.Link>
               <Nav.Link onClick={() => navigate ("/admin")}>Admin</Nav.Link>
+              <Nav.Link>Registro</Nav.Link>
             </Nav>
           </Container>
           <Button variant="info" onClick={handleShow}>Login</Button>
