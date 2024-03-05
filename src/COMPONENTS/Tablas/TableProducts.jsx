@@ -1,30 +1,46 @@
-import { useContext} from "react";
+import { useContext } from "react";
 import { ProductosProvider } from '../../context/ProductsContext.jsx';
+import Table from 'react-bootstrap/Table';
+import { Button } from "react-bootstrap";
 
 const TableProducts = () => {
-
-const {productos} = useContext(ProductosProvider)
-console.log("Productos desde TABLEPRO.JSX: ", productos)
-
-  /*useEffect(() => {
-      const obtenerDatos = async () => {
-        try {
-          const response = await axios.get("http://localhost:3000/productos");
-          console.log(response.data);
-        } catch (error) {
-          console.error("Error al obtener datos:", error);
-        }
-      };
-      obtenerDatos();
-    }, []);
-
-    console.log("productos desde TABLEPRODUCTS") */
+  const { productos } = useContext(ProductosProvider);
 
   return (
     <>
-    <h1>TABLA DE LOS PRODUCTOS</h1>
+      <h1>TABLA DE LOS PRODUCTOS</h1>
+
+      {productos.length === 0 ? (
+        <h2>No tenemos productos, locoo :c </h2>
+      ) : (
+        <Table striped bordered hover>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            {productos.map((product, index) => (
+              <>
+              <tr>
+                <td>{product.id}</td>
+                <td>{product.nombre}</td>
+                <td>{product.precio}</td>
+                <td>
+                  <Button variant="primary">Editar</Button>
+                  <Button variant="dabge">Eliminar</Button>
+                </td>
+              </tr>
+              </>
+            ))}
+          </tbody>
+        </Table>
+      )}
     </>
-  )
+  );
 }
 
 export default TableProducts;
