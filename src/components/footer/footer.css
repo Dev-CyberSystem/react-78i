@@ -6,4 +6,7 @@ footer img{
 
 footer{
     background-color: rgb(65, 8, 119);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }

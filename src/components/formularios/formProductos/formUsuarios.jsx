@@ -6,12 +6,11 @@ import { UsuariosProvider } from "../../../context/usuariosContext";
 
 const FormularioUsuarios = () =>
 {
-    const {agregarUsuario} = useContext(UsuariosProvider) 
 
     const[usuarioLogin, setUsuario] = useState(
         {
             usuario: " ",
-            email: " "
+            clave: " "
         }
     )
 
@@ -20,11 +19,10 @@ const FormularioUsuarios = () =>
     {
         e.preventDefault()
         console.log("Usuario atrapado en login: ", usuarioLogin)
-        agregarUsuario(usuarioLogin)
 
     }
 
-    const {usuario, email} = setUsuario
+    const {usuario, clave} = setUsuario
 
    const  handleChange = ({target}) =>
     {
@@ -46,8 +44,8 @@ const FormularioUsuarios = () =>
             </Container>
 
             <Container class="mb-2">
-            <label htmlFor="">Email</label>
-            <input type="email" value={email} name="email" onChange={handleChange}/>
+            <label htmlFor="">Clave</label>
+            <input type="clave" value={clave} name="text" onChange={handleChange}/>
             </Container>
 
             <Container>

@@ -3,27 +3,38 @@
     {
       "id": 1,
       "usuario": "juancitoperez1",
-      "email": "juanperez@gmail.com"
+      "email": "juanperez@gmail.com",
+      "clave": "oiueytdfsldkj"
     },
     {
       "id": 2,
       "usuario": "mariabonita300",
-      "email": "mariafernandez@gmail.com"
+      "email": "mariafernandez@gmail.com",
+      "clave": "julixcarlos231"
     },
     {
       "id": 3,
       "usuario": "ilovepizza",
-      "email": "martinargceballos@gmail.com"
+      "email": "martinargceballos@gmail.com",
+      "clave": "123456789"
     },
     {
       "id": 4,
       "usuario": "rollingschool",
-      "email": "rollingcodeschool@tucuman.com"
+      "email": "rollingcodeschool@tucuman.com",
+      "clave": "kasjdhkjsah"
     },
     {
       "id": "084d",
       "usuario": "mruiz",
-      "email": "martugut2005@gmail.com"
+      "email": "martugut2005@gmail.com",
+      "clave": "holaholahola"
+    },
+    {
+      "id": "1c9f",
+      "email": "martugutierrez166@gmail.com",
+      "usuario": "lapeppa",
+      "clave": "queseyoche"
     }
   ]
 }

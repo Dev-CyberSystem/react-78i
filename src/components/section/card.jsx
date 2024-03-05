@@ -1,7 +1,10 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { useNavigate } from 'react-router-dom';
 
 function Cards() {
+  const navegacion = useNavigate()
+
   return (
     <>
   
@@ -12,7 +15,7 @@ function Cards() {
         <Card.Text>
           Che che venite a bariloche al al al cerro catedral
         </Card.Text>
-        <Button variant="outline-dark">Ver más</Button>
+        <Button onClick={()=>navegacion('*')} variant="outline-dark">Ver más</Button>
       </Card.Body>
     </Card>
     <Card style={{ width: '18rem' }}>
@@ -22,7 +25,7 @@ function Cards() {
       <Card.Text>
         Quebradeño a mí me dicen porque nací en la quebrada
       </Card.Text>
-      <Button variant="outline-dark">Ver más</Button>
+      <Button onClick={()=>navegacion('*')} variant="outline-dark">Ver más</Button>
     </Card.Body>
   </Card>
   </>
