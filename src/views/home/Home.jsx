@@ -1,12 +1,11 @@
-
-import NavBar from '../../components/navBar/Navbar';
 import MiCard from '../../components/card/Card';
 
 
 function Home() {
   return (
     <div className="Home">
-      <NavBar />
+      
+      
       <h1 className='p-4'>Cursos disponbles:</h1>
 
 

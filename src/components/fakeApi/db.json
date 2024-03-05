@@ -1,54 +1,77 @@
 {
-    "page": 2,
-    "per_page": 6,
-    "total": 12,
-    "total_pages": 2,
-    "data": [
-        {
-            "id": 7,
-            "email": "michael.lawson@reqres.in",
-            "first_name": "Michael",
-            "last_name": "Lawson",
-            "avatar": "https://reqres.in/img/faces/7-image.jpg"
-        },
-        {
-            "id": 8,
-            "email": "lindsay.ferguson@reqres.in",
-            "first_name": "Lindsay",
-            "last_name": "Ferguson",
-            "avatar": "https://reqres.in/img/faces/8-image.jpg"
-        },
-        {
-            "id": 9,
-            "email": "tobias.funke@reqres.in",
-            "first_name": "Tobias",
-            "last_name": "Funke",
-            "avatar": "https://reqres.in/img/faces/9-image.jpg"
-        },
-        {
-            "id": 10,
-            "email": "byron.fields@reqres.in",
-            "first_name": "Byron",
-            "last_name": "Fields",
-            "avatar": "https://reqres.in/img/faces/10-image.jpg"
-        },
-        {
-            "id": 11,
-            "email": "george.edwards@reqres.in",
-            "first_name": "George",
-            "last_name": "Edwards",
-            "avatar": "https://reqres.in/img/faces/11-image.jpg"
-        },
-        {
-            "id": 12,
-            "email": "rachel.howell@reqres.in",
-            "first_name": "Rachel",
-            "last_name": "Howell",
-            "avatar": "https://reqres.in/img/faces/12-image.jpg"
-        }
-    ],
-    "support": {
-        "url": "https://reqres.in/#support-heading",
-        "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
+  "page": 2,
+  "per_page": 6,
+  "total": 12,
+  "total_pages": 2,
+  "data": [
+    {
+      "id": "7",
+      "email": "michael.lawson@reqres.in",
+      "name": "Michael Lawson",
+      "avatar": "https://reqres.in/img/faces/7-image.jpg"
+    },
+    {
+      "id": "8",
+      "email": "lindsay.ferguson@reqres.in",
+      "name": "Lindsay Ferguson",
+      "avatar": "https://reqres.in/img/faces/8-image.jpg"
+    },
+    {
+      "id": "9",
+      "email": "tobias.funke@reqres.in",
+      "name": "Tobias Funke",
+      "avatar": "https://reqres.in/img/faces/9-image.jpg"
+    },
+    {
+      "id": "10",
+      "email": "byron.fields@reqres.in",
+      "name": "Byron Fields",
+      "avatar": "https://reqres.in/img/faces/10-image.jpg"
+    },
+    {
+      "id": "11",
+      "email": "george.edwards@reqres.in",
+      "name": "George Edwards",
+      "avatar": "https://reqres.in/img/faces/11-image.jpg"
+    },
+    {
+      "id": "12",
+      "email": "rachel.howell@reqres.in",
+      "name": "Rachel Howell",
+      "avatar": "https://reqres.in/img/faces/12-image.jpg"
+    },
+    {
+      "id": "3837",
+      "name": "ceci",
+      "email": "haroanaceci@yahoo.com",
+      "avatar": "https://gabrielanta.com/wp-content/uploads/2019/01/usuario-invitado.jpg"
     }
+  ],
+  "cursos": [
+    {
+      "nombre": "Curso de Desarrollo Web",
+      "descripcion": "Aprende a construir aplicaciones web modernas.",
+      "imagen": "url_de_la_imagen_1"
+    },
+    {
+      "nombre": "Introducción a la Programación",
+      "descripcion": "Un curso para principiantes en el mundo de la programación.",
+      "imagen": "url_de_la_imagen_2"
+    },
+    {
+      "nombre": "Curso de Diseño Gráfico",
+      "descripcion": "Descubre los fundamentos del diseño gráfico y la creatividad.",
+      "imagen": "url_de_la_imagen_3"
+    },
+    {
+      "nombre": "Curso de Marketing Digital",
+      "descripcion": "Aprende estrategias de marketing en la era digital.",
+      "imagen": "url_de_la_imagen_4"
+    }
+    
+  ],
+  "support": {
+    "url": "https://reqres.in/#support-heading",
+    "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
+  }
 }
