@@ -2,21 +2,21 @@ import { useState } from 'react';
 import {Form, Button}from 'react-bootstrap';
 const Login = () => {
 
-    const [gmail, setGmail] = useState ("")
-    const [contraseña, setContraseña] = useState ("")
+    const [users, setUsers] = useState ({
+      email:"",
+      contraseña:""
+    })
 
     const handleSubmit = (e) => {
       e.preventDefault()
+      console.log("Dato Capturado:", users)
     }
 
     const handleChange = (e) => {
-      setGmail({
-        ...gmail [e.target.gmail.value]
+      setUsers({
+        ...users, //se recuperan los datos existentes de users.
+        [e.target.name]: e.target.value // con el target.name se obtiene en nombre del input y con el target.value su valor.
       })
-      setContraseña({
-        ...contraseña [e.target.contraseña.value]
-      }
-      )
     }
   return (
  <>
@@ -24,7 +24,7 @@ const Login = () => {
       <Form.Group className="mb-3">
         <Form.Label>Email</Form.Label>
         <Form.Control type="email"
-        value={gmail}
+        value={users.email}
         name="email"
         onChange={handleChange}
         placeholder="Email" />
@@ -32,7 +32,7 @@ const Login = () => {
       <Form.Group className="mb-3">
         <Form.Label>Contraseña</Form.Label>
         <Form.Control type="password" 
-        value={contraseña}
+        value={users.contraseña}
         name="contraseña"
         onChange={handleChange}
         placeholder="Contraseña" />
