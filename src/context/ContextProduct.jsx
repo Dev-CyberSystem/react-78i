@@ -7,7 +7,6 @@ const ContextProduct = ({ children }) => {
   const [productos, setProductos] = useState();
 
   const addProducto = async (producto) =>{
-  
     try {
       const response = await axios.post("http://localhost:7000/productos",producto)
       setProductos([...productos,response.data]);
@@ -28,9 +27,18 @@ const ContextProduct = ({ children }) => {
   useEffect(() => {
     obtenerProductos();
   }, []);
+
+  const deleteProduct = async (id) => {
+    try {
+      await axios.delete(`http://localhost:7000/productos/${id}`);
+      setProductos(productos.filter((P) => P.id !== id));
+    } catch (error) {
+      console.log(error)
+    }
+  }
   
 return (
-  <ProductContext.Provider value={{productos,obtenerProductos,addProducto}}>
+  <ProductContext.Provider value={{productos,obtenerProductos,addProducto,deleteProduct}}>
     {children}
   </ProductContext.Provider>
   )

@@ -1,50 +1,28 @@
 {
   "productos": [
     {
-      "id": 0,
-      "nombre": "fernet",
+      "id": "05c8c5d4-edec-4476-a9ff-aeb631c100d5",
+      "nombre": "coca cola",
       "precio": "10000"
     },
     {
-      "id": 0,
-      "nombre": "coca cola",
-      "precio": "2500"
-    },
-    {
-      "id": 0,
+      "id": "88d24ce2-9a7e-475d-88c9-afaf3b279ac5",
       "nombre": "pepsi",
-      "precio": "1500"
-    },
-    {
-      "id": 0,
-      "nombre": "salchica",
-      "precio": "1000"
+      "precio": "20000"
     }
   ],
   "usuarios": [
     {
-      "id": "ae08"
-    },
-    {
-      "id": "628f",
-      "nombre": "Bruno Javier",
-      "apellido": "",
-      "email": "pieruzzib@gmail.com",
-      "Apellido": "i"
-    },
-    {
-      "id": "f0f7",
-      "nombre": "",
-      "apellido": "",
-      "email": "",
-      "Apellido": "d"
-    },
-    {
-      "id": "2c33",
+      "id": "93e91143-8243-4ae7-bebf-801710e95c55",
       "nombre": "Bruno Javier",
       "apellido": "Pieruzzi",
-      "email": "pieruzzib@gmail.com",
-      "Apellido": "l"
+      "email": "admin@gmail.com"
+    },
+    {
+      "id": "82a513ed-1919-4233-8097-242f26e2404f",
+      "nombre": "Eve",
+      "apellido": "Uro",
+      "email": "admin@gmail.com"
     }
   ]
 }

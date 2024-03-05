@@ -1,11 +1,13 @@
 import { useState, useContext, useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
 import { ProviderUser } from "../../context/ContexUsers";
+import {v4 as uuidv4} from "uuid"
 
 export const FormUsers = () => {
   const { addUsuario } = useContext(ProviderUser);
 
   const [usuario, setUsuario] = useState({
+    id: uuidv4(),
     nombre: "",
     apellido: "",
     email: "",

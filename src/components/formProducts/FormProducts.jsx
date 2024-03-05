@@ -1,14 +1,15 @@
 import { Button, Form } from "react-bootstrap";
 import { useState, useContext } from "react";
 import { ProductContext } from "../../context/ContextProduct";
+import { v4 as uuidv4 } from "uuid";
 
-const formProducts = () => {
+const formProducts = ({ editProducto }) => {
   const { addProducto } = useContext(ProductContext);
 
   const [producto, setProducto] = useState({
-    id: 0,
-    nombre: "",
-    precio: 0,
+    id: editProducto ? editProducto.id : uuidv4(),
+    nombre: editProducto ? editProducto.nombre : "",
+    precio: editProducto ? editProducto.precio : 0,
   });
 
   const handleChange = (e) => {
@@ -21,6 +22,11 @@ const formProducts = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     addProducto(producto);
+    setProducto({
+      id: uuidv4(),
+      nombre: "",
+      precio: 0,
+    });
   };
 
   return (
@@ -46,9 +52,13 @@ const formProducts = () => {
             onChange={handleChange}
           />
         </Form.Group>
-        <Button variant="primary" type="submit">
-          Agregar producto
-        </Button>
+        {editProducto ? (
+          <Button variant="success" type="submit">Editar Producto</Button>
+        ) : (
+          <Button variant="primary" type="submit">
+            Agregar producto
+          </Button>
+        )}
       </Form>
     </>
   );

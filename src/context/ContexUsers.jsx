@@ -8,12 +8,13 @@ const ContexUsers = ({ children }) => {
 
   const addUsuario = async (usuario) => {
     try {
-      const response = await axios.post("http://localhost:7000/usuarios",usuario);
-      setUser(response.data);
+      const response = await axios.post("http://localhost:7000/usuarios", usuario);
+      setUser([...user, response.data]);
     } catch (error) {
       console.log(error);
     }
   };
+  
 
   useEffect(() => {
     const getUser = async () => {
@@ -27,8 +28,17 @@ const ContexUsers = ({ children }) => {
     getUser();
   }, []);
 
+const deleteUser = async (id) => {
+  try {
+    await axios.delete(`http://localhost:7000/usuarios/${id}`);
+    setUser(user.filter((U) => U.id !== id));
+  } catch (error) {
+    console.log(error)
+  }
+}
+
   return (
-    <ProviderUser.Provider value={{ user, addUsuario }}>
+    <ProviderUser.Provider value={{ user, addUsuario, deleteUser }}>
       {children}
     </ProviderUser.Provider>
   );

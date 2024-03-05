@@ -3,13 +3,13 @@ import { useContext } from "react";
 import { ProviderUser } from "../../context/ContexUsers";
 
 const TablaUsers = () => {
-  const { user } = useContext(ProviderUser);
+  const { user, deleteUser } = useContext(ProviderUser)
+  console.log(user, "user desde tabla ")
   return (
     <>
       <Table striped bordered hover>
         <thead>
           <tr>
-            <th>id</th>
             <th>Nombre</th>
             <th>Apellido</th>
             <th>Email</th>
@@ -19,12 +19,11 @@ const TablaUsers = () => {
           {Array.isArray(user) &&
             user.map((U) => (
               <tr key={U.id}>
-                <td>{U.id}</td>
                 <td>{U.nombre}</td>
                 <td>{U.apellido}</td>
                 <td>{U.email}</td>
                 <td>
-                  <Button variant="danger">Eliminar</Button>
+                  <Button variant="danger" onClick={()=> deleteUser(U.id)}>Eliminar</Button>
                   <Button variant="primary">Editar</Button>
                 </td>
               </tr>
