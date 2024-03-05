@@ -4,13 +4,34 @@
       "id": "9edb55dd-a988-4a52-986e-1cf18a715c19",
       "nombre": "Pepsi",
       "precio": "1200"
+    },
+    {
+      "id": "8ec08fe6-91ee-43dd-866e-c6e9a4f3ed3a",
+      "nombre": "Coca-Cola",
+      "precio": "1500"
+    },
+    {
+      "id": "fccc75ba-e0fb-4780-8a1f-85447fe5f6fb",
+      "nombre": "Asado x KG",
+      "precio": "12000"
+    },
+    {
+      "id": "53ebbd45-7e5e-43a7-9488-d38f4630b236",
+      "nombre": "Hielo",
+      "precio": "1500"
+    },
+    {
+      "id": "14367dff-8449-41da-947e-9e0b5b303db5",
+      "nombre": "Fernet",
+      "precio": "10000"
     }
   ],
   "usuarios": [
     {
       "id": "1",
       "nombre": "Usuario 1",
-      "email": "user1@h.com"
+      "email": "user1@h.com",
+      "password": "123456"
     },
     {
       "id": "2",

@@ -10,8 +10,8 @@ const FormProductos = ({ editProducto, handleClose }) => {
 
   const [producto, setProducto] = useState({
     id: editProducto ? editProducto.id : uuidv4(),
-    nombre: editProducto ? editProducto.nombre : "xxxxxxxxxxx",
-    precio: editProducto ? editProducto.precio : 43,
+    nombre: editProducto ? editProducto.nombre: "",
+    precio: editProducto ? editProducto.precio: ""
   });
 
   const handleChange = (e) => {
