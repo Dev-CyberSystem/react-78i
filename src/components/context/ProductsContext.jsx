@@ -46,6 +46,8 @@ const  ProductsContext  = ({children}) => {
     obtenerDatos();  
  },[])
   
+ //DELETE PRODUCTOS
+ 
  const borrarDatos = async (id) =>{
     try{
          await axios.delete(`http://localhost:8000/productos/${id}`)
@@ -56,6 +58,7 @@ const  ProductsContext  = ({children}) => {
     }
  }
  
+ //EDITAAR PRODUCTOS 
 const editarDatos = async (productForm ) =>{
 
         try{

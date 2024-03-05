@@ -27,7 +27,7 @@ const handleSubmit = (e) =>{
 }
 
 const handleChange = (e) =>{
-setProductForm({
+    setProductForm({
     ...productForm,//SETEA LOS DATOS CON LOS VALORES INICIALES QUE COLOCAMOS EN EL USESTATE
     [e.target.name]: e.target.value //Actualiza el estado con el nuevo valor que se ingreso
     
