@@ -1,6 +1,16 @@
-import {Container, Nav, Navbar, Button, ButtonGroup, Dropdown} from 'react-bootstrap';
+import {Container, Nav, Navbar, Button, Modal} from 'react-bootstrap';
 import {useNavigate} from 'react-router';
+import Login from '../login/Login';
+import { useState } from 'react';
+
 const Navegador = () => {
+
+  const [show, setShow] = useState(false)
+
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
+
+
   const navigate = useNavigate()
     return (
    <>
@@ -13,16 +23,17 @@ const Navegador = () => {
               <Nav.Link onClick={() => navigate ("/admin")}>Admin</Nav.Link>
             </Nav>
           </Container>
-         <Dropdown as={ButtonGroup}>
-           <Button variant="secondary">Categorías</Button>
-           <Dropdown.Toggle split variant="secondary" id="dropdown-split-basic" />
-           <Dropdown.Menu>
-             <Dropdown.Item href="#/action-1">Romántico</Dropdown.Item>
-             <Dropdown.Item href="#/action-2">Acción</Dropdown.Item>
-             <Dropdown.Item href="#/action-3">Fantasía</Dropdown.Item>
-           </Dropdown.Menu>
-         </Dropdown>
+          <Button variant="info" onClick={handleShow}>Login</Button>
         </Navbar>
+
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Inicio de Sesión</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+           <Login />
+          </Modal.Body>
+        </Modal>
    </>
 )
 }

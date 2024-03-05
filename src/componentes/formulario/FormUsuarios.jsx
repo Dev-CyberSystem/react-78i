@@ -12,8 +12,8 @@ const FormUsuarios = () => {
         setNombre(e.target.nombre.value)
         setEmail(e.target.email.value) 
     }
-    console.log(nombre, "funciona")
-    console.log(email, "funciona email")
+    //console.log(nombre, "funciona")
+    //console.log(email, "funciona email")
   return (
     //Paso 1
     <>

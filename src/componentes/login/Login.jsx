@@ -1,19 +1,14 @@
 import { useState } from 'react';
 import {Form, Button}from 'react-bootstrap';
-
 const Login = () => {
 
     const [gmail, setGmail] = useState("")
     const [contraseña, setContraseña] = useState("")
 
     const handleSubmit = (e) => {
-        e.preventDefault()
-        setGmail(e.target.gmail.value)
-        setContraseña(e.target.contraseña.value)
-    }
-
-    const handleChange = () => {
-
+      e.preventDefault()
+      setGmail(e.target.gmail.value)
+      setContraseña(e.target.contraseña.value)
     }
 
   return (
@@ -24,6 +19,7 @@ const Login = () => {
         <Form.Control type="email"
         value={gmail}
         name="gamail"
+        // onChange={handleChange}
         placeholder="Email" />
       </Form.Group>
       <Form.Group className="mb-3">
@@ -31,6 +27,7 @@ const Login = () => {
         <Form.Control type="password" 
         value={contraseña}
         name="contraseña"
+        // onChange={handleChange}
         placeholder="Contraseña" />
       </Form.Group>
       <Button variant="primary" type="submit">Iniciar Sesión</Button>
