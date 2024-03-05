@@ -3,13 +3,12 @@ import {Form, Button}from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 
-const Login = (handleClose) => {
+const Login = () => {
 
     const navigate = useNavigate() //sirve para la redirección de los componentes.
 
     const redireccionRegistro= () => {
       navigate("/registro")
-      handleClose()
     }
 
     const [users, setUsers] = useState ({

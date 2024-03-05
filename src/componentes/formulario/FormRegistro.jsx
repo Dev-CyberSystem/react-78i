@@ -51,7 +51,7 @@ const FormRegistro = () => {
         onChange={handleChange}
         />
       </Form.Group>
-      <Button variant="outline-warning">REGISTRARSE</Button>
+      <Button type="submit" variant="outline-warning">REGISTRARSE</Button>
     </Form>
  </>
   )

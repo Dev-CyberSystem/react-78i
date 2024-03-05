@@ -4,7 +4,7 @@ const Registro = () => {
   return (
     <>
     <h2>Registrate como Usuario</h2>
-    <FormRegistro/>
+    <FormRegistro />
     </>
   )
 }
