@@ -21,7 +21,6 @@ const Navegador = () => {
               <Nav.Link onClick={() => navigate ("/")}>Home</Nav.Link>
               <Nav.Link ></Nav.Link>
               <Nav.Link onClick={() => navigate ("/admin")}>Admin</Nav.Link>
-              <Nav.Link>Registro</Nav.Link>
             </Nav>
           </Container>
           <Button variant="info" onClick={handleShow}>Login</Button>
