@@ -1,15 +1,4 @@
 {
-  "productos": [
-    {
-      "id": "05c8c5d4-edec-4476-a9ff-aeb631c100d5",
-      "nombre": "coca cola zero",
-      "precio": "10000"
-    },
-    {
-      "id": "88d24ce2-9a7e-475d-88c9-afaf3b279ac5",
-      "nombre": "Fanta uva",
-      "precio": "20000"
-    }
-  ],
+  "productos": [],
   "usuarios": []
 }

@@ -13,16 +13,6 @@ const Admin = () => {
             <FormProducts />
           </Col>
           <Col><TablaProductos /></Col>
-          <hr />
-          <hr />
-        </Row>
-        <Row>
-          <Col>
-            <FormUsers />
-          </Col>
-          <Col>
-          <TablaUsers />
-          </Col>
         </Row>
       </Container>
     </>
