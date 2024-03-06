@@ -16,16 +16,5 @@
       "precio": "20"
     }
   ],
-  "usuarios": [
-    {
-      "id": "1",
-      "nombre": "Usuario 1",
-      "email": "1@1.com"
-    },
-    {
-      "id": "2",
-      "nombre": "Usuario 2",
-      "email": "2@2.com"
-    }
-  ]
+  "usuarios": []
 }

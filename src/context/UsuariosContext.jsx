@@ -16,12 +16,49 @@ const UsuariosContext = ({ children }) => {
     }
   };
 
+  const addUser = async (usuario) => {
+    try {
+      const response = await axios.post(
+        "http://localhost:8000/usuarios",
+        usuario
+      );
+      setUsuarios([...usuarios, response.data]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const editarUsuario = async (usuario) => {
+    try {
+      await axios.put(`http://localhost:8000/usuarios/${usuario.id}`, usuario);
+      await getUsers();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const deleteUsuario = async (id) => {
+    try {
+      await axios.delete(`http://localhost:8000/usuarios/${id}`);
+      await getUsers();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  const logout = () => {
+    localStorage.removeItem("user");
+    window.location.href = "/";
+  };
+
   useEffect(() => {
     getUsers();
   }, []);
 
   return (
-    <UsuariosProvider.Provider value={{ usuarios, getUsers }}>
+    <UsuariosProvider.Provider
+      value={{ usuarios, getUsers, addUser, logout, editarUsuario, deleteUsuario }}
+    >
       {children}
     </UsuariosProvider.Provider>
   );

@@ -47,10 +47,6 @@ const ProductsContext = ({ children }) => {
   //Editar Producto
 
   const editarProducto = async (producto) => {
-    console.log(
-      producto,
-      "<<<<---------- Recibimos el producto a editar en el context"
-    );
     try {
       await axios.put(
         `http://localhost:8000/productos/${producto.id}`,
