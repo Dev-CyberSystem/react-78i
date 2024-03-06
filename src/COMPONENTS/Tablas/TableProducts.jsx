@@ -4,7 +4,7 @@ import Table from 'react-bootstrap/Table';
 import { Button } from "react-bootstrap";
 
 const TableProducts = () => {
-  const { productos } = useContext(ProductosProvider);
+  const { productos, deleteProductos } = useContext(ProductosProvider);
 
   return (
     <>
@@ -24,17 +24,15 @@ const TableProducts = () => {
           </thead>
           <tbody>
             {productos.map((product, index) => (
-              <>
-              <tr>
+              <tr key={product.id}>
                 <td>{product.id}</td>
                 <td>{product.nombre}</td>
                 <td>{product.precio}</td>
                 <td>
                   <Button variant="primary">Editar</Button>
-                  <Button variant="dabge">Eliminar</Button>
+                  <Button onClick={() => deleteProductos(product.id)} variant="danger">Eliminar</Button>
                 </td>
               </tr>
-              </>
             ))}
           </tbody>
         </Table>

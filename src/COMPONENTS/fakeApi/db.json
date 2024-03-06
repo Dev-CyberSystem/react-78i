@@ -1,56 +1,41 @@
 {
-    "productos": [
-        {
-            "id": 1,
-            "nombre": "Producto 1",
-            "precio": 100
-        },
-        {
-            "id": 2,
-            "nombre": "Producto 2",
-            "precio": 200
-        },
-        {
-            "id": 3,
-            "nombre": "Producto 3",
-            "precio": 300
-        },
-        {
-            "id": 4,
-            "nombre": "Producto 4",
-            "precio": 400
-        },
-        {
-            "id": 5,
-            "nombre": "Producto 5",
-            "precio": 500
-        }
-    ],
-    "usuarios": [
-        {
-            "id": 1,
-            "nombre": "Usuario 1",
-            "email": "usuario1@example.com"
-        },
-        {
-            "id": 2,
-            "nombre": "Usuario 2",
-            "email": "usuario2@example.com"
-        },
-        {
-            "id": 3,
-            "nombre": "Usuario 3",
-            "email": "usuario3@example.com"
-        },
-        {
-            "id": 4,
-            "nombre": "Usuario 4",
-            "email": "usuario4@example.com"
-        },
-        {
-            "id": 5,
-            "nombre": "Usuario 5",
-            "email": "usuario5@example.com"
-        }
-    ]
+  "productos": [
+    {
+      "id": "42e2172d-39cd-4392-ad12-a603e3937445",
+      "nombre": "Coca Cola normal",
+      "precio": "01231231322"
+    },
+    {
+      "id": "42e2172d-39cd-4392-ad12-a603e3937445",
+      "nombre": "Coca Cola Zero",
+      "precio": "1231322"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": "1",
+      "nombre": "Usuario 1",
+      "email": "usuario1@example.com"
+    },
+    {
+      "id": "2",
+      "nombre": "Usuario 2",
+      "email": "usuario2@example.com"
+    },
+    {
+      "id": "3",
+      "nombre": "Usuario 3",
+      "email": "usuario3@example.com"
+    },
+    {
+      "id": "4",
+      "nombre": "Usuario 4",
+      "email": "usuario4@example.com"
+    },
+    {
+      "id": "5",
+      "nombre": "Usuario 5",
+      "email": "usuario5@example.com"
+    }
+  ]
 }
