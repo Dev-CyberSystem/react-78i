@@ -49,19 +49,11 @@ const Footer = () => {
         <Button id= "btn-footer" variant="primary" onClick = {() =>navigate ("/contacto")}>Contacto</Button>
       </Card.Body>
     </Card>
-    <div class="text-uppercase fluid footer-text text-center m-2 ">Copyright © 2024 Lorena Oterino. Todos los derechos reservados.
+   
     </div>
+    <div class ="text-uppercase fluid footer-text text-center m-2">Copyright © 2024 Lorena Oterino. Derechos reservados.</div>
+    
 
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
     </>
   )
 }

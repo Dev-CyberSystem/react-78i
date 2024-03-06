@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import {Form, Button} from 'react-bootstrap';
-import './formInsc.css'
+import './formRegistro.css'
 
 
-const FormInsc = () => {
+const FormRegistro = () => {
 
     const [nombre,setNombre] = useState ()
     const [edad,setEdad] = useState ()
@@ -11,8 +11,8 @@ const FormInsc = () => {
     const [domicilio,setDomicilio] = useState ()
     const [telefono,setTelefono] = useState ()
     const [mail,setMail] = useState ()
-    const [grado,setGrado] = useState ()
-    const [observaciones,setObservaciones] = useState ()
+    const [puesto,setPuesto] = useState ()
+    
 
 
     const handleSubmit = (e) => {
@@ -24,30 +24,32 @@ const FormInsc = () => {
         setDomicilio (e.target.domicilio.value);
         setTelefono (e.target.telefono.value);
         setMail (e.target.mail.value);
-        setGrado (e.target.grado.value);
-        setObservaciones (e.target.observaciones.value);
+        setPuesto (e.target.puesto.value);
+      
 
-        console.log (nombre, "Estado nombre");
-        console.log (edad, "Estado edad");
-        console.log (nacimiento, "Estado nacimiento");
-        console.log (domicilio, "Estado domicilio");
-        console.log (telefono, "Estado telefono");
-        console.log (mail, "Estado mail");
-        console.log (grado, "Estado grado");
-        console.log (observaciones, "Estado observaciones");
+        console.log (nombre);
+        console.log (edad);
+        console.log (nacimiento);
+        console.log (domicilio);
+        console.log (telefono);
+        console.log (mail);
+        console.log (puesto);
+       
     };
 
   return (
     <>
 
+
     <Form onSubmit={handleSubmit}>
         
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-        <Form.Label>Apellido y nombre del alumno</Form.Label>
-        <Form.Control type="text"
+        <Form.Label>Apellido y nombre</Form.Label>
+        <Form.Control 
+        type="text"
         value= {nombre}
         name="nombre"
-        placeholder="Luna Bautista" />
+        placeholder="Juan Pérez" />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -55,7 +57,7 @@ const FormInsc = () => {
         <Form.Control type="number" 
          value= {edad}
          name="edad"
-        placeholder="11" />
+        placeholder="41" />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -63,7 +65,7 @@ const FormInsc = () => {
         <Form.Control type="number" 
          value= {nacimiento}
          name="nacimiento"
-        placeholder="29/05/2012" />
+        placeholder="29/05/1982" />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -75,7 +77,7 @@ const FormInsc = () => {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-        <Form.Label>Teléfono del tutor/a</Form.Label>
+        <Form.Label>Teléfono</Form.Label>
         <Form.Control type="number"
         value= {telefono}
         name="telefono"
@@ -83,7 +85,7 @@ const FormInsc = () => {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-        <Form.Label>Mail del tutor/a</Form.Label>
+        <Form.Label>Mail</Form.Label>
         <Form.Control type="email" 
         value= {mail}
         name="mail"
@@ -91,24 +93,18 @@ const FormInsc = () => {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-        <Form.Label>Grado al que se inscribe</Form.Label>
-        <Form.Control type="number"
-        value= {grado}
-        name="grado"
-        placeholder="6" />
+        <Form.Label>Puesto</Form.Label>
+        <Form.Control type="text"
+        value= {puesto}
+        name="puesto"
+        placeholder="docente de grado" />
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-        <Form.Label>Observaciones</Form.Label>
-        <Form.Control as="textarea" rows={3}
-        value= {observaciones}
-        name="observaciones"/>
-      </Form.Group>
+    
+        <Button type="submit" className= "d-block mx-auto" >Registrarse</Button>
     </Form>
-
-    <Button type="submit" className="d-block mx-auto"  >Completar inscripción</Button>
     </>
   )
 }
 
-export default FormInsc
+export default FormRegistro

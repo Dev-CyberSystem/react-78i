@@ -6,6 +6,7 @@ import Docentes from "../../view/docentes/Docentes"
 import Alumnos from "../../view/alumnos/Alumnos"
 import Contacto from "../../view/contacto/Contacto"
 import Admin from "../../view/administrador/Admin"
+import Registro from "../../view/registro/Registro"
 const Rutas = () => {
   return (
     <>
@@ -17,6 +18,7 @@ const Rutas = () => {
     <Route path = "/alumnos" element = {<Alumnos/>} />
     <Route path = "/contacto" element = {<Contacto/>} />
     <Route path = "/administrador" element = {<Admin/>} />
+    <Route path = "/registro" element = {<Registro/>} />
         
         </Routes> 
     </>
