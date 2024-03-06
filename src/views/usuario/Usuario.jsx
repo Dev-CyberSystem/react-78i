@@ -1,25 +1,13 @@
-import axios from "axios"
-import { useEffect, useState } from "react"
 import { Table } from "react-bootstrap";
-import FormUsuarios from "../../components/formUsuarios/FormUsuarios";
+import { useContext } from "react";
+import { usuariosContext } from "../../context/UserContext";
+
 
 const Usuario = () => {
-    const [users,setUsers] = useState([]);
-    
-    useEffect(()=>{
-        const obtenerUsuarios = async () => {
-            try{
-                const response = await axios.get('http://localhost:8000/usuarios');
-                setUsers(response.data)
-            }
-            catch(error){
-                console.log(error)
-            }
-        }
-        obtenerUsuarios()
-        
-    },[])
-    
+  
+  const {users} = useContext(usuariosContext)
+  console.log(users)
+  
   return (
     <>
     <Table striped bordered hover variant="dark">
