@@ -47,8 +47,26 @@ const UsersContext = ({ children }) => {
         }
     }
 
+    //PUT
+
+    const putUsers = async(user) => {
+        try {
+            await axios.put(`http://localhost:8000/usuarios/${user.id}`, user)
+            await conseguirDatos()
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    //LOGOUT 
+    
+    const logout = () => {
+        localStorage.removeItem("user")
+        window.location.href = '/'
+    }
+
     return (
-        <UsersProvider.Provider value={{Users, postUsers, deleteUsers}}>
+        <UsersProvider.Provider value={{Users, postUsers, deleteUsers, putUsers, logout}}>
             {children}
         </UsersProvider.Provider>
     )

@@ -16,5 +16,30 @@
       "precio": "300"
     }
   ],
-  "usuarios": []
+  "usuarios": [
+    {
+      "id": "c2cbb205-c0de-49d1-a1e9-5424323653fe",
+      "nombre": "Franco",
+      "apellido": "Mastantuono",
+      "email": "a@a.com",
+      "password": "1234",
+      "isAdmin": true
+    },
+    {
+      "id": "c231dda1-37c0-415b-b7e6-b2a9b7402969",
+      "nombre": "Facundo",
+      "apellido": "Colidio",
+      "email": "facu@colidio.com",
+      "password": "12345",
+      "isAdmin": false
+    },
+    {
+      "id": "39285147-ded3-4364-8c0e-dabc63e54eef",
+      "nombre": "Hernán",
+      "apellido": "Lopez Muñoz",
+      "email": "herni10@gmail.com",
+      "password": "912",
+      "isAdmin": true
+    }
+  ]
 }

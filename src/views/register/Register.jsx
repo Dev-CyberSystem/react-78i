@@ -1,11 +1,19 @@
 import FormRegistro from "../../components/FormRegistro/FormRegistro"
+import { Container, Row, Col } from 'react-bootstrap'
 
 
 const Register = () => {
   return (
     <>
-    <h2>REGISTRARSE</h2>
-    <FormRegistro/>
+      <Container>
+        <Row>
+          <Col>
+            <h2>REGISTRARSE</h2>
+            <FormRegistro />
+          </Col>
+        </Row>
+      </Container>
+
     </>
   )
 }

@@ -1,30 +1,49 @@
 import { Form, Button } from 'react-bootstrap'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { UsersProvider } from '../../context/UsersContext'
+import { v4 as uuidv4 } from 'uuid'
 
-const FormRegistro = () => {
+const FormRegistro = ({ UserEdit, handleClose }) => {
+
+    const { postUsers, putUsers } = useContext(UsersProvider)
+
+
     const [usuarioCreado, setUsuarioCreado] = useState({
-        nombre: "",
-        direccion: "",
-        email: "",
-        password: ""
+        id: UserEdit ? UserEdit.id : uuidv4(),
+        nombre: UserEdit ? UserEdit.nombre : "",
+        apellido: UserEdit ? UserEdit.apellido : "",
+        email: UserEdit ? UserEdit.email : "",
+        password: UserEdit ? UserEdit.password : "",
+        isAdmin: UserEdit ? UserEdit.isAdmin : false
     })
 
     const handleChange = (e) => {
-        setUsuarioCreado({
-            ...usuarioCreado,
-            [e.target.name]: e.target.value
-        })
+        const { type, name, value, checked } = e.target
+        if (type === "checkbox") {
+            setUsuarioCreado({ ...usuarioCreado, [name]: checked})
+        } else {
+            setUsuarioCreado({ ...usuarioCreado, [name]: value})
+        }
+        // setUsuarioCreado({
+        //     ...usuarioCreado,
+        //     [e.target.name]: e.target.value
+        // })
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(usuarioCreado, "<<<<<<<<< TRAIGO LOS DATOS DEL USUARIO CREADO")
-        setUsuarioCreado({
-            nombre: "",
-            direccion: "",
-            email: "",
-            password: ""
-        })
+        if (UserEdit) {
+            putUsers(usuarioCreado)
+            handleClose()
+        } else {
+            postUsers(usuarioCreado)
+            setUsuarioCreado({
+                nombre: "",
+                direccion: "",
+                email: "",
+                password: ""
+            })
+        }
     }
 
     return (
@@ -35,8 +54,8 @@ const FormRegistro = () => {
                     <Form.Control type="text" placeholder="Nombre" name='nombre' value={usuarioCreado.nombre} onChange={handleChange} />
                 </Form.Group>
                 <Form.Group className="mb-3" >
-                    <Form.Label>Dirección</Form.Label>
-                    <Form.Control type="text" placeholder="Dirección" name='direccion' value={usuarioCreado.direccion} onChange={handleChange} />
+                    <Form.Label>Apellido</Form.Label>
+                    <Form.Control type="text" placeholder="Apellido" name='apellido' value={usuarioCreado.apellido} onChange={handleChange} />
                 </Form.Group>
                 <Form.Group className="mb-3" >
                     <Form.Label>Email</Form.Label>
@@ -46,7 +65,19 @@ const FormRegistro = () => {
                     <Form.Label>Contraseña</Form.Label>
                     <Form.Control type="password" placeholder="Contraseña" name='password' value={usuarioCreado.password} onChange={handleChange} />
                 </Form.Group>
-                <Button type='submit' variant='success'>REGISTRARSE</Button>
+                {UserEdit ? (
+                    <Form.Group className="mb-3" >
+                        <Form.Check type="checkbox" label='Admin' checked={usuarioCreado.isAdmin} onChange={handleChange} name='isAdmin'></Form.Check>
+                    </Form.Group>
+                ) : (
+                    null
+                )}
+
+                {UserEdit ? (
+                    <Button type='submit' variant='warning'>EDITAR USUARIO</Button>
+                ) : (
+                    <Button type='submit' variant='success'>REGISTRARSE</Button>
+                )}
             </Form>
         </>
     )

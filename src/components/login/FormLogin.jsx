@@ -1,9 +1,13 @@
 import {Form, Button} from 'react-bootstrap'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import {useNavigate} from 'react-router-dom'
+import { UsersProvider } from '../../context/UsersContext'
+import Swal from 'sweetalert2'
 
 const FormLogin = ({handleClose}) => {
   const navigate = useNavigate()
+
+  const {Users} = useContext(UsersProvider)
 
   const [usuario, setUsuario] = useState({
     email: "",
@@ -19,12 +23,34 @@ const FormLogin = ({handleClose}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(usuario, '<<<<<<< TOMÉ LOS DATOS DEL FORM DE LOGIN')
-    setUsuario({
-      email: "",
-      password: ""
-    })
-    handleClose()
+    try {
+      const user = Users.find((user) => user.email === usuario.email && user.password === usuario.password)
+      if (user) {
+        Swal.fire({
+          title: "Bienvenido",
+          text: "Inicio de sesión exitoso",
+          icon: "success",
+          confirmButtonText: "Aceptar",
+          timer: 1500,
+        });
+        localStorage.setItem("user", JSON.stringify(user))
+        setUsuario({
+          email: "",
+          password: ""
+        })
+        handleClose()
+      } else {
+        Swal.fire({
+          title: "Error",
+          text: "Usuario o contraseña incorrectos",
+          icon: "error",
+          confirmButtonText: "Aceptar",
+          timer: 2000,
+        });
+      }
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   const redirectRegister = () => {
