@@ -1,24 +1,24 @@
 import { Card, Button, Modal } from 'react-bootstrap';
 import { useContext, useState } from 'react';
-import { UsersProvider } from "../../context/UsersContext";
-import FormEditarUsuario from '../form/FormEditarUsuario';
+import { CursosProvider } from "../../context/CursosContext";
+import FormEditarUsuario from '../form/FormEditarCurso';
 import Swal from 'sweetalert2';
 
 
 
-const CardUsuario = ({ titulo, contenido, imagenUrl, id }) => {
+const CardAdmin = ({ titulo, contenido, imagenUrl, id }) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const { eliminarUsuario, editarUsuario } = useContext(UsersProvider)
+  const { eliminarCurso } = useContext(CursosProvider)
 
   const handleEliminarClick = () => {
-    // Mostrar SweetAlert de confirmación antes de eliminar el usuario
+    // Mostrar SweetAlert de confirmación antes de eliminar el curso
     Swal.fire({
       title: '¿Estás seguro?',
-      text: 'Una vez eliminado, no podrás recuperar este usuario.',
+      text: 'Una vez eliminado, no podrás recuperar este curso.',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#d33',
@@ -27,13 +27,13 @@ const CardUsuario = ({ titulo, contenido, imagenUrl, id }) => {
       cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.isConfirmed) {
-        // Si el usuario confirma, ejecutar la función eliminarUsuario
-        eliminarUsuario(id);
+        // Si el curso confirma, ejecutar la función eliminarCurso
+        eliminarCurso(id);
 
-        // Mostrar SweetAlert de éxito después de eliminar el usuario
+        // Mostrar SweetAlert de éxito después de eliminar el curso
         Swal.fire({
           title: 'Eliminado',
-          text: 'El usuario se ha eliminado correctamente.',
+          text: 'El curso se ha eliminado correctamente.',
           icon: 'success',
           confirmButtonText: 'Aceptar'
         });
@@ -59,22 +59,18 @@ const CardUsuario = ({ titulo, contenido, imagenUrl, id }) => {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Editar usuario</Modal.Title>
+          <Modal.Title>Editar curso</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <FormEditarUsuario/>
+          <FormEditarUsuario nombre={titulo}
+            descripcion={contenido}
+            imagen={imagenUrl}
+            id={id} 
+            handleClose={handleClose}/>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Cerrar
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Guardar cambios
-          </Button>
-        </Modal.Footer>
       </Modal>
     </>
   )
 }
 
-export default CardUsuario
+export default CardAdmin

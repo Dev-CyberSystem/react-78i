@@ -1,15 +1,31 @@
 import MiCard from '../../components/card/Card';
+import { useContext } from 'react';
+import { CursosProvider } from '../../context/CursosContext';
+
 
 
 function Home() {
+  const { cursos } = useContext(CursosProvider)
+  console.log(cursos, "Home")
+
   return (
     <div className="Home">
-      
-      
+
+
       <h1 className='p-4'>Cursos disponbles:</h1>
 
 
       <div className="row justify-content-center">
+        {cursos.length == 0 ? <h3></h3> :
+          cursos.map(curso => (
+            <MiCard key={curso.id}
+              titulo={curso.nombre}
+              contenido={curso.descripcion}
+              imagenUrl={curso.imagen}
+            />
+
+          ))
+        }
         <MiCard
           titulo="React"
           contenido="Aprende react facil y rapido."

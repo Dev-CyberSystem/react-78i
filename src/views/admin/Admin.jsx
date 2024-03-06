@@ -1,30 +1,30 @@
 import { useContext } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import CardUsuario from "../../components/card/CardUsuario"
-import FormUsuario from "../../components/form/FormUsuario"
-import { UsersProvider } from "../../context/UsersContext";
+import CardAdmin from "../../components/card/CardAdmin"
+import FormCursos from "../../components/form/FormCursos"
+import { CursosProvider } from "../../context/CursosContext";
 
 const Admin = () => {
-    const { usuarios } = useContext(UsersProvider);
+    const { cursos } = useContext(CursosProvider);
 
     return (
         <>
-            <h1 className='p-4'>Usuarios:</h1>
+            <h1 className='p-4'>Cursos:</h1>
             <Container>
 
                 <Row>
                     <Col>
-                        <FormUsuario />
+                        <FormCursos />
                     </Col>
                     <Col>
                         <div className="row justify-content-center">
-                            {usuarios.length == 0 ? <h3>No se encontraron usuarios</h3> :
-                                usuarios.map(usuario => (
-                                    <CardUsuario key={usuario.id}
-                                        titulo={usuario.name}
-                                        contenido={usuario.email}
-                                        imagenUrl={usuario.avatar}
-                                        id = {usuario.id}
+                            {cursos.length == 0 ? <h3>No se encontraron cursos</h3> :
+                                cursos.map(curso => (
+                                    <CardAdmin key={curso.id}
+                                        titulo={curso.nombre}
+                                        contenido={curso.descripcion}
+                                        imagenUrl={curso.imagen}
+                                        id={curso.id}
                                     />
 
                                 ))
