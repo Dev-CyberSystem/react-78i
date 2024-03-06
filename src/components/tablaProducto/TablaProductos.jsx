@@ -52,7 +52,7 @@ const TablaProductos = () => {
           <Modal.Title>Modal heading</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <FormProducts editProducto={editProducto} />
+          <FormProducts editProducto={editProducto} handleClose={handleClose} />
         </Modal.Body>
       </Modal>
     </>

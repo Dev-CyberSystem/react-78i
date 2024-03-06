@@ -1,33 +1,40 @@
 import { useState, useContext, useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
 import { ProviderUser } from "../../context/ContexUsers";
-import {v4 as uuidv4} from "uuid"
+import { v4 as uuidv4 } from "uuid";
 
 export const FormUsers = () => {
   const { addUsuario } = useContext(ProviderUser);
 
-  const [usuario, setUsuario] = useState({
+  const [newUsuario, setNewUsuario] = useState({
     id: uuidv4(),
     nombre: "",
     apellido: "",
     email: "",
+    password: "",
   });
 
   const handleChange = (e) => {
-    setUsuario({
-      ...usuario,
+    setNewUsuario({
+      ...newUsuario,
       [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmitUsers = (e) => {
     e.preventDefault();
-    addUsuario(usuario);
+    addUsuario(newUsuario);
+    setNewUsuario({
+      id: uuidv4(),
+      nombre: "",
+      apellido: "",
+      email: "",
+      password: "",
+    });
   };
-
   return (
     <>
-      <h1>FormUsers</h1>
+      <h1>Formulario de registro</h1>
       <Form onSubmit={handleSubmitUsers}>
         <Form.Group className="mb-3">
           <Form.Label>Nombre</Form.Label>
@@ -35,7 +42,7 @@ export const FormUsers = () => {
             type="text"
             placeholder="Nombre"
             onChange={handleChange}
-            value={usuario.nombre}
+            value={newUsuario.nombre}
             name="nombre"
           />
         </Form.Group>
@@ -45,7 +52,7 @@ export const FormUsers = () => {
             type="text"
             placeholder="Apellido"
             onChange={handleChange}
-            value={usuario.apellido}
+            value={newUsuario.apellido}
             name="apellido"
           />
         </Form.Group>
@@ -55,10 +62,19 @@ export const FormUsers = () => {
             type="email"
             placeholder="Email"
             onChange={handleChange}
-            value={usuario.email}
+            value={newUsuario.email}
             name="email"
           />
-          <Form.Text className="text-muted"></Form.Text>
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
+            type="password"
+            name="password"
+            value={newUsuario.password}
+            onChange={handleChange}
+            placeholder="Password"
+          />
         </Form.Group>
         <Button variant="primary" type="submit">
           registrar

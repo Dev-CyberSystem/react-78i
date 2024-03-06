@@ -4,7 +4,6 @@ import { ProviderUser } from "../../context/ContexUsers";
 
 const TablaUsers = () => {
   const { user, deleteUser } = useContext(ProviderUser)
-  console.log(user, "user desde tabla ")
   return (
     <>
       <Table striped bordered hover>
@@ -13,6 +12,7 @@ const TablaUsers = () => {
             <th>Nombre</th>
             <th>Apellido</th>
             <th>Email</th>
+            <th>Contraseña</th>
           </tr>
         </thead>
         <tbody>
@@ -22,6 +22,7 @@ const TablaUsers = () => {
                 <td>{U.nombre}</td>
                 <td>{U.apellido}</td>
                 <td>{U.email}</td>
+                <td>{U.password}</td>
                 <td>
                   <Button variant="danger" onClick={()=> deleteUser(U.id)}>Eliminar</Button>
                   <Button variant="primary">Editar</Button>

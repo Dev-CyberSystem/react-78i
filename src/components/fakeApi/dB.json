@@ -2,27 +2,14 @@
   "productos": [
     {
       "id": "05c8c5d4-edec-4476-a9ff-aeb631c100d5",
-      "nombre": "coca cola",
+      "nombre": "coca cola zero",
       "precio": "10000"
     },
     {
       "id": "88d24ce2-9a7e-475d-88c9-afaf3b279ac5",
-      "nombre": "pepsi",
+      "nombre": "Fanta uva",
       "precio": "20000"
     }
   ],
-  "usuarios": [
-    {
-      "id": "93e91143-8243-4ae7-bebf-801710e95c55",
-      "nombre": "Bruno Javier",
-      "apellido": "Pieruzzi",
-      "email": "admin@gmail.com"
-    },
-    {
-      "id": "82a513ed-1919-4233-8097-242f26e2404f",
-      "nombre": "Eve",
-      "apellido": "Uro",
-      "email": "admin@gmail.com"
-    }
-  ]
+  "usuarios": []
 }

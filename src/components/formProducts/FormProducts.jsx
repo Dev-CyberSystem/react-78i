@@ -3,8 +3,8 @@ import { useState, useContext } from "react";
 import { ProductContext } from "../../context/ContextProduct";
 import { v4 as uuidv4 } from "uuid";
 
-const formProducts = ({ editProducto }) => {
-  const { addProducto } = useContext(ProductContext);
+const formProducts = ({ editProducto,handleClose }) => {
+  const { addProducto, editarProduct } = useContext(ProductContext);
 
   const [producto, setProducto] = useState({
     id: editProducto ? editProducto.id : uuidv4(),
@@ -21,12 +21,17 @@ const formProducts = ({ editProducto }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addProducto(producto);
-    setProducto({
-      id: uuidv4(),
-      nombre: "",
-      precio: 0,
-    });
+    if (editProducto) {
+      editarProduct(producto);
+      handleClose()
+    } else {
+      addProducto(producto);
+      setProducto({
+        id: uuidv4(),
+        nombre: "",
+        precio: 0,
+      });
+    }
   };
 
   return (
@@ -53,7 +58,9 @@ const formProducts = ({ editProducto }) => {
           />
         </Form.Group>
         {editProducto ? (
-          <Button variant="success" type="submit">Editar Producto</Button>
+          <Button variant="success" type="submit">
+            Editar Producto
+          </Button>
         ) : (
           <Button variant="primary" type="submit">
             Agregar producto
