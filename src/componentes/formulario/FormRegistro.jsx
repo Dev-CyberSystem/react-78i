@@ -3,13 +3,13 @@ import {Form, Button} from 'react-bootstrap';
 
 const FormRegistro = () => {
 
-    const [registroUsers, setRegistroUsers] = useState ({
+    const [registroUsers, setRegistroUsers] = useState ({//guardar datos.
         nombre:"",
         apellido:"",
         email:""
     })
 
-    const handleChange = (e) =>{
+    const handleChange = (e) =>{ //recuperar y capturar datos.
         setRegistroUsers({
             ...registroUsers,
             [e.target.name]: e.target.value
@@ -17,7 +17,7 @@ const FormRegistro = () => {
 
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e) => {//enviar datos actualizados.
         e.preventDefault()
         console.log("Datos del Usuario creado:", registroUsers)
     }
