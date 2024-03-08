@@ -2,49 +2,30 @@
   "productos": [
     {
       "id": "1",
-      "nombre": "Producto 1",
-      "precio": 100
+      "nombre": "Producto 16",
+      "precio": "10"
     },
     {
-      "id": "2",
-      "nombre": "Producto 2",
-      "precio": 200
-    },
-    {
-      "id": "3",
-      "nombre": "Producto 3",
-      "precio": 300
-    },
-    {
-      "id": "4",
-      "nombre": "Producto 4",
-      "precio": 400
-    },
-    {
-      "id": "5",
-      "nombre": "Producto 5",
-      "precio": 500
-    },
-    {
-      "id": "6",
-      "nombre": "Producto 61",
-      "precio": 600
+      "id": "e3d3ff01-143e-401b-be5d-02feee4b25c1",
+      "nombre": "veigar",
+      "precio": "12"
     }
   ],
   "usuarios": [
     {
-      "id": "7e0ec981-8cff-4e52-b0d5-7ac50c9ebb0e",
-      "nombre": "Javier"
+      "id": "7c5c9186-0c81-4600-8385-c64f16df98d8",
+      "nombre": "javier",
+      "email": "javier@gmail.com"
     },
     {
-      "id": "f047cdf9-d919-44ad-b5d1-ecca34670c99",
-      "nombre": "fede",
-      "email": "fede@gmail.com"
+      "id": "9ebf44e6-6a2c-4825-bce7-c043dbd7166d",
+      "nombre": "marto",
+      "email": "marto@gmail.com"
     },
     {
-      "id": "8c3d5974-7e8a-4bc6-b1cc-9530613ad714",
-      "nombre": "maria",
-      "email": "maria@gmail.com"
+      "id": "d3edf41b-91ef-4aac-a764-57925abab5be",
+      "nombre": "veigar",
+      "email": "veigar@gmail.com"
     }
   ]
 }

@@ -1,11 +1,11 @@
 import { React} from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import TableUsers from "../../components/table/TableUsers";
-import FormUsers from "../../components/form/FormUsers";
+import TableProducts from "../../components/table/TableProducts";
+import FormProducts from "../../components/form/FormProducts";
 
 
 
-export const Usuarios = () => {
+const Productos = () => {
   return (
     <>
       <h1>Usuarios</h1>
@@ -13,13 +13,15 @@ export const Usuarios = () => {
       <Container>
         <Row>
           <Col>
-            <FormUsers/>
+            <FormProducts/>
           </Col>
           <Col>
-            <TableUsers />
+            <TableProducts />
           </Col>
         </Row>
       </Container>
     </>
   );
 }
+
+export default Productos;

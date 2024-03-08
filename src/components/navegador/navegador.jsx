@@ -19,7 +19,7 @@ export const Navegador = () => {
           <Nav.Link onClick={() => navigate("/")} className='text-white'>Home</Nav.Link>
           <Nav.Link onClick={() => navigate("/about")} className='text-white'>About</Nav.Link>
           <Nav.Link onClick={() => navigate("/contactos")} className='text-white'>Contactos</Nav.Link>
-          <Nav.Link onClick={() => navigate("/usuarios")} className='text-white'>Usuarios</Nav.Link>
+          <Nav.Link onClick={() => navigate("/productos")} className='text-white'>Productos</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
