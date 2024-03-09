@@ -3,7 +3,7 @@ import {Form, Button}from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 
-const Login = () => {
+const Login = ({handleClose}) => {
 
     const navigate = useNavigate() //sirve para la redirección de los componentes.
 
@@ -19,6 +19,7 @@ const Login = () => {
     const handleSubmit = (e) => {
       e.preventDefault()
       console.log("Dato Capturado:", users)
+      handleClose()
     }
 
     const handleChange = (e) => {

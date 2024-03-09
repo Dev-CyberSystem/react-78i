@@ -31,7 +31,7 @@ const Navegador = () => {
             <Modal.Title>Inicio de Sesión</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-           <Login />
+           <Login handleClose={handleClose}/>
           </Modal.Body>
         </Modal>
    </>
