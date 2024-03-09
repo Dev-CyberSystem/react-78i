@@ -8,7 +8,7 @@ const ContextUsuarios = ({children}) => {
 
    //Función asincronica lo indica el async.
    // get ---> trae productos.
-    const getApi = async () => {
+    const getUsuario = async () => {
       try { 
         const response = await axios.get ("http://localhost:8000/usuarios") // con el axios get se traen los datos creados en la fakeApi (se levanto un servidor para la api con el json-server).
         setUsuario (response.data) // se guardan los datos del http.
@@ -18,12 +18,12 @@ const ContextUsuarios = ({children}) => {
       }
     }
     useEffect(() => {
-    getApi() //se ejecuta la llamada a la api.
+    getUsuario() //se ejecuta la llamada a la api.
     }, [])
     // los children hace referencia a los componentes que estan dentro de context usuarios en el app.
    return (
     <>
-    <UsuariosContext.Provider value={{usuarios, getApi}}>
+    <UsuariosContext.Provider value={{usuarios, getUsuario}}>
         {children}
     </UsuariosContext.Provider>
       
