@@ -24,7 +24,7 @@ const FormRegistro = () => {
     const handleSubmit = (e) => {//enviar datos actualizados.
         e.preventDefault()
         setRegistroUsers({
-          id:"", //va en cero por que es el estado inicial.
+          id: uuidv4(), //va en cero por que es el estado inicial.
           nombre:"",
           apellido:"",
           email:""
