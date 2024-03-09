@@ -1,10 +1,16 @@
 {
   "usuarios": [
     {
-      "id": "c0f4"
+      "id": "9d2e"
     },
     {
-      "id": "ff86"
+      "id": "299c"
+    },
+    {
+      "id": "037f0562-2d2c-4d45-b920-8d6b24bf4778",
+      "nombre": "pepe",
+      "apellido": "perez",
+      "email": "pepe@gmail.com"
     }
   ]
 }
