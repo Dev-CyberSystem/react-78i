@@ -5,7 +5,7 @@ import { UsuariosContext } from '../../contexto/ContextUsuarios';
 const FormRegistro = () => {
   const {createUsuario} = useContext(UsuariosContext)
 
-    const [registroUsers, setRegistroUsers] = useState ({//guardar datos.
+    const [registroUsers, setRegistroUsers] = useState ({//guardar datos, paso 4.
         id: "", //va en cero por que es el estado inicial.
         nombre:"",
         apellido:"",
@@ -19,19 +19,21 @@ const FormRegistro = () => {
         })
 
     }
-
+    //paso 2
     const handleSubmit = (e) => {//enviar datos actualizados.
         e.preventDefault()
         console.log("Datos del Usuario creado:", registroUsers)
+        createUsuario(registroUsers)
     }
 
   return (
+    //paso 1
     <>
       <Form onSubmit={handleSubmit}> 
       <Form.Group className="mb-3">
         <Form.Label>Nombre</Form.Label>
         <Form.Control type="text"
-        value={registroUsers.nombre}
+        value={registroUsers.nombre} //paso 3
         name="nombre"
         onChange={handleChange}
         />
@@ -61,3 +63,9 @@ const FormRegistro = () => {
 }
 
 export default FormRegistro
+
+//onSubmit sirve para guardar los datos que ingresan del formulario en una funcion, que se la pasa entre {}.
+//Paso 1, crear en formulario
+//Paso 2, guardar en una funcion los datos que ingresen del formulario.
+//Paso 3, agregar parametros en el form para indicar que cosas capturar y guardar (value y name).
+//Paso 4, crear un useState (estado) para guardar los datos del paso 3, que luego iran a la funcion del paso 2 con el setState.

@@ -18,15 +18,14 @@ const ContextUsuarios = ({children}) => {
       }
     }
 
-    const createUsuario = async (usuarios) => {
-      console.log(usuarios, "usuario a agregado desde el context")
-      //try {
-       // const response = await axios.post ("http://localhost:8000/usuarios", usuarios)
-        //setUsuario([...usuarios, response.data]) //se recuperan los datos existentes y se actualiza usuario.
-     // }
-      //catch {
-        //console.log("error")
-     // }
+    const createUsuario = async (registroUsers) => {
+      try {
+       const response = await axios.post ("http://localhost:8000/usuarios", registroUsers)
+      setUsuario([...usuarios, response.data]) //se recuperan los datos existentes y se agregan los nuevos usuarios.
+     }
+    catch {
+      console.log("error")
+    }
     }
     useEffect(() => {
     getUsuario() //se ejecuta la llamada a la api.
