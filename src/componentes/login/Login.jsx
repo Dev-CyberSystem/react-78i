@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import {Form, Button}from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-react-dom';
 
 
 const Login = ({handleClose}) => {
@@ -49,6 +49,7 @@ const Login = ({handleClose}) => {
       </Form.Group>
       <Button variant="primary" type="submit" onClick={() => redireccionRegistro()}>Iniciar Sesión</Button>
     </Form>
+    <p>Si no tienes cuenta, has click <a onClick={FormRegistro}>"Aqui"</a></p>
  </>
   )
 }
