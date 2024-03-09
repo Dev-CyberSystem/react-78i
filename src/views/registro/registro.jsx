@@ -1,4 +1,4 @@
-import FormRegistro from "../../components/formularios/formProductos/formRegistro"
+import FormRegistro from "../../components/formularios/formRegistro/formRegistro"
 
 const RegistroView = () => {
     

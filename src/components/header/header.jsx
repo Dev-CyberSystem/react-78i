@@ -5,7 +5,7 @@ import { Button } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import FormularioUsuarios from '../formularios/formProductos/formUsuarios';
+import FormularioUsuarios from '../formularios/formUsuarios/formUsuarios';
 
 function Header() {
     const navegacion = useNavigate()

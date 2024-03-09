@@ -2,41 +2,50 @@ import { useState, useContext } from 'react'
 import {Form, Button, Container} from 'react-bootstrap'
 import { ProductosProvider } from '../../../context/productosContext'
 
-const FormProductos = () =>
+const FormProductos = ({productoModificar}) =>
 {
     const {agregarProducto} = useContext(ProductosProvider)
+    const {modificarProducto} = useContext(ProductosProvider)
 
     const [formulario, setFormulario] = useState({
-        hotel: "",
-        lugar: "",
-        precio: 0,
-        descripcion: ""
+        hotel: productoModificar ? productoModificar.hotel : "",
+        lugar: productoModificar ? productoModificar.lugar : "",
+        precio: productoModificar ? productoModificar.precio : 0,
+        descripcion: productoModificar ? productoModificar.descripcion : ""
     })
 
     const handleChange = ({target}) =>
     {
+       
         setFormulario({
             ...formulario,
             [target.name]: target.value
-        })
+        }) 
     }    
         
-    const handleSubmit = () =>
+    const handleSubmit = (e) =>
     {
-        agregarProducto(formulario)
+        e.preventDefault()
+        if(productoModificar)
+        {
+            modificarProducto(productoModificar)
+        }else{
+            agregarProducto(formulario)
+        }
+       
     }
     return(
         <>
         <Form onSubmit={handleSubmit}> 
 
             <Container className='justify-content-center'>
-            <label className='col-12' htmlFor="">Hotel</label>
+            <Form.Label className='col-12' htmlFor="">Hotel</Form.Label>
             <input className='col-6' type="text" name='hotel' value={formulario.hotel} onChange={handleChange}/>
-            <label className='col-12' htmlFor="">Lugar</label>
+            <Form.Label className='col-12' htmlFor="">Lugar</Form.Label>
             <input className='col-6' type="text" name='lugar' value={formulario.lugar} onChange={handleChange}/>
-            <label className='col-12' htmlFor="">Precio</label>
+            <Form.Label className='col-12' htmlFor="">Precio</Form.Label>
             <input className='col-6' type="number" name='precio' value={formulario.precio} onChange={handleChange}/>
-            <label className='col-12'htmlFor="">Descripción</label>
+            <Form.Label className='col-12'htmlFor="">Descripción</Form.Label>
             <input className='col-6' type="text" name='descripcion' value={formulario.descripcion} onChange={handleChange}/>
             <Button className='btn-danger' type='submit'>Envíar</Button>
             </Container>

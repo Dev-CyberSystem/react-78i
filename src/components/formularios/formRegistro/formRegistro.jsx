@@ -1,6 +1,8 @@
 import { useContext, useState } from "react"
 import { Container, Form, Button } from "react-bootstrap"
 import { UsuariosProvider } from "../../../context/usuariosContext" 
+// import "formRegistro.css"
+
 
 const FormRegistro = () => {
     const { agregarUsuario } = useContext(UsuariosProvider)
