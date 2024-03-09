@@ -1,9 +1,12 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import {Form, Button} from 'react-bootstrap';
+import { UsuariosContext } from '../../contexto/ContextUsuarios';
 
 const FormRegistro = () => {
+  const {createUsuario} = useContext(UsuariosContext)
 
     const [registroUsers, setRegistroUsers] = useState ({//guardar datos.
+        id: "", //va en cero por que es el estado inicial.
         nombre:"",
         apellido:"",
         email:""

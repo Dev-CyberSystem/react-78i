@@ -17,13 +17,25 @@ const ContextUsuarios = ({children}) => {
         console.log("error")
       }
     }
+
+    const createUsuario = async (usuarios) => {
+      console.log(usuarios, "usuario a agregado desde el context")
+      //try {
+       // const response = await axios.post ("http://localhost:8000/usuarios", usuarios)
+        //setUsuario([...usuarios, response.data]) //se recuperan los datos existentes y se actualiza usuario.
+     // }
+      //catch {
+        //console.log("error")
+     // }
+    }
     useEffect(() => {
     getUsuario() //se ejecuta la llamada a la api.
+    createUsuario()
     }, [])
     // los children hace referencia a los componentes que estan dentro de context usuarios en el app.
    return (
     <>
-    <UsuariosContext.Provider value={{usuarios, getUsuario}}>
+    <UsuariosContext.Provider value={{usuarios, getUsuario, createUsuario}}>
         {children}
     </UsuariosContext.Provider>
       
