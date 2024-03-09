@@ -9,6 +9,7 @@ const Login = ({handleClose}) => {
 
     const redireccionRegistro= () => {
       navigate("/registro")
+      handleClose()
     }
 
     const [users, setUsers] = useState ({
@@ -47,9 +48,9 @@ const Login = ({handleClose}) => {
         onChange={handleChange}
         placeholder="Contraseña" />
       </Form.Group>
-      <Button variant="primary" type="submit" onClick={() => redireccionRegistro()}>Iniciar Sesión</Button>
+      <Button variant="primary" type="submit">Iniciar Sesión</Button>
     </Form>
-    <p>Si no tienes cuenta, has click <a onClick={FormRegistro}>"Aqui"</a></p>
+    <p>Si no tienes cuenta, has click <a onClick={redireccionRegistro}>"Aqui"</a></p>
  </>
   )
 }
