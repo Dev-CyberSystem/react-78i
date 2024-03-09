@@ -27,6 +27,7 @@ const ContextUsuarios = ({children}) => {
       console.log("error")
     }
     }
+    
     useEffect(() => {
     getUsuario() //se ejecuta la llamada a la api.
     createUsuario()

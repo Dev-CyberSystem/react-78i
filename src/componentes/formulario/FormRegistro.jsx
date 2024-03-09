@@ -6,7 +6,7 @@ const FormRegistro = () => {
   const {createUsuario} = useContext(UsuariosContext)
 
     const [registroUsers, setRegistroUsers] = useState ({//guardar datos, paso 4.
-        id: "", //va en cero por que es el estado inicial.
+        id:"", //va en cero por que es el estado inicial.
         nombre:"",
         apellido:"",
         email:""
@@ -22,6 +22,12 @@ const FormRegistro = () => {
     //paso 2
     const handleSubmit = (e) => {//enviar datos actualizados.
         e.preventDefault()
+        setRegistroUsers({
+          id:"", //va en cero por que es el estado inicial.
+          nombre:"",
+          apellido:"",
+          email:""
+        })
         console.log("Datos del Usuario creado:", registroUsers)
         createUsuario(registroUsers)
     }
