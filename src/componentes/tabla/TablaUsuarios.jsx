@@ -9,8 +9,8 @@ const TablaUsuarios = () => {
       <h2>Tabla Usuarios</h2>
       <Table striped bordered hover>
       <thead>
-        <tr key={usuarios.id}>
-          <th>id</th>
+        <tr>
+          <th>#</th>
           <th>Nombre</th>
           <th>Email</th>
           <th>Acciones</th>
