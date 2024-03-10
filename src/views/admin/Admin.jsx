@@ -26,9 +26,6 @@ const Admin = () => {
       <Container>
 <Row>
   <Col>
-  <FormUsuarios/>
-  </Col>
-  <Col>
 <TablaUsuarios/>
   </Col>
 </Row>

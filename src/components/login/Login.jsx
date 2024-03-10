@@ -2,10 +2,10 @@ import { useState, useContext } from "react"
 import { Form, Button } from "react-bootstrap"
 import { UsuariosProv } from "../../context/UsuariosContext"
 import Swal from 'sweetalert2';
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
-const Login = () => {
+const Login = ({handleClose}) => {
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -19,6 +19,13 @@ const Login = () => {
     };
 
 
+const navigate  = useNavigate(); 
+
+const registro =()=>{
+    handleClose()
+navigate('/registro')
+}
+
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -28,7 +35,13 @@ const Login = () => {
 
         if (usuarioEncontrado) {
 
-            console.log(usuarioEncontrado, "Sesión iniciada con éxito.  Redireccionando...");
+            Swal.fire ({
+                icon: 'success',
+                title: `Bienvenido ${usuarioEncontrado.nombre}`,
+                showConfirmButton: false,
+                timer: 1500
+              })
+              localStorage.setItem('userData', JSON.stringify(usuarioEncontrado))
         } else {
 
             Swal.fire({
@@ -68,10 +81,9 @@ const Login = () => {
                 </Form.Group>
 
                 <Button type="submit">Iniciar Sesión</Button>
-                <p>¿No tienes cuenta? <Link to="/registro">Regístrate</Link></p>
-
             </Form>
 
+                <p>No tenes cuenta? <a onClick={registro}>Registrate</a> </p>
 
         </>
     )

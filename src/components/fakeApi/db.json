@@ -28,25 +28,18 @@
   ],
   "usuarios": [
     {
-      "id": "1",
-      "nombre": "Usuario 1",
-      "email": "user1@h.com",
-      "password": "123456"
+      "id": "4b48b58f-b562-479b-b60f-e01e8c56f95e",
+      "nombre": "Juan Armando Perez",
+      "email": "juanperez@hotmail.com",
+      "password": "123456",
+      "isAdmin": false
     },
     {
-      "id": "2",
-      "nombre": "Usuario 2",
-      "email": "user2@h.com"
-    },
-    {
-      "id": "3",
-      "nombre": "Usuario 3",
-      "email": "user3@h.com"
-    },
-    {
-      "id": "4",
-      "nombre": "Administrador",
-      "es_admin": true
+      "id": "b98ad2d8-5675-4039-ae79-82e70f5fde94",
+      "nombre": "Juan Román",
+      "email": "jr10@h.com",
+      "password": "123",
+      "isAdmin": true
     }
   ]
 }

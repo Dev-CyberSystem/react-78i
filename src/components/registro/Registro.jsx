@@ -2,34 +2,70 @@ import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import { useState, useContext } from "react";
 import { UsuariosProv } from "../../context/UsuariosContext";
 import { v4 as uuidv4 } from "uuid"
+import Swal from 'sweetalert2';
 import "./registro.css"
 
-const Registro = () => {
+const Registro = ({ editUsuario, handleClose }) => {
 
-    const { registrarUsuario } = useContext(UsuariosProv)
+    const { registrarUsuario, editarUsuario } = useContext(UsuariosProv)
 
     const [usuario, setUsuario] = useState({
-        id : uuidv4(),
-        nombre: "",
-        email: "",
-        password: "",
+        id: editUsuario ? editUsuario.id : uuidv4(),
+        nombre: editUsuario ? editUsuario.nombre : "",
+        email: editUsuario ? editUsuario.email : "",
+        password: editUsuario ? editUsuario.password : "",
+        isAdmin: editUsuario ? editUsuario.isAdmin : false
     });
 
     const handleChange = (e) => {
-        const { name, value } = e.target;
-        setUsuario({ ...usuario, [name]: value });
+      const {name, value, type, checked } = e.target 
+      if (type === "checkbox") {
+        setUsuario({...usuario, [name]:checked})
+      } else {
+        setUsuario({...usuario, [name]:value})
+      }
     };
 
 
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        registrarUsuario(setUsuario)
-        console.log("Registrando usuario:", usuario);
-    };
+       if(editUsuario) {
+        editarUsuario (usuario);
+        Swal.fire({
+            icon: 'success',
+            title: `Se ha actualizado el usuario ${usuario.nombre}`,
+            timer: 1500
+          })
+          handleClose()
+          setUsuario({
+            id:  uuidv4(),
+            nombre:"",
+            email:"",
+            password:"",
+            isAdmin: false
+          })
+       }  else{
 
-
-
+        registrarUsuario(usuario) 
+        Swal.fire ({
+            position: 'top-end',
+            icon: 'success',
+            title: `El usuario ${usuario.nombre} se ha registrado correctamente`,
+            showConfirmButton: false,
+            timer: 1500
+          });
+          setUsuario({
+            id:  uuidv4(),
+            nombre:"",
+            email:"",
+            password:"",
+            isAdmin: false
+          })
+       }
+          
+       }  
+        
 
 
 
@@ -74,7 +110,31 @@ const Registro = () => {
                                     placeholder="Ingrese contraseña" />
                             </Form.Group>
 
-                            <Button type="submit">Registrarse</Button>
+                            {editUsuario ? (
+                                <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                                    <Form.Check
+                                        type="checkbox"
+                                        label="Admin"
+                                        checked={usuario.isAdmin}
+                                        name="isAdmin"
+                                        onChange={handleChange} />
+                                </Form.Group>
+                            ) : null
+                            }
+
+{editUsuario ? (
+     <Button type="submit" variant="warning">
+     {" "} Editar </Button>
+     ) : (
+        <Button type="submit">
+                                {" "} Registrarse</Button>
+     )
+     }
+
+
+
+
+                            
                         </Form>
                     </Col>
                 </Row>

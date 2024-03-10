@@ -1,14 +1,25 @@
-import { useContext } from "react";
+import { useContext,useState } from "react";
 import { UsuariosProv } from  "../../context/UsuariosContext"
-import { Button, Table } from "react-bootstrap";
+import { Button, Table, Modal } from "react-bootstrap";
+import Registro from "../registro/Registro"
+
 
 
 
 const TablaUsuarios = () => {
-  const { usuarios } = useContext(UsuariosProv);
-  
+  const { usuarios, eliminarUsuario } = useContext(UsuariosProv);
+
+  const [editUsuario, setEditUsuario] = useState(null)
+  const handleClose = () => setShow(false);
+  const [show, setShow] = useState(false);
   console.log(usuarios, "mostrar usuarios");
   
+  const handleEdit = (user) =>{
+    setEditUsuario(user)
+    setShow(true) 
+  }
+    
+
   
   return (
     <>
@@ -33,15 +44,25 @@ const TablaUsuarios = () => {
                   <td>{user.id}</td>
                   <td>{user.nombre}</td>
                   <td>{user.email}</td>
+                  <td>{user.isAdmin ?  'Admin' : 'User'}</td>
                   <td>
-                    <Button variant="primary">Editar</Button>
-                    <Button variant="danger">Eliminar</Button>
+                    <Button variant="primary" onClick={() => handleEdit (user)}>Editar</Button>
+                    <Button variant="danger" onClick={()=> eliminarUsuario(user.id) }>Eliminar</Button>
                   </td>
                 </tr>
             ))}
           </tbody>
         </Table>
       )}
+<Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Editar Usuario</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Registro editUsuario={editUsuario} handleClose={handleClose}/>
+        </Modal.Body>
+        
+      </Modal>
     </>
   )
 }
