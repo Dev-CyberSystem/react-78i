@@ -52,7 +52,7 @@ const FormProducts = ({ editProducts }) => {
           />
         </Form.Group>
         <Form.Group className="mb-3">
-          <Form.Label>Correo electrónico</Form.Label>
+          <Form.Label>Precio</Form.Label>
           <Form.Control
             type="number"
             value={productos.precio}
@@ -62,10 +62,10 @@ const FormProducts = ({ editProducts }) => {
           />
         </Form.Group>
 
-        {editProduct ? (
-          <Button type="submit" variant="success">Editar Usuario</Button>
+        {editProducts ? (
+          <Button type="submit" variant="success">Editar Producto</Button>
         ) : (
-          <Button type="submit">Agregar Usuario</Button>
+          <Button type="submit">Agregar Producto</Button>
         )}
       </Form>
     </>

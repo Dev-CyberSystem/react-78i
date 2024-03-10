@@ -2,7 +2,8 @@ import {Routes, Route} from 'react-router-dom'
 import Home from '../../views/home/Home'
 import About from '../../views/about/About'
 import Contactos from '../../views/contactos/Contactos'
-import Productos from '../../views/productos/Productos'
+import Admin from '../../views/admin/Admin'
+import Registro from '../registro/Registro'
 
 const Rutas = () => {
   return (
@@ -12,7 +13,8 @@ const Rutas = () => {
       <Route path="/about" element={<About />} />
       <Route path="*" element={<h1>Not Found</h1>} />
       <Route path="/contactos" element={<Contactos />} />
-      <Route path="/productos" element={<Productos />} />
+      <Route path="/admin" element={<Admin />} />
+      <Route path="/registro" element={<Registro />} />
       
     </Routes>
     </>

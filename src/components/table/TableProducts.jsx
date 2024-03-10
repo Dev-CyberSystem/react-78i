@@ -1,8 +1,8 @@
 import {React, useState, } from 'react'
 import { useContext } from "react";
 import { Button, Table, Modal} from "react-bootstrap";
-import FormUsers from "../form/FormProducts"
 import {ProductosContext} from "../../context/ProductContext";
+import FormProducts from '../form/FormProducts';
 
 const TableProducts = () => {
 
@@ -56,7 +56,7 @@ const TableProducts = () => {
           <Modal.Title>Editar producto</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <FormUsers editProducts={editProducts} />
+          <FormProducts editProducts={editProducts} />
         </Modal.Body>
         
       </Modal>

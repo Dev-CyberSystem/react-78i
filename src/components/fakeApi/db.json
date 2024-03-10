@@ -1,31 +1,24 @@
 {
   "productos": [
     {
-      "id": "1",
-      "nombre": "Producto 16",
-      "precio": "10"
-    },
-    {
       "id": "e3d3ff01-143e-401b-be5d-02feee4b25c1",
       "nombre": "veigar",
       "precio": "12"
+    },
+    {
+      "id": "23f41c20-b2ae-4fdd-b73b-bb76950880e7",
+      "nombre": "Mantecol",
+      "precio": "350"
     }
   ],
   "usuarios": [
     {
-      "id": "7c5c9186-0c81-4600-8385-c64f16df98d8",
-      "nombre": "javier",
-      "email": "javier@gmail.com"
-    },
-    {
-      "id": "9ebf44e6-6a2c-4825-bce7-c043dbd7166d",
-      "nombre": "marto",
-      "email": "marto@gmail.com"
-    },
-    {
-      "id": "d3edf41b-91ef-4aac-a764-57925abab5be",
-      "nombre": "veigar",
-      "email": "veigar@gmail.com"
+      "id": "d9823826-c0e7-4fc2-beb7-1282e0ef06c2",
+      "nombre": "Javier",
+      "apellido": "Rodriguez",
+      "email": "javier@gmail.com",
+      "password": "123",
+      "isAdmin": true
     }
   ]
 }
