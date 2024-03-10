@@ -18,15 +18,22 @@ const UsuariosContext = ({ children }) => {
   };
 
 
+  const addUser = async (usuario) => {
+    try {
+        const response = await axios.post("http://localhost:8000/usuarios", usuario);
+        setUsuarios([...usuarios, response.data]);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+
   useEffect(() => {
     getUsers();
   }, []);
 
-
-  console.log(usuarios, "HOLAAAAAAAAA");
-
   return (
-    <UsuariosProvider.Provider value={usuarios}>
+    <UsuariosProvider.Provider value={{usuarios, getUsers, addUser}}>
       {children}
     </UsuariosProvider.Provider>
   );

@@ -5,9 +5,6 @@ export const ProductosProvider = createContext();
 
 const ProductsContext = ({ children }) => {
 
-
-
-
 const [productos, setProductos] = useState([]);
 
 
@@ -43,10 +40,19 @@ const deleteProductos = async (id) => {
     getProductos();
   }, []);
 
- console.log(productos, 'ESTO ES DESDE EL ProductsContext');
+  //Editar
+
+  const editarProducto = async (producto) => {
+    console.log(producto, 'recibiendo para editar en el context');
+  try {
+    await axios.put(`http://localhost:8000/productos/${producto.id}`, producto);
+    await getProductos();
+  } catch (error) {
+    console.log(error);
+  }}
 
   return (
-    <ProductosProvider.Provider value={{productos, getProductos, addProductos, deleteProductos}}>
+    <ProductosProvider.Provider value={{productos, getProductos, addProductos, deleteProductos, editarProducto}}>
       {children}
     </ProductosProvider.Provider>
   );

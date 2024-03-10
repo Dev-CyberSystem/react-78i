@@ -1,14 +1,9 @@
 {
   "productos": [
     {
-      "id": "42e2172d-39cd-4392-ad12-a603e3937445",
-      "nombre": "Coca Cola normal",
-      "precio": "01231231322"
-    },
-    {
-      "id": "42e2172d-39cd-4392-ad12-a603e3937445",
-      "nombre": "Coca Cola Zero",
-      "precio": "1231322"
+      "id": "ec0bd66b-7e3e-42d3-b028-be261efe0eb2",
+      "nombre": "Pepsi",
+      "precio": "1300"
     }
   ],
   "usuarios": [
@@ -18,24 +13,20 @@
       "email": "usuario1@example.com"
     },
     {
-      "id": "2",
-      "nombre": "Usuario 2",
-      "email": "usuario2@example.com"
+      "id": "381b18dd-dabf-4bb1-af19-c66697c4dee1",
+      "nombre": "Usuario2",
+      "apellido": "PRUEBA",
+      "email": "enzo@prueba.com",
+      "password": "12345",
+      "isAdmin": false
     },
     {
-      "id": "3",
-      "nombre": "Usuario 3",
-      "email": "usuario3@example.com"
-    },
-    {
-      "id": "4",
-      "nombre": "Usuario 4",
-      "email": "usuario4@example.com"
-    },
-    {
-      "id": "5",
-      "nombre": "Usuario 5",
-      "email": "usuario5@example.com"
+      "id": "b86d8e12-f501-483d-9430-00aa36de18b4",
+      "nombre": "Perón",
+      "apellido": "Peróooon",
+      "email": "quegrandesos@sos.el",
+      "password": "primer trabajador",
+      "isAdmin": false
     }
   ]
 }

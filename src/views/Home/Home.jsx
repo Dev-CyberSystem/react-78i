@@ -20,16 +20,16 @@ const funcionProps = () => {
       setCount(count + 1);
    };
 
-useEffect (() => {
-    console.log('Soy el USEFFECT');
-   },[count])
 
-useEffect (() => {
-    console.log('MONTAJE')
-    return () => {
-      console.log('DESMONTAJE');
-    }
-   }, [count])
+   // useEffect (() => {
+   //     console.log('Soy el USEFFECT');
+   //    },[count])
+   
+   // useEffect (() => {
+   //     console.log('MONTAJE')
+   //     return () => {
+   //       console.log('DESMONTAJE');
+   //     }}, [count])
 
 useEffect(() => {
     const obtenerDatos = async () => {
@@ -43,7 +43,7 @@ useEffect(() => {
     obtenerDatos();
   }, []);
 
-  console.log(productos, 'somos los productos');
+  //console.log(productos, 'somos los productos');//
 
    return (
      <>

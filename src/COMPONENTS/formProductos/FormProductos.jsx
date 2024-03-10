@@ -3,19 +3,16 @@ import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
 import { ProductosProvider } from '../../context/ProductsContext';
 import { v4 as uuidv4 } from 'uuid';
+import PropTypes from 'prop-types';
 
-
-//explicacion en el minuto 40 de la clase 28 de febrero//
-const FormProductos = () => {
-    const { addProductos } = useContext(ProductosProvider);
-
+const FormProductos = ({ editProducto, handleClose }) => {
+    const { addProductos, editarProducto} = useContext(ProductosProvider);
+ //Estado inicial:
     const [producto, setProductos] = useState({
-        id: uuidv4(),
-        nombre: "",
-        precio: 0,
+        id: editProducto ? editProducto.id : uuidv4(),
+        nombre: editProducto ? editProducto.nombre : "",
+        precio: editProducto ? editProducto.precio : 0,
     });
-
-    console.log(producto, "ESTO ES DESDE EL FORMS, ESTADO INCIIAL");
 
     const handleChange = (e) => {
         setProductos({
@@ -26,14 +23,17 @@ const FormProductos = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        addProductos(producto);
-        setProductos(
-            {
+        if(editProducto) {
+            editarProducto(producto)
+            handleClose();
+        } else {
+            addProductos(producto);
+            setProductos({
                 id: uuidv4(),
                 nombre: "",
-                precio: 0,  
-            }
-        )
+                precio: 0,
+            });
+        }
     };
 
     return (
@@ -60,10 +60,18 @@ const FormProductos = () => {
                         placeholder="PRECIOOOOO"
                     />
                 </Form.Group>
-                <Button type="submit">AGREGAR</Button>
+                {editProducto ? (
+                    <Button type="submit" variant="success" >EDITAR</Button>
+                ) : (
+                    <Button type="submit">AGREGAR</Button>
+                )}
             </Form>
         </>
     );
+}
+
+FormProductos.propTypes = {
+    editProducto: PropTypes.object,
 }
 
 export default FormProductos;
