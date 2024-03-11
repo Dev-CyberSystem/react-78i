@@ -29,18 +29,26 @@ const ProductosContext = ({ children }) => {
 
     const modificarProducto = async (producto) => {
         try {
-            const response = await axios.put(`http://localhost:8000/productos/${producto.id}`, producto)
-            setProductos([...productos, response.data])
+            await axios.put(`http://localhost:8000/productos/${producto.id}`, producto)
+            agregarProducto()
         } catch (error) {
             console.log(error)
         }
     }
 
+    const eliminarProducto = async (producto) => {
+        try {
+            const response = await axios.delete(`http://localhost:8000/productos/${producto.id}`)
+            setProductos(productos.filter((item) => item.id !== producto.id))
+        } catch (error) {
+            console.log(error)
+        }
+    }
     
 
     return (
 
-        <ProductosProvider.Provider value={{ productos, agregarProducto, modificarProducto }}>
+        <ProductosProvider.Provider value={{ productos, agregarProducto, modificarProducto, eliminarProducto }}>
             {children}
         </ProductosProvider.Provider>
     )

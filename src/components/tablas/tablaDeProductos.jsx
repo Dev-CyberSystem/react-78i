@@ -4,7 +4,7 @@ import { Button, Table, Modal } from "react-bootstrap"
 import FormProductos from "../formularios/formProductos/formProductos"
 
 const TablaDeProductos = () => {
-    const { productos } = useContext(ProductosProvider)
+    const { productos, eliminarProducto } = useContext(ProductosProvider)
 
     const [show, setShow] = useState(false)
 
@@ -69,7 +69,7 @@ const TablaDeProductos = () => {
                                     <Button className="btn-warning" onClick={()=>{handleModificar(item)}}>
                                         modificar
                                     </Button>
-                                    <Button className="btn-danger">
+                                    <Button className="btn-danger" onClick={() => eliminarProducto(item)}>
                                         eliminar
                                     </Button>
                                 </div>

@@ -28,7 +28,7 @@ const FormProductos = ({productoModificar}) =>
         e.preventDefault()
         if(productoModificar)
         {
-            modificarProducto(productoModificar)
+            modificarProducto(formulario)
         }else{
             agregarProducto(formulario)
         }
