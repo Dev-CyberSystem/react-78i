@@ -36,6 +36,14 @@ const editarUsuario = async (usuario) => {
   }
 }
 
+const deleteUsuario = async (id) => {
+  try {
+    await axios.delete(`http://localhost:8000/usuarios/${usuario.id}`)
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 const logout = () => {
   localStorage.removeItem("user");
   window.location.href = "/";
@@ -46,7 +54,7 @@ const logout = () => {
   }, []);
 
   return (
-    <UsuariosProvider.Provider value={{usuarios, getUsers, addUser, logout, editarUsuario}}>
+    <UsuariosProvider.Provider value={{usuarios, getUsers, addUser, logout, editarUsuario, deleteUsuario}}>
       {children}
     </UsuariosProvider.Provider>
   );

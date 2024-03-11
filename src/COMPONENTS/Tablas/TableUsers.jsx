@@ -5,7 +5,7 @@ import Table from 'react-bootstrap/Table';
 import Registro from '../registro/Registro.jsx';
 
 const TableUsers = () => {
-  const { usuarios, deleteUsuarios} = useContext(UsuariosProvider);
+  const { usuarios, deleteUsuario} = useContext(UsuariosProvider);
   const [show, setShow] = useState(false);
   const [editUsuario, setEditUsuario] = useState(null)
   const handleClose = () => setShow(false);
@@ -42,7 +42,7 @@ const TableUsers = () => {
                 <td>{usuario.isAdmin ? "SI" : "NEL"}</td>
                 <td>
                 <Button variant="primary" onClick={() => handleEdit(usuario)}>Editar</Button>
-                  <Button onClick={() => deleteUsuarios(usuario.id)} variant="danger">Eliminar</Button>
+                  <Button onClick={() => deleteUsuario(usuario.id)} variant="danger">Eliminar</Button>
                 </td>
               </tr>
             ))}
