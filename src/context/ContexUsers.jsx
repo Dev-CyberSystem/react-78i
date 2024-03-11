@@ -7,6 +7,7 @@ const ContexUsers = ({ children }) => {
   const [user, setUser] = useState();
 
   const addUsuario = async (usuario) => {
+    console.log(usuario,"en el contex");
     try {
       const response = await axios.post("http://localhost:7000/usuarios", usuario);
       setUser([...user, response.data]);
@@ -37,8 +38,13 @@ const deleteUser = async (id) => {
   }
 }
 
+const logout  = ()=>{
+  localStorage.removeItem('usuario');
+  window.location.href='/'
+}
+
   return (
-    <ProviderUser.Provider value={{ user, addUsuario, deleteUser }}>
+    <ProviderUser.Provider value={{ user, addUsuario, deleteUser,logout }}>
       {children}
     </ProviderUser.Provider>
   );

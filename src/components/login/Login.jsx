@@ -1,23 +1,48 @@
 import { Form, Button } from "react-bootstrap";
-import { useState } from "react";
-const Login = () => {
-  
-    const [user, setUser] = useState({
-    email: "",
-    password: "",
-  });
+import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { ProviderUser } from "../../context/ContexUsers";
+import Swal from "sweetalert2";
+
+const Login = ({ handleClose }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const { user } = useContext(ProviderUser);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    try {
+      const usuario = user.find((user) => user.email === email && user.password === password   );
+      if (usuario) {
+        Swal.fire({
+          icon: "success",
+          title: `Bienvenido`,
+          text: `inicio de sesion correcto`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        localStorage.setItem("usuario", JSON.stringify(usuario));
+        navigate("/");
+        handleClose()
+      } else {
+        Swal.fire({
+          title: "Error!",
+          text: "Correo o contraseña incorrectos.",
+          icon: "error",
+          confirmButtonText: "Aceptar",
+          timer: 2000,
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const registro = () => {
+    navigate("./registro");
+    handleClose();
   };
 
-  const handleChange = (e) => {
-    setUser({
-      ...user,
-      [e.target.name]: e.target.value,
-    });
-  };
-  console.log(user);
   return (
     <div>
       <Form onSubmit={handleSubmit}>
@@ -26,8 +51,8 @@ const Login = () => {
           <Form.Control
             type="email"
             name="email"
-            value={user.email}
-            onChange={handleChange}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter email"
           />
         </Form.Group>
@@ -37,13 +62,16 @@ const Login = () => {
           <Form.Control
             type="password"
             name="password"
-            value={user.password}
-            onChange={handleChange}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
           />
         </Form.Group>
-        <Button>Iniciar seción</Button>
+        <Button type="submit">Iniciar sesión</Button>
       </Form>
+      <p>
+        si no estas registrado pulsa <a onClick={registro}>Aquí</a>
+      </p>
     </div>
   );
 };

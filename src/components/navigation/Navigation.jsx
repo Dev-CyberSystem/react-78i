@@ -1,15 +1,25 @@
-import {Container,Navbar,Nav,NavDropdown,Button,Modal} from "react-bootstrap";
+import {
+  Container,
+  Navbar,
+  Nav,
+  NavDropdown,
+  Button,
+  Modal,
+} from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Login from "../login/Login";
-import {useState} from "react";
+import { useContext, useState } from "react";
+import { ProviderUser } from "../../context/ContexUsers";
 
 const Navigation = () => {
-  const navigate = useNavigate();
-  const [show, setShow] = useState(false);
 
+  const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const navigate = useNavigate();
+  const usuario = JSON.parse(localStorage.getItem("usuario"));
+  const {logout}=useContext(ProviderUser)
 
   return (
     <>
@@ -38,23 +48,23 @@ const Navigation = () => {
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
-          <Button variant="info" onClick={handleShow}>Login</Button>
+          {usuario ? (
+            <Button variant="danger" onClick={()=>logout()} >Logout</Button>
+          ) : (
+            <Button variant="info" onClick={handleShow}>
+              Login
+            </Button>
+          )}
         </Container>
       </Navbar>
-
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Login</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Login/>
+          <Login handleClose={handleClose} />
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="primary"onClick={() => navigate("/Registro")}>
-            Registrate
-          </Button>
-        </Modal.Footer>
       </Modal>
     </>
   );

@@ -1,4 +1,21 @@
 {
   "productos": [],
-  "usuarios": []
+  "usuarios": [
+    {
+      "id": "1f3e9cad-b981-4e1d-85c7-a04e4a23dfc9",
+      "nombre": "Bruno Javier",
+      "apellido": "Pieruzzi",
+      "email": "admin@gmail.com",
+      "password": "123",
+      "isAdmin": false
+    },
+    {
+      "id": "3ca1dbc0-0f57-4af9-afcc-1c06fc6228c7",
+      "nombre": "Eve",
+      "apellido": "Pieruzzi",
+      "email": "admin@gmail.com",
+      "password": "123",
+      "isAdmin": false
+    }
+  ]
 }
