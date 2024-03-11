@@ -9,8 +9,10 @@
   "usuarios": [
     {
       "id": "1",
-      "nombre": "Usuario 1",
-      "email": "usuario1@example.com"
+      "nombre": "ENZOOO",
+      "apellido": "CASTROOO",
+      "email": "ENZO@email.com",
+      "password": "1234"
     },
     {
       "id": "381b18dd-dabf-4bb1-af19-c66697c4dee1",

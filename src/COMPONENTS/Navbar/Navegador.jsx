@@ -1,19 +1,17 @@
-import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import { Button } from 'react-bootstrap';
-import { useState } from 'react';
-import Modal from 'react-bootstrap/Modal';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useContext } from 'react';
+import { BrowserRouter as Router, useNavigate } from 'react-router-dom';
+import { Container, Nav, Navbar, NavDropdown, Button, Modal } from 'react-bootstrap';
 import Login from '../login/Login';
+import { UsuariosProvider } from '../../context/UsuariosContext';
 
 const Navegador = () => {
   const [show, setShow] = useState(false);
+  const { logout } = useContext(UsuariosProvider);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
+
+  const user = JSON.parse(localStorage.getItem("user"));
 
   return (
     <>
@@ -25,16 +23,18 @@ const Navegador = () => {
             <Nav className="me-auto">
               <Nav.Link onClick={() => navigate("/")}>Home</Nav.Link>
               <Nav.Link onClick={() => navigate("/about")}>ABOUT</Nav.Link>
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item onClick={() => navigate("/admin")}>ADMINISTRACIÓN!</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-              </NavDropdown>
+              {user?.isAdmin ? (
+                <NavDropdown title="ESTO DE AQUÍ" id="basic-nav-dropdown">
+                  <NavDropdown.Item onClick={() => navigate("/admin")}>ADMINISTRACIÓN!</NavDropdown.Item>
+                </NavDropdown>
+              ) : null}
             </Nav>
           </Navbar.Collapse>
-          <Button variant="danger" onClick={handleShow}>LOGIN</Button>
+          {user ? (
+            <Button variant="danger" onClick={() => logout()}>CERRAR Sesión</Button>
+          ) : (
+            <Button variant="danger" onClick={handleShow}>LOGIN</Button>
+          )}
         </Container>
       </Navbar>
 
@@ -47,7 +47,7 @@ const Navegador = () => {
         </Modal.Body>
       </Modal>
     </>
-  )
+  );
 }
 
 export default Navegador;

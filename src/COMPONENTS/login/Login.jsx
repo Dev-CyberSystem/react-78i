@@ -1,21 +1,51 @@
 import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { UsuariosProvider } from '../../context/UsuariosContext';
+import Swal from "sweetalert2"
 
-const Login = ({ handleClose }) => { // Corrección aquí
+const Login = ({ handleClose }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const navigate = useNavigate();
+  const { usuarios } = useContext(UsuariosProvider);
+  console.log(usuarios, "usuarios LOGIIIN");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(email + "" + password);
+    try {
+      const user = usuarios.find((user) => user.email === email && user.password === password);
+      if (user) {
+        Swal.fire({
+          title: "WELCOMEEE",
+          text: "EXITOOO",
+          icon: "success",
+          confirmButtonText: "OK",
+          timer: 1500,
+        });
+        localStorage.setItem("user", JSON.stringify(user));
+        navigate("/");
+        handleClose();
+      }
+      else {
+        Swal.fire({
+          title: "ERROR",
+          text: "incorrecto, pa",
+          icon: "error",
+          confirmButtonText: "OK, bro",
+          timer: 1500,
+        })
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const registro = () => {
     navigate('/registro');
-    handleClose(); // Utiliza handleClose como una función aquí
+    handleClose();
   };
 
   return (

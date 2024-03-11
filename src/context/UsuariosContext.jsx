@@ -27,13 +27,26 @@ const UsuariosContext = ({ children }) => {
     }
 }
 
+const editarUsuario = async (usuario) => {
+  try {
+    await axios.put(`http://localhost:8000/usuarios/${usuario.id}`, usuario),
+    await getUsers()
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+const logout = () => {
+  localStorage.removeItem("user");
+  window.location.href = "/";
+}
 
   useEffect(() => {
     getUsers();
   }, []);
 
   return (
-    <UsuariosProvider.Provider value={{usuarios, getUsers, addUser}}>
+    <UsuariosProvider.Provider value={{usuarios, getUsers, addUser, logout, editarUsuario}}>
       {children}
     </UsuariosProvider.Provider>
   );
