@@ -1,7 +1,6 @@
 import FormProducts from "../../components/formProducts/FormProducts";
 import { Container, Row, Col } from "react-bootstrap";
 import TablaProductos from "../../components/tablaProducto/TablaProductos";
-import { FormUsers } from "../../components/formUsers/FormUsers";
 import TablaUsers from "../../components/tablaUsers/TablaUsers";
 
 const Admin = () => {
@@ -12,7 +11,17 @@ const Admin = () => {
           <Col>
             <FormProducts />
           </Col>
-          <Col><TablaProductos /></Col>
+          <Col><TablaProductos />
+          </Col>
+        </Row>
+        <br />
+        <hr />
+        <br />
+        <Row>
+          <Col>
+          <h1>Tabla usuarios</h1>
+          <TablaUsers/>
+          </Col>
         </Row>
       </Container>
     </>

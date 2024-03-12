@@ -12,14 +12,13 @@ import { useContext, useState } from "react";
 import { ProviderUser } from "../../context/ContexUsers";
 
 const Navigation = () => {
-
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   const navigate = useNavigate();
   const usuario = JSON.parse(localStorage.getItem("usuario"));
-  const {logout}=useContext(ProviderUser)
+  const { logout } = useContext(ProviderUser);
 
   return (
     <>
@@ -32,7 +31,11 @@ const Navigation = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link onClick={() => navigate("/")}>Home</Nav.Link>
-              <Nav.Link onClick={() => navigate("/Admin")}>Admin</Nav.Link>
+              
+              {usuario?.isAdmin ? (
+                <Nav.Link onClick={() => navigate("/Admin")}>Admin</Nav.Link>
+              ) : null}
+
               <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">
@@ -48,8 +51,11 @@ const Navigation = () => {
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
+
           {usuario ? (
-            <Button variant="danger" onClick={()=>logout()} >Logout</Button>
+            <Button variant="danger" onClick={() => logout()}>
+              Logout
+            </Button>
           ) : (
             <Button variant="info" onClick={handleShow}>
               Login

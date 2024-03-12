@@ -2,20 +2,20 @@
   "productos": [],
   "usuarios": [
     {
-      "id": "1f3e9cad-b981-4e1d-85c7-a04e4a23dfc9",
+      "id": "ffaf6d46-33fe-4eb1-89df-8bc2132458b4",
       "nombre": "Bruno Javier",
       "apellido": "Pieruzzi",
       "email": "admin@gmail.com",
       "password": "123",
-      "isAdmin": false
+      "isAdmin": true
     },
     {
-      "id": "3ca1dbc0-0f57-4af9-afcc-1c06fc6228c7",
+      "id": "a1fedfd6-103b-4d43-a8be-4d4325ff9108",
       "nombre": "Eve",
-      "apellido": "Pieruzzi",
-      "email": "admin@gmail.com",
+      "apellido": "uro",
+      "email": "admin2@gmail.com",
       "password": "123",
-      "isAdmin": false
+      "isAdmin": true
     }
   ]
 }
