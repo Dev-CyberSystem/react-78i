@@ -14,7 +14,7 @@ const obtenerUsuarios= async () =>{
     catch(error){
         console.log(error);
     }   
-    console.log (users)
+    // console.log (users)
 } 
 
 const agregarUsuarios = async (registro) =>{
@@ -32,7 +32,7 @@ const agregarUsuarios = async (registro) =>{
 
  return(
     <>
-    <userProvider.Provider value = {{  obtenerUsuarios,agregarUsuarios}}>
+    <userProvider.Provider value = {{  users,obtenerUsuarios,agregarUsuarios}}>
         {children}
     </userProvider.Provider>
     </>

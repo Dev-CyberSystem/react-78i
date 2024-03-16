@@ -1,8 +1,13 @@
 import React from 'react'
 import { Form , Button} from 'react-bootstrap'
+import { useContext } from 'react'
+import { userProvider } from '../contextUser/UsersContext'
 
 const Login = () => {
+ const {users} = useContext(userProvider);
+ console.log(users )
   return (
+    
    <>
     <Form>
     <Form.Group>

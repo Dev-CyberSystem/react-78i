@@ -4,7 +4,9 @@ import {  Button,Form } from 'react-bootstrap'
 import {userProvider} from '../contextUser/UsersContext'
 
 const Register = ({handleClose}) => {
+ 
     const {agregarUsuarios,obtenerUsuarios} = useContext(userProvider)
+    
     const  [registro,setRegistro ] = useState({
         nombre: "",
         apellido: "",
@@ -21,13 +23,14 @@ const Register = ({handleClose}) => {
     const handleSubmit = (e) =>{
         e.preventDefault();
         agregarUsuarios (registro)
-      
+       
         setRegistro({
           nombre: "",
         apellido: "",
         correo: "",
         contraseña: "" 
         })
+      handleClose();
       
     }
     
@@ -35,7 +38,7 @@ const Register = ({handleClose}) => {
   
   <>
      
-<Form onSubmit={handleSubmit}>
+<Form onSubmit={handleSubmit} >
     <Form.Group>
         <Form.Label>Nombre/s</Form.Label>
             <Form.Control type='text' name='nombre'   value={registro.nombre}   onChange={handleChange} placeholder='Nombre' required/>
@@ -60,8 +63,8 @@ const Register = ({handleClose}) => {
             <Form.Control type='text' name='' value={} on onChange={} placeholder=' Contraseña' required/>
         
     </Form.Group> */}
-    <Button type='submit' onClick={handleClose} className='w-100 mt-2' variant='dark'>Registrarse</Button>
-   
+    <Button type='submit'  className='w-100 mt-2' variant='dark'>Registrarse</Button>
+   {/* <Button onClick={()=>obtenerUsuarios()}>Users</Button> */}
 </Form>
       
   </>
