@@ -4,9 +4,10 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Button,Modal,Form } from 'react-bootstrap';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Register from '../register/Register';
 import Login from '../login/Login'
+import  { userProvider } from '../contextUser/UsersContext';
 
 const Navigator = () =>{
 const  navigate = useNavigate();
@@ -17,6 +18,10 @@ const  navigate = useNavigate();
     const [show2, setShow2] = useState(false);
      const handleClose2 = () => setShow2(false);
     const handleShow2 = () => setShow2(true);
+  //Almaceno en la variable los datos almacenados en en el local storage
+  const user  = JSON.parse(localStorage.getItem("user"))
+  const {logout} = useContext(userProvider)
+
     return (
         <>
         <Navbar expand="lg" className="bg-body-tertiary">
@@ -40,8 +45,10 @@ const  navigate = useNavigate();
                 </NavDropdown>
               </Nav>
             </Navbar.Collapse>
-            <Button onClick={ handleShow} variant='secondary'  >Registrarse</Button>
-            <Button onClick={ handleShow2} variant='dark' className={"ms-1"}>Iniciar Sesion</Button>
+           {user ? (<Button variant='secondary'>Perfil</Button>): ( <Button onClick={ handleShow} variant='secondary'  >Registrarse</Button>)}
+            {user ? (<Button onClick = {()=> logout ()}  variant='danger' className={"ms-1"}>Cerrar Sesion</Button>) :
+             (<Button onClick={ handleShow2} variant='dark' className={"ms-1"}>Iniciar Sesion</Button>)
+            }
         
           </Container>
         </Navbar>

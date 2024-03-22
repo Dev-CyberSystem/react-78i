@@ -2,7 +2,7 @@
 import React, {   useContext, useState } from "react";
 import {Button,Modal,Table} from 'react-bootstrap';
 import {ProductoProvider} from "../../components/context/ProductsContext";
- 
+import TableUser from "../../components/tableUser/TableUser";
 import Form from "../../components/form/Form";
 
 
@@ -71,7 +71,9 @@ const Products = ( ) => {
      
     )
    }
-     
+    <TableUser/>
+
+
     </>
   )
 }

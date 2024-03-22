@@ -1,32 +1,19 @@
 {
   "productos": [
     {
-      "id": "69515158-87d1-4653-a002-dd2e811893fe",
-      "nombreProducto": "dasd",
-      "precioProducto": "02121"
+      "id": "4c9ed463-fe86-4089-9fb5-54422ed7ae8e",
+      "nombreProducto": "dasdas",
+      "precioProducto": "0312312"
     }
   ],
   "usuarios": [
     {
-      "id": "1597",
+      "id": "614d",
       "nombre": "  MARIANO A",
       "apellido": "Ruiz",
       "correo": "marianoruiz145@gmail.com",
-      "contraseña": "agsutin12dsa"
-    },
-    {
-      "id": "598a",
-      "nombre": "RUIZ, MARIANO AGUSTIN",
-      "apellido": "Ruiz",
-      "correo": "rangercz5@gmail.com",
-      "contraseña": "dassd"
-    },
-    {
-      "id": "e75c",
-      "nombre": "RUIZ, MARIANO AGUSTIN",
-      "apellido": "dadsdasd",
-      "correo": "121312",
-      "contraseña": "dadas"
+      "contraseña": "marianousky",
+      "admin": false
     }
   ]
 }

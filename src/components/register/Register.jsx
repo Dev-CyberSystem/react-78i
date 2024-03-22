@@ -2,16 +2,18 @@ import React from 'react'
 import { useState,useContext } from 'react';
 import {  Button,Form } from 'react-bootstrap'
 import {userProvider} from '../contextUser/UsersContext'
-
-const Register = ({handleClose}) => {
+import Swal from 'sweetalert2'
  
-    const {agregarUsuarios,obtenerUsuarios} = useContext(userProvider)
+const Register = ({handleClose}) => {
+  
+    const {agregarUsuarios} = useContext(userProvider)
     
     const  [registro,setRegistro ] = useState({
         nombre: "",
         apellido: "",
         correo: "",
-        contraseña: ""
+        contraseña: "",
+        admin: false
     })
     const handleChange  = (e) =>{
        
@@ -23,7 +25,13 @@ const Register = ({handleClose}) => {
     const handleSubmit = (e) =>{
         e.preventDefault();
         agregarUsuarios (registro)
-       
+        Swal.fire({
+            title: "Registro exitoso!",
+            text: "Usuario registrado con exito!",
+            icon : "success",
+            timer: 1500
+            
+          });       
         setRegistro({
           nombre: "",
         apellido: "",
