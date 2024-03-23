@@ -31,7 +31,7 @@ const  navigate = useNavigate();
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
                 <Nav.Link onClick={() => navigate("/")}>Inicio</Nav.Link>
-                <Nav.Link onClick={() => navigate("/products")}>Productos</Nav.Link>
+              {user && user.admin ?   (<Nav.Link onClick={() => navigate("/products")}>Admin</Nav.Link>) : null}
                 <NavDropdown title="Opciones" id="basic-nav-dropdown">
                   <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.2">

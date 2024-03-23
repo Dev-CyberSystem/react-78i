@@ -29,10 +29,21 @@ const agregarUsuarios = async (registro) =>{
 
 }
 
+const editarUsuario = async (registro) => {
+    try{
+        await axios.put(`http://localhost:8000/usuarios/${registro.id}`,registro)
+        await obtenerUsuarios();
+    }
+    catch(error){
+        console.log(error)
+    }
+}
+
 const borrarUsuario = async (usuarioId) =>{
    try{
        await axios.delete(`http://localhost:8000/usuarios/${usuarioId}`  )
-       setProducts(users.filter((users)=>users.id !=id)) 
+       setUsers(users.filter((users)=>users.id !=usuarioId)) 
+      
    }catch(error){
         console.log(error)
    }
@@ -48,7 +59,7 @@ const logout = () =>{
 
  return(
     <>
-    <userProvider.Provider value = {{  users,obtenerUsuarios,agregarUsuarios,borrarUsuario,logout}}>
+    <userProvider.Provider value = {{  users,obtenerUsuarios,agregarUsuarios,editarUsuario,borrarUsuario,logout}}>
         {children}
     </userProvider.Provider>
     </>
